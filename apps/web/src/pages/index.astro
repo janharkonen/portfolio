@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import NumberIncrement from "../components/NumberIncrement.astro";
 
 const TITLE_TEXT = `Jan Härkönen portfolio`;
 ---
@@ -7,6 +8,7 @@ const TITLE_TEXT = `Jan Härkönen portfolio`;
 <Layout title="portfolio">
   <div class="container mx-auto max-w-3xl px-4 py-2">
     <pre class="overflow-x-auto font-mono text-sm text-white">{TITLE_TEXT}</pre>
+    <NumberIncrement />
     <div class="grid gap-6">
     </div>
   </div>

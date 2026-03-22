@@ -1,0 +1,20 @@
+---
+---
+
+<button id="number-increment" class="cursor-pointer">
+  Click me <span id="number-increment-count">0</span>
+</button>
+
+<script>
+  let current = 0;
+  const button = document.querySelector("#number-increment");
+  const count = document.querySelector("#number-increment-count");
+
+  button?.addEventListener("click", () => {
+    current += 1;
+
+    if (count) {
+      count.textContent = String(current);
+    }
+  });
+</script>
