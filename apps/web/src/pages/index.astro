@@ -1,12 +1,201 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const skills = ["React", "Golang", "Python", "Convex", "PostgreSQL", "Linux"];
+
+const experience = [
+  {
+    role: "Software Developer",
+    company: "Taito United Oy",
+    period: "2025–present",
+    description: "Product data management software development",
+    tech: ["React", "GraphQL", "Node.js", "PostgreSQL", "Docker", "Google Cloud"],
+  },
+  {
+    role: "CEO / Software Developer",
+    company: "Pion Blanc Oy",
+    period: "2024–2025",
+    description: "Helping small businesses navigate their massive product data pipelines and automating their sales processes",
+    tech: ["Next.js", "React", "Python", "Golang", "PostgreSQL", "Redis", "Docker", "Hetzner"],
+  },
+  {
+    role: "Software Developer",
+    company: "Polycon Oy",
+    period: "2021–2024",
+    description: "Developing and maintaining software and databases for handling mobility aid items for Finnish hospital districts",
+    tech: ["Delphi", "Microsoft SQL Server"],
+  },
+  {
+    role: "Software Developer / Data Analyst",
+    company: "Semantum Oy",
+    period: "Feb 2020–Sep 2020",
+    description: "LCA dashboard for environmental impact assessment",
+    tech: ["Java", "InfluxDB", "Docker", "Haskell"],
+  },
+  {
+    role: "Research Assistant",
+    company: "Aalto University School of Science",
+    period: "Jun 2019–Dec 2019",
+    description: "Simulating and calculating the annihilating electron-positron pair momentum density in a solid in the atomic scale using quantum Monte Carlo methods",
+    tech: ["Fortran", "Quantum ESPRESSO", "CASINO", "CSC Mahti"],
+  },
+  {
+    role: "Research Assistant",
+    company: "Aalto University School of Science",
+    period: "Summer 2018",
+    description: "Semiconductor enhancement factor simulation",
+    tech: ["Fortran", "Quantum ESPRESSO", "CASINO", "CSC Mahti"],
+  },
+];
+
+const projects = [
+  {
+    name: "SyncSpace",
+    year: "2025",
+    description: "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
+    tech: ["Next.js", "Convex", "Clerk", "Docker", "Hetzner"],
+  },
+  {
+    name: "Piggybank",
+    year: "2025",
+    description: "Personal finance tracker",
+    tech: ["Next.js", "Convex", "Golang", "Neon", "PostgreSQL"],
+  },
+  {
+    name: "ÉclairDB",
+    year: "2025",
+    description: "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
+    tech: ["Vue", "Golang", "Github Actions", "AWS"],
+  },
+  {
+    name: "One source of truth",
+    year: "2025",
+    description: "A tool to search and filter a vast array of products blazingly fast",
+    tech: ["Next.js", "Golang", "Redis", "Lua", "Docker", "Hetzner"],
+  },
+  {
+    name: "cdx",
+    year: "2025",
+    description: "Bash CLI tool to cd into directories 10x faster",
+    tech: ["Bash"],
+  },
+  {
+    name: "PICAPI",
+    year: "2025",
+    description: "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
+    tech: ["Vanilla Javascript", "Python", "SQLite", "Hetzner"],
+  },
+  {
+    name: "Progress tracker",
+    year: "2025",
+    description: "Web application to track the progress level of listed items for each user in real time using websockets",
+    tech: ["Svelte", "Bun", "Redis", "Docker", "Github Actions", "Azure"],
+  },
+  {
+    name: "Offer generator",
+    year: "2024–2025",
+    description: "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",
+    tech: ["React", "Python", "PostgreSQL", "Docker", "Hetzner"],
+  },
+  {
+    name: "Portfolio site",
+    year: "2024–2025",
+    description: "This very website. A personal full stack developer portfolio",
+    tech: ["Astro", "Tailwind CSS"],
+  },
+  {
+    name: "Progress tracker",
+    year: "2021",
+    description: "Mobile application progress tracker",
+    tech: ["Java"],
+  },
+  {
+    name: "Lens and mirror simulator",
+    year: "2015",
+    description: "Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors",
+    tech: ["Python"],
+  },
+];
 ---
 
-<Layout title="portfolio">
-  <div class="container mx-auto max-w-3xl px-4 py-2">
-    <pre class="overflow-x-auto font-mono text-sm text-white">Jan Härkönen portfolio</pre>
-    <div class="grid gap-6">
-    </div>
-  </div>
-</Layout>
+<Layout title="Jan Härkönen — Senior Full Stack Developer">
+  <main class="container mx-auto max-w-5xl px-4 py-16 md:px-6">
+    <!-- Hero -->
+    <section class="mb-20">
+      <p class="text-sm text-neutral-500 mb-2">Helsinki, Finland 🇫🇮</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Jan Härkönen</h1>
+      <h2 class="text-xl md:text-2xl text-neutral-400 mb-4">Senior Full Stack Developer</h2>
+      <p class="text-neutral-400 text-lg italic">"Writing software that's pleasant to look at"</p>
+    </section>
 
+    <!-- Skills -->
+    <section class="mb-20">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-6">Core Stack</h3>
+      <div class="flex flex-wrap gap-3">
+        {skills.map((skill) => (
+          <span class="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-800 text-sm text-neutral-300">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="mb-20">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-8">Experience</h3>
+      <div class="space-y-8">
+        {experience.map((job) => (
+          <div class="group">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+              <h4 class="text-lg font-medium text-white">{job.role}</h4>
+              <span class="text-sm text-neutral-500">{job.period}</span>
+            </div>
+            <p class="text-neutral-400 font-medium mb-2">{job.company}</p>
+            <p class="text-neutral-500 text-sm mb-3">{job.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {job.tech.map((t) => (
+                <span class="text-xs px-2 py-1 rounded bg-neutral-900 text-neutral-500">{t}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="mb-20">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-8">Projects</h3>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {projects.map((project) => (
+          <div class="rounded-lg border border-neutral-800 bg-neutral-900/50 p-5 hover:border-neutral-700 transition-colors">
+            <div class="flex items-baseline justify-between mb-2">
+              <h4 class="text-base font-medium text-white">{project.name}</h4>
+              <span class="text-xs text-neutral-600">{project.year}</span>
+            </div>
+            <p class="text-sm text-neutral-400 mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {project.tech.map((t) => (
+                <span class="text-xs px-2 py-0.5 rounded bg-neutral-800 text-neutral-500">{t}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer class="border-t border-neutral-800 pt-12 pb-8">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-6">Contact</h3>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-neutral-400">
+        <a href="mailto:jan.harkonen@taitounited.fi" class="hover:text-white transition-colors">jan.harkonen@taitounited.fi</a>
+        <span class="hidden sm:inline text-neutral-700">·</span>
+        <span>+358 50 4646 745</span>
+        <span class="hidden sm:inline text-neutral-700">·</span>
+        <a href="https://github.com/janharkonen" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Github</a>
+        <span class="hidden sm:inline text-neutral-700">·</span>
+        <a href="https://www.linkedin.com/in/janharkonen" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+      </div>
+      <p class="text-xs text-neutral-700 mt-8">&copy; 2026 Jan Härkönen</p>
+    </footer>
+  </main>
+</Layout>
