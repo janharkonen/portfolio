@@ -14,13 +14,13 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 First, install the dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 
 Then, run the development server:
 
 ```bash
-bun run dev
+pnpm run dev
 ```
 
 Open [http://localhost:4321](http://localhost:4321) in your browser to see the fullstack application.
@@ -36,7 +36,7 @@ portfolio/
 
 ## Available Scripts
 
-- `bun run dev`: Start all applications in development mode
-- `bun run build`: Build all applications
-- `bun run dev:web`: Start only the web application
-- `bun run check-types`: Check TypeScript types across all apps
+- `pnpm run dev`: Start all applications in development mode
+- `pnpm run build`: Build all applications
+- `pnpm run dev:web`: Start only the web application
+- `pnpm run check-types`: Check TypeScript types across all apps
