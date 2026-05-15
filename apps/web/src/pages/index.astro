@@ -1,7 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getDB } from "../lib/mongo";
+import { z } from "zod";
 
-const skills = ["React", "Golang", "Python", "Convex", "PostgreSQL"];
+const db = await getDB();
+const coreStackNotValidated = await db.collection("core_stack").findOne();
+const skills = z.array(z.string()).parse(coreStackNotValidated?.content ?? []);
 
 const experience = [
   {
