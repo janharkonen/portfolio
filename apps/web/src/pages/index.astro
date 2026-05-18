@@ -46,6 +46,7 @@ const projectSchema = z.object({
   year: z.string(),
   description: z.string(),
   tech: z.array(z.string()),
+  initiallyHidden: z.boolean(),
 });
 const projectNotValidatedCursor = await db.collection("projects").find();
 const projects: z.infer<typeof projectSchema>[] = [];
@@ -92,6 +93,28 @@ projects.reverse()
             <div class="flex flex-wrap gap-2">
               {job.tech.map((t) => (
                 <span class="text-xs px-2 py-1 rounded bg-neutral-900 text-neutral-500">{t}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    
+    <!-- Education -->
+    <section class="mb-20" hidden="true">
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-8">Education</h3>
+      <div class="space-y-8">
+        {educations.map((education) => (
+          <div class="group">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+              <h4 class="text-lg font-medium text-white">{education.degree}</h4>
+              <span class="text-sm text-neutral-500">{education.period}</span>
+            </div>
+            <p class="text-neutral-400 font-medium mb-2">{education.school}</p>
+            <p class="text-neutral-500 text-sm mb-3">{education.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {education.documents.map((d) => (
+                <span class="text-xs px-2 py-1 rounded bg-neutral-900 text-neutral-500">{d}</span>
               ))}
             </div>
           </div>
