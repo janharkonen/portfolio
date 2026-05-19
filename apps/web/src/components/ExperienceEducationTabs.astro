@@ -1,26 +1,38 @@
 ---
-interface Experience {
-  role: string;
-  company: string;
-  period: string;
-  description: string;
-  tech: string[];
-}
+import { getDB } from "../lib/mongo";
+import { z } from "zod";
 
-interface Education {
-  degree: string;
-  school: string;
-  period: string;
-  description: string;
-  documents: string[];
-}
+const db = await getDB();
 
-interface Props {
-  experiences: Experience[];
-  educations: Education[];
+// Experience
+const experienceSchema = z.object({
+  role: z.string(),
+  company: z.string(),
+  period: z.string(),
+  description: z.string(),
+  tech: z.array(z.string()),
+});
+const experienceNotValidatedCursor = await db.collection("experience").find();
+const experiences: z.infer<typeof experienceSchema>[] = [];
+for await (const experienceNotValidated of experienceNotValidatedCursor) {
+  experiences.push(experienceSchema.parse(experienceNotValidated));
 }
+experiences.reverse();
 
-const { experiences, educations } = Astro.props;
+// Education
+const educationSchema = z.object({
+  degree: z.string(),
+  school: z.string(),
+  period: z.string(),
+  description: z.string(),
+  documents: z.array(z.string()),
+});
+const educationNotValidatedCursor = await db.collection("education").find();
+const educations: z.infer<typeof educationSchema>[] = [];
+for await (const educationNotValidated of educationNotValidatedCursor) {
+  educations.push(educationSchema.parse(educationNotValidated));
+}
+educations.reverse();
 
 const tabClass =
   "rounded-md py-3 px-6 text-sm font-medium transition-colors cursor-pointer text-neutral-500 hover:text-neutral-300 aria-selected:bg-neutral-800 aria-selected:text-white aria-selected:shadow-sm";
