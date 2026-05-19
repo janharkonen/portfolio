@@ -16,6 +16,8 @@ WORKDIR /app
 ENV HOST=0.0.0.0
 ENV PORT=4321
 ENV NODE_ENV=production
+ENV CORS_ORIGIN={$CORS_ORIGIN}
+ENV MONGO_URI={$MONGO_URI}
 RUN apk add --no-cache libc6-compat
 COPY --from=build /app/apps/web/dist ./dist
 COPY --from=build /out/node_modules ./node_modules
