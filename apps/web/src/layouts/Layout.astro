@@ -5,13 +5,13 @@ import Header from "../components/Header.astro";
 interface Props {
   title?: string;
   bodyClass?: string;
-  showHeader?: boolean;
+  themeClass?: string;
 }
 
 const {
   title = "portfolio",
   bodyClass = "min-h-screen bg-neutral-950 text-white",
-  showHeader = true,
+  themeClass = "",
 } = Astro.props;
 ---
 
@@ -28,8 +28,8 @@ const {
     <meta name="description" content="Jan Härkönen — Senior Full Stack Developer based in Helsinki, Finland" />
     <title>{title}</title>
   </head>
-  <body class={bodyClass}>
-    {showHeader && <Header />}
+  <body class:list={[bodyClass, themeClass]}>
+    <Header />
     <slot />
   </body>
 </html>
