@@ -1,3 +1,14 @@
+// How to add a new branded item:
+// 1. Say I want to add "Hugging Face" logo.
+// 2. I go to https://svgl.app and search for "Hugging Face" on the search bar.
+// 3. I click on the first result and save the SVG to my local machine.
+// 4. I rename the file to "huggingface.svg" and save it to the "public/svgs" folder.
+// 5. I add the following to the brandedItems object:
+//    "HUGGINGFACE": {
+//      displayName: "Hugging Face",
+//      logoUrl: "/huggingface.svg",
+//    },
+
 type BrandedItem = {
   displayName: string;
   logoUrl: string;
@@ -58,8 +69,7 @@ export const brandedItems = {
   },
   MSSQLSERVER: {
     displayName: "Microsoft SQL Server",
-    logoUrl:
-      "https://img.icons8.com/?size=100&id=laYYF3dV0Iew&format=png&color=000000",
+    logoUrl: "/sql-server.svg",
   },
   JAVA: {
     displayName: "Java",
@@ -67,32 +77,31 @@ export const brandedItems = {
   },
   VSCODE: {
     displayName: "Visual Studio Code",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/768px-Visual_Studio_Code_1.35_icon.svg.png",
+    logoUrl: "/vscode.svg",
   },
   ANDROIDSTUDIO: {
     displayName: "Android Studio",
-    logoUrl: "https://cdn.simpleicons.org/androidstudio",
+    logoUrl: "/androidstudio.svg",
   },
   REDUX: {
     displayName: "Redux",
-    logoUrl: "https://cdn.simpleicons.org/redux",
+    logoUrl: "/redux.svg",
   },
   SOURCETREE: {
     displayName: "Sourcetree",
-    logoUrl: "https://cdn.simpleicons.org/sourcetree",
+    logoUrl: "/sourcetree.svg",
   },
   GITLAB: {
     displayName: "Gitlab",
-    logoUrl: "https://cdn.simpleicons.org/gitlab",
+    logoUrl: "/gitlab.svg",
   },
   GIT: {
     displayName: "Git",
-    logoUrl: "https://cdn.simpleicons.org/git",
+    logoUrl: "/git.svg",
   },
   RADSTUDIO: {
     displayName: "RAD Studio",
-    logoUrl: "https://cdn.simpleicons.org/radstudio",
+    logoUrl: "/radstudio.svg",
   },
   SQL: {
     displayName: "SQL",
@@ -101,33 +110,36 @@ export const brandedItems = {
   },
   VITE: {
     displayName: "Vite",
+    logoUrl: "/vite.svg",
+  },
+  VITE_OLD: {
+    displayName: "Vite",
     logoUrl:
       "https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png&color=000000",
   },
-  NODEJS: {
+  NODEJS_OLD: {
     displayName: "Node.js",
-    logoUrl: "https://cdn.simpleicons.org/nodedotjs",
+    logoUrl: "/nodedotjs.svg",
   },
   HTML: {
     displayName: "HTML",
-    logoUrl: "https://cdn.simpleicons.org/html5",
+    logoUrl: "/html.svg",
   },
   CSS: {
     displayName: "CSS",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/1e6a510d9b084d8c9b9e1e50d5ebc450.png?BGt=84&BGb=97",
+    logoUrl: "/css.svg",
   },
   TAILWIND: {
     displayName: "Tailwind CSS",
-    logoUrl: "https://cdn.simpleicons.org/tailwindcss",
+    logoUrl: "/tailwindcss.svg",
   },
   JAVASCRIPT: {
     displayName: "Javascript",
-    logoUrl: "https://cdn.simpleicons.org/javascript",
+    logoUrl: "/javascript.svg",
   },
   TYPESCRIPT: {
     displayName: "Typescript",
-    logoUrl: "https://cdn.simpleicons.org/typescript",
+    logoUrl: "/typescript.svg",
   },
   PYQT4: {
     displayName: "PyQT 4",
@@ -144,49 +156,48 @@ export const brandedItems = {
   },
   VERCEL: {
     displayName: "Vercel",
-    logoUrl: "https://cdn.simpleicons.org/vercel",
+    logoUrl: "/vercel.svg",
   },
   SHADCN: {
     displayName: "shadcn/ui",
-    logoUrl: "https://cdn.simpleicons.org/shadcnui",
+    logoUrl: "/shadcnui.svg",
   },
-  LATEX: {
+  LATEX_OLD: {
     displayName: "LaTeX",
     logoUrl:
       "https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg",
   },
   FORTRAN: {
     displayName: "Fortran",
-    logoUrl: "https://cdn.simpleicons.org/fortran",
+    logoUrl: "/fortran.svg",
   },
-  FLASK: {
+  FLASK_OLD: {
     displayName: "Flask",
-    logoUrl: "https://cdn.simpleicons.org/flask",
+    logoUrl: "/flask.svg",
   },
   HASKELL: {
     displayName: "Haskell",
-    logoUrl: "https://cdn.simpleicons.org/haskell",
+    logoUrl: "/haskell.svg",
   },
   HETZNER: {
     displayName: "Hetzner",
-    logoUrl: "https://cdn.simpleicons.org/hetzner",
+    logoUrl: "/hetzner.svg",
   },
   AUTH0: {
     displayName: "Auth0",
-    logoUrl: "https://cdn.simpleicons.org/auth0",
+    logoUrl: "/auth0.svg",
   },
   CLOUDFLARE: {
     displayName: "Cloudflare",
-    logoUrl: "https://cdn.simpleicons.org/cloudflare",
+    logoUrl: "/cloudflare.svg",
   },
   CHATGPT: {
     displayName: "ChatGPT",
-    logoUrl: "https://cdn.simpleicons.org/openai",
+    logoUrl: "/openai.svg",
   },
   CLAUDE: {
     displayName: "Claude",
-    logoUrl:
-      "https://www.mescomputing.com/news/ai/media_13b863a9243381ff7394de5430fa38774577c1a90.png?width=2000&format=webply&optimize=medium",
+    logoUrl: "/claude.svg",
   },
   V0: {
     displayName: "V0",
@@ -200,13 +211,11 @@ export const brandedItems = {
   },
   DOCKER: {
     displayName: "Docker",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/6263092852e442a49eb3a84baef6632b.png?BG=95",
+    logoUrl: "/docker.svg",
   },
   SUBLIME: {
     displayName: "Sublime text",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/en/d/d2/Sublime_Text_3_logo.png",
+    logoUrl: "/sublime.svg",
   },
   SQLALCHEMY: {
     displayName: "SQLAlchemy",
@@ -215,8 +224,7 @@ export const brandedItems = {
   },
   NGINX: {
     displayName: "Nginx",
-    logoUrl:
-      "https://ahmadalli.gallerycdn.vsassets.io/extensions/ahmadalli/vscode-nginx-conf/0.3.5/1711059993560/Microsoft.VisualStudio.Services.Icons.Default",
+    logoUrl: "/nginx.svg",
   },
   GUNICORN: {
     displayName: "Gunicorn",
@@ -225,37 +233,35 @@ export const brandedItems = {
   },
   LECHAT: {
     displayName: "Le Chat",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Mistral_AI_logo_%282025%E2%80%93%29.svg/1200px-Mistral_AI_logo_%282025%E2%80%93%29.svg.png",
+    logoUrl: "/mistral.svg",
   },
   DEEPSEEK: {
     displayName: "Deepseek",
-    logoUrl:
-      "https://freepnglogo.com/images/all_img/deep-seek-logo-whale-1ced.png",
+    logoUrl: "/deepseek.svg",
+  },
+  HUGGINGFACE: {
+    displayName: "Hugging Face",
+    logoUrl: "/huggingface.svg",
   },
   JWT: {
     displayName: "JSON Web Token",
-    logoUrl: "https://cdn.worldvectorlogo.com/logos/jwt-3.svg",
+    logoUrl: "/jwt.svg",
   },
   SVELTE: {
     displayName: "Svelte",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Svelte_logo_by_gengns.svg/960px-Svelte_logo_by_gengns.svg.png?_=20191219134736",
+    logoUrl: "/svelte.svg",
   },
   SVELTEKIT: {
     displayName: "SvelteKit",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Svelte_logo_by_gengns.svg/960px-Svelte_logo_by_gengns.svg.png?_=20191219134736",
+    logoUrl: "/sveltekit.svg",
   },
   LUA: {
     displayName: "Lua",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/94515531ee08445dbc794d5477b27b99.png",
+    logoUrl: "/lua.svg",
   },
   REDIS: {
     displayName: "Redis",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/c52dba9ecc2e42b1ac74597152b89e18.png",
+    logoUrl: "/redis.svg",
   },
   REDISEARCH: {
     displayName: "RediSearch",
@@ -269,8 +275,7 @@ export const brandedItems = {
   },
   AWS: {
     displayName: "AWS",
-    logoUrl:
-      "https://img.icons8.com/?size=100&id=33039&format=png&color=000000",
+    logoUrl: "/aws.svg",
   },
   EC2: {
     displayName: "EC2",
@@ -279,13 +284,11 @@ export const brandedItems = {
   },
   LINUX: {
     displayName: "Linux",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/2008891e943c466a99328a3cc939c4b3.png?BG=110",
+    logoUrl: "/linux.svg",
   },
   UBUNTU: {
     displayName: "Ubuntu",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/1024px-UbuntuCoF.svg.png",
+    logoUrl: "/ubuntu.svg",
   },
   GITKRAKEN: {
     displayName: "GitKraken",
@@ -293,7 +296,7 @@ export const brandedItems = {
   },
   INFLUXDB: {
     displayName: "InfluxDB",
-    logoUrl: "https://cdn.simpleicons.org/influxdb",
+    logoUrl: "/influxdb.svg",
   },
   QUANTUMESPRESSO: {
     displayName: "Quantum ESPRESSO",
@@ -312,48 +315,48 @@ export const brandedItems = {
   },
   MATLAB: {
     displayName: "Matlab",
-    logoUrl:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdic.academic.ru%2Fpictures%2Fwiki%2Ffiles%2F77%2FMatlab_Logo.png&f=1&nofb=1&ipt=de8b9be6d426a4eeb2cfcff0b906bd53996e2b5a9945f3b004ab19acaabb3a9c&ipo=images",
+    logoUrl: "/matlab.svg",
   },
   GITHUB: {
     displayName: "Github",
-    logoUrl: "https://cdn.simpleicons.org/github",
+    logoUrl: "/github.svg",
+  },
+  GITHUBCOPILOT: {
+    displayName: "Github Co-Pilot",
+    logoUrl: "/githubcopilot.svg",
   },
   EMACS: {
     displayName: "Emacs",
-    logoUrl: "https://cdn.simpleicons.org/gnuemacs",
+    logoUrl: "/gnuemacs.svg",
   },
   OVERLEAF: {
     displayName: "Overleaf",
-    logoUrl: "https://cdn.simpleicons.org/overleaf",
+    logoUrl: "/overleaf.svg",
   },
   DEBIAN: {
     displayName: "Debian",
-    logoUrl:
-      "https://imgs.search.brave.com/mV28jf-NBucxv2QwEP63spCo_03Aj-jK7LYy2LFCPZI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yYXcu/Z2l0aHVidXNlcmNv/bnRlbnQuY29tL2dp/bGJhcmJhcmEvbG9n/b3MvbWFpbi9sb2dv/cy9kZWJpYW4uc3Zn",
+    logoUrl: "/debian.svg",
   },
   SQLITE: {
     displayName: "SQLite",
-    logoUrl:
-      "https://images.icon-icons.com/2699/PNG/512/sqlite_logo_icon_169724.png",
+    logoUrl: "/sqlite.svg",
   },
   VANILLAJS: {
     displayName: "Vanilla Javascript",
-    logoUrl: "https://cdn.simpleicons.org/javascript",
+    logoUrl: "/vanillajs.svg",
   },
   NEXTJS: {
     displayName: "NextJS",
-    logoUrl: "https://www.svgrepo.com/show/354113/nextjs-icon.svg",
+    logoUrl: "/nextjs.svg",
   },
-  CURSOR: {
+  CURSOR_OLD: {
     displayName: "Cursor",
     logoUrl:
       "https://registry.npmmirror.com/@lobehub/icons-static-png/1.44.0/files/light/cursor.png",
   },
-  GO: {
-    displayName: "Go",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/bcde08d74bd546d38455fcbe9b6733f3.png?BGl=90&BGr=90",
+  CURSOR: {
+    displayName: "Cursor",
+    logoUrl: "/cursor.svg",
   },
   GIN: {
     displayName: "Gin",
@@ -362,18 +365,15 @@ export const brandedItems = {
   },
   BASH: {
     displayName: "Bash",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/9217dc92bb514915a95d95330cf9e520.png?BGw=56&BGh=85",
+    logoUrl: "/bash.svg",
   },
   VIM: {
     displayName: "Vim",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/eb790a83970547009e9a8e40cab17ef8.png?BG=90",
+    logoUrl: "/vim.svg",
   },
   VUE: {
     displayName: "Vue",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/b8563c4c00044ecab81f88505d492846.png",
+    logoUrl: "/vue.svg",
   },
   GITHUBACTIONS: {
     displayName: "Github Actions",
@@ -428,12 +428,11 @@ export const brandedItems = {
   NEON: {
     displayName: "Neon",
     logoUrl:
-      "https://s.yimg.com/ny/api/res/1.2/Z99z2SpmSybWhq5lYn81pQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTQyMDtoPTQyMDtjZj13ZWJw/https://media.zenfs.com/en/globenewswire.com/6464841194bd568ac51257418c476b66",
-  },
-  NEONPASKA: {
-    displayName: "Neon",
-    logoUrl:
       "https://picapi.janharkonen.fi/api/pics/92abe4a3d3044ceeada95e723841f24a.svg",
+  },
+  STRIPE: {
+    displayName: "Stripe",
+    logoUrl: "/stripe.svg",
   },
   SPRINGBOOT: {
     displayName: "Spring Boot",
@@ -442,18 +441,15 @@ export const brandedItems = {
   },
   GCP: {
     displayName: "Google Cloud",
-    logoUrl:
-      "https://images.icon-icons.com/2699/PNG/512/google_cloud_logo_icon_171058.png",
+    logoUrl: "/gcp.svg",
   },
   GRAPHQL: {
     displayName: "GraphQL",
-    logoUrl:
-      "https://cdn.iconscout.com/icon/free/png-512/free-graphql-logo-icon-svg-download-png-2944912.png?f=webp&w=256",
+    logoUrl: "/graphql.svg",
   },
   DRIZZLE: {
     displayName: "Drizzle",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/4fe49ff6405541e7b5b2390df4fa8db1.png",
+    logoUrl: "/drizzle.svg",
   },
   PANDACSS: {
     displayName: "Panda CSS",
@@ -467,13 +463,11 @@ export const brandedItems = {
   },
   KEYCLOAK: {
     displayName: "Keycloak",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/83e4ebc212d6490fbd16603c6a31054e.png",
+    logoUrl: "/keycloak.svg",
   },
   KUBERNETES: {
     displayName: "Kubernetes",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/ba2ad48424a8452ea52c504dd19b66f3.png",
+    logoUrl: "/kubernetes.svg",
   },
   PLAYWRIGHT: {
     displayName: "Playwright",
