@@ -1,11 +1,5 @@
 ---
-const links = [
-  { to: "/pdf/resume", label: "CV" },
-  { to: "https://www.linkedin.com/in/janharkonen", label: "LinkedIn", external: true },
-  { to: "https://github.com/janharkonen", label: "Github", external: true },
-  { to: "mailto:jan.harkonen@pionblanc.fi", label: "Email" },
-  { to: "https://scholar.google.com/citations?hl=en&user=a5q61ooAAAAJ", label: "Scholar", external: true },
-];
+import { profile } from "../app_data/profile";
 ---
 
 <header class="site-nav">
@@ -14,15 +8,11 @@ const links = [
     </a>
 
     <nav class="primary-nav" aria-label="Primary navigation">
-      {links.map((link) => (
-        <a
-          href={link.to}
-          target={link.external ? "_blank" : undefined}
-          rel={link.external ? "noopener noreferrer" : undefined}
-        >
-          {link.label}
-        </a>
-      ))}
+      <a href={profile.cv}>CV</a>
+      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={profile.github} target="_blank" rel="noopener noreferrer">Github</a>
+      <a href={`mailto:${profile.email}`}>Email</a>
+      <a href={profile.scholar} target="_blank" rel="noopener noreferrer">Scholar</a>
     </nav>
 
   </header>

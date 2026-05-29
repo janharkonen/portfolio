@@ -5,25 +5,8 @@ import { coreStack } from "../app_data/core_stack";
 import { educations } from "../app_data/education";
 import { experiences } from "../app_data/experience";
 import { projects } from "../app_data/projects";
+import { profile } from "../app_data/profile";
 
-const profile = {
-  name: "Jan Härkönen",
-  role: "Senior Full Stack Developer",
-  location: "Helsinki, Finland",
-  line: "Writing software that's pleasant to look at",
-  email: "jan.harkonen@taitounited.fi",
-  phone: "+358 50 4646 745",
-  github: "https://github.com/janharkonen",
-  linkedin: "https://www.linkedin.com/in/janharkonen",
-  scholar: "https://scholar.google.com/citations?hl=en&user=a5q61ooAAAAJ",
-  cv: "/pdf/resume",
-};
-
-const activeStyle = {
-  label: "Archive",
-  eyebrow: "Index / Selected work",
-  intro: "Product software, data systems, and practical tools.",
-};
 
 ---
 
@@ -33,10 +16,9 @@ const activeStyle = {
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">{activeStyle.eyebrow}</p>
         <h1>{profile.name}</h1>
         <p class="role">{profile.role}</p>
-        <p class="intro">{activeStyle.intro}</p>
+        <p class="intro">Writing software that's pleasant to look at</p>
         <div class="hero-actions">
           <a class="button primary" href={`mailto:${profile.email}`}>Start a conversation</a>
           <a class="button secondary" href={profile.cv}>View CV</a>
