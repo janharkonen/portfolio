@@ -20,6 +20,10 @@ export const brandedItems = {
     displayName: "Convex",
     logoUrl: "/convex.svg",
   },
+  POSTGRESQL: {
+    displayName: "PostgreSQL",
+    logoUrl: "/postgresql.svg",
+  },
 } satisfies Record<string, BrandedItem>;
 
 export type BrandedItemKey = keyof typeof brandedItems;
