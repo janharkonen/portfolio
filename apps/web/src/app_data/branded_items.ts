@@ -484,6 +484,10 @@ export const brandedItems = {
     logoUrl:
       "https://picapi.janharkonen.fi/api/pics/d659304038da4889975eecdb7a0aa31a.png",
   },
+  ASTRO: {
+    displayName: "Astro",
+    logoUrl: "/astro.svg",
+  },
 } satisfies Record<string, BrandedItem>;
 
 export type BrandedItemKey = keyof typeof brandedItems;
