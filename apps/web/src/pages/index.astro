@@ -5,6 +5,7 @@ import { coreStack } from "../app_data/core_stack";
 import { projects } from "../app_data/projects";
 import LargeLogo from "../components/LargeLogo.astro";
 import Logo from "../components/Logo.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Jan Härkönen — Senior Full Stack Developer">
@@ -13,7 +14,7 @@ import Logo from "../components/Logo.astro";
     <section class="mb-20">
       <div class="flex flex-col items-center gap-8 sm:flex-row sm:items-center sm:gap-10 md:gap-12">
         <div class="shrink-0 rounded-full p-1 ring-2 ring-neutral-700 ring-offset-4 ring-offset-neutral-950 shadow-lg shadow-black/40">
-          <img
+          <Image
             src="/jan-1-8.webp"
             alt="Jan Härkönen"
             width="500"

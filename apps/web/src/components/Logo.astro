@@ -1,6 +1,7 @@
 ---
 import type { BrandedItemKey } from "../app_data/branded_items";
 import { brandedItems } from "../app_data/branded_items";
+import { Image } from "astro:assets";
 
 interface Props {
   skill: BrandedItemKey;
@@ -11,9 +12,11 @@ const brandedItem = brandedItems[skill];
 ---
 
 <div class="flex h-6 w-6 shrink-0 items-center justify-center">
-  <img
+  <Image
     src={brandedItem.logoUrl}
     alt={brandedItem.displayName}
+    width={24}
+    height={24}
     class="max-h-6 max-w-6 object-contain"
     loading="lazy"
   />
