@@ -6,4 +6,10 @@ export const coreStack: BrandedItemKey[] = [
   "CONVEX",
   "GOLANG",
   "POSTGRESQL",
+  "TAITOUNITED",
+  "PIONBLANC",
+  "POLYCON",
+  "SEMANTUM",
+  "DELPHI",
+  "JAVA",
 ];
