@@ -1,85 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ExperienceEducationTabs from "../components/ExperienceEducationTabs.astro";
-import { coreStack } from "../app_data/core_stack";
-import { projects } from "../app_data/projects";
-import LargeLogo from "../components/LargeLogo.astro";
-import Logo from "../components/Logo.astro";
-import { Image } from "astro:assets";
+import ThemedPortfolio from "../components/ThemedPortfolio.astro";
 ---
 
-<Layout title="Jan Härkönen — Senior Full Stack Developer">
-  <main class="container mx-auto max-w-5xl px-4 py-16 md:px-6">
-    <!-- Hero -->
-    <section class="mb-20">
-      <div class="flex flex-col items-center gap-8 sm:flex-row sm:items-center sm:gap-10 md:gap-12">
-        <div class="shrink-0 rounded-full p-1 ring-2 ring-neutral-700 ring-offset-4 ring-offset-neutral-950 shadow-lg shadow-black/40">
-          <Image
-            src="/jan-1-8.webp"
-            alt="Jan Härkönen"
-            width="500"
-            height="750"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            class="h-28 w-28 rounded-full object-cover object-[center_18%] sm:h-36 sm:w-36 md:h-40 md:w-40"
-          />
-        </div>
-        <div class="min-w-0 text-center sm:text-left">
-          <p class="text-sm text-neutral-500 mb-2">Helsinki, Finland 🇫🇮</p>
-          <h1 class="text-4xl md:text-5xl font-bold mb-3">Jan Härkönen</h1>
-          <h2 class="text-xl md:text-2xl text-neutral-400 mb-4">Senior Full Stack Developer</h2>
-          <p class="text-neutral-400 text-lg italic">"Writing software that's pleasant to look at"</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="mb-20">
-      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-6">Core Stack</h3>
-      <div class="flex flex-wrap gap-3">
-        {coreStack.map((skill) => {
-          return <LargeLogo skill={skill} />
-        })}
-      </div>
-    </section>
-
-    <ExperienceEducationTabs />
-
-    <!-- Projects -->
-    <section class="mb-20">
-      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-8">Projects</h3>
-      <div class="grid gap-6 sm:grid-cols-2">
-        {projects.map((project) => (
-          <div class="rounded-lg border border-neutral-800 bg-neutral-900/50 p-5 hover:border-neutral-700 transition-colors">
-            <div class="flex items-baseline justify-between mb-2">
-              <h4 class="text-base font-medium text-white">{project.name}</h4>
-              <span class="text-xs text-neutral-600">{project.year}</span>
-            </div>
-            <p class="text-sm text-neutral-400 mb-4">{project.description}</p>
-            <div class="flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <Logo skill={t} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <footer class="border-t border-neutral-800 pt-12 pb-8">
-      <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-6">Contact</h3>
-      <div class="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-neutral-400">
-        <a href="mailto:jan.harkonen@taitounited.fi" class="hover:text-white transition-colors">jan.harkonen@taitounited.fi</a>
-        <span class="hidden sm:inline text-neutral-700">·</span>
-        <span>+358 50 4646 745</span>
-        <span class="hidden sm:inline text-neutral-700">·</span>
-        <a href="https://github.com/janharkonen" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Github</a>
-        <span class="hidden sm:inline text-neutral-700">·</span>
-        <a href="https://www.linkedin.com/in/janharkonen" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
-      </div>
-      <p class="text-xs text-neutral-700 mt-8">&copy; 2026 Jan Härkönen</p>
-    </footer>
-  </main>
+<Layout
+  title="Jan Härkönen — Senior Full Stack Developer"
+  bodyClass="min-h-screen bg-[#f6f1e7] text-[#1d2430]"
+  showHeader={false}
+>
+  <ThemedPortfolio />
 </Layout>
