@@ -38,7 +38,6 @@ const navLinks = [
   <header class="site-nav">
     <a class="brand" href="/" aria-label={`${profile.name} home`}>
       <span>JH</span>
-      <small>{activeStyle.label}</small>
     </a>
 
     <nav class="primary-nav" aria-label="Primary navigation">
@@ -302,6 +301,7 @@ const navLinks = [
     --accent-2: #f7b267;
     --radius: 28px;
     --shadow: 0 26px 70px rgba(24, 33, 45, 0.12);
+    --content-max: 960px;
     min-height: 100vh;
     overflow: hidden;
     background: var(--page);
@@ -318,7 +318,7 @@ const navLinks = [
   .hero,
   .section,
   .contact-footer {
-    width: min(1180px, calc(100% - 32px));
+    width: min(var(--content-max), calc(100% - 32px));
     margin-inline: auto;
   }
 
@@ -996,7 +996,7 @@ const navLinks = [
     .hero,
     .section,
     .contact-footer {
-      width: min(100% - 24px, 1180px);
+      width: min(100% - 24px, var(--content-max));
     }
 
     .hero-copy h1 {
