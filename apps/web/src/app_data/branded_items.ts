@@ -17,31 +17,31 @@ type BrandedItem = {
 export const brandedItems = {
   REACT: {
     displayName: "React",
-    logoUrl: "/react_dark.svg",
+    logoUrl: "/logos/react_dark.svg",
   },
   GOLANG: {
     displayName: "Go",
-    logoUrl: "/go.svg",
+    logoUrl: "/logos/go.svg",
   },
   PYTHON: {
     displayName: "Python",
-    logoUrl: "/python.svg",
+    logoUrl: "/logos/python.svg",
   },
   CONVEX: {
     displayName: "Convex",
-    logoUrl: "/convex.svg",
+    logoUrl: "/logos/convex.svg",
   },
   POSTGRESQL: {
     displayName: "PostgreSQL",
-    logoUrl: "/postgresql.svg",
+    logoUrl: "/logos/postgresql.svg",
   },
   TAITOUNITED: {
     displayName: "Taito United Oy",
-    logoUrl: "/taitounited.svg",
+    logoUrl: "/logos/taitounited.svg",
   },
   PIONBLANC: {
     displayName: "Pion Blanc Oy",
-    logoUrl: "/pionblanc.svg",
+    logoUrl: "/logos/pionblanc.svg",
   },
   POLYCON: {
     displayName: "Polycon Oy",
@@ -65,43 +65,43 @@ export const brandedItems = {
   },
   DELPHI: {
     displayName: "Delphi",
-    logoUrl: "/delphi.svg",
+    logoUrl: "/logos/delphi.svg",
   },
   MSSQLSERVER: {
     displayName: "Microsoft SQL Server",
-    logoUrl: "/sql-server.svg",
+    logoUrl: "/logos/sql-server.svg",
   },
   JAVA: {
     displayName: "Java",
-    logoUrl: "/java.svg",
+    logoUrl: "/logos/java.svg",
   },
   VSCODE: {
     displayName: "Visual Studio Code",
-    logoUrl: "/vscode.svg",
+    logoUrl: "/logos/vscode.svg",
   },
   ANDROIDSTUDIO: {
     displayName: "Android Studio",
-    logoUrl: "/androidstudio.svg",
+    logoUrl: "/logos/androidstudio.svg",
   },
   REDUX: {
     displayName: "Redux",
-    logoUrl: "/redux.svg",
+    logoUrl: "/logos/redux.svg",
   },
   SOURCETREE: {
     displayName: "Sourcetree",
-    logoUrl: "/sourcetree.svg",
+    logoUrl: "/logos/sourcetree.svg",
   },
   GITLAB: {
     displayName: "Gitlab",
-    logoUrl: "/gitlab.svg",
+    logoUrl: "/logos/gitlab.svg",
   },
   GIT: {
     displayName: "Git",
-    logoUrl: "/git.svg",
+    logoUrl: "/logos/git.svg",
   },
   RADSTUDIO: {
     displayName: "RAD Studio",
-    logoUrl: "/radstudio.svg",
+    logoUrl: "/logos/radstudio.svg",
   },
   SQL: {
     displayName: "SQL",
@@ -110,7 +110,7 @@ export const brandedItems = {
   },
   VITE: {
     displayName: "Vite",
-    logoUrl: "/vite.svg",
+    logoUrl: "/logos/vite.svg",
   },
   VITE_OLD: {
     displayName: "Vite",
@@ -119,27 +119,27 @@ export const brandedItems = {
   },
   NODEJS_OLD: {
     displayName: "Node.js",
-    logoUrl: "/nodedotjs.svg",
+    logoUrl: "/logos/nodedotjs.svg",
   },
   HTML: {
     displayName: "HTML",
-    logoUrl: "/html.svg",
+    logoUrl: "/logos/html.svg",
   },
   CSS: {
     displayName: "CSS",
-    logoUrl: "/css.svg",
+    logoUrl: "/logos/css.svg",
   },
   TAILWIND: {
     displayName: "Tailwind CSS",
-    logoUrl: "/tailwindcss.svg",
+    logoUrl: "/logos/tailwindcss.svg",
   },
   JAVASCRIPT: {
     displayName: "Javascript",
-    logoUrl: "/javascript.svg",
+    logoUrl: "/logos/javascript.svg",
   },
   TYPESCRIPT: {
     displayName: "Typescript",
-    logoUrl: "/typescript.svg",
+    logoUrl: "/logos/typescript.svg",
   },
   PYQT4: {
     displayName: "PyQT 4",
@@ -156,11 +156,11 @@ export const brandedItems = {
   },
   VERCEL: {
     displayName: "Vercel",
-    logoUrl: "/vercel.svg",
+    logoUrl: "/logos/vercel.svg",
   },
   SHADCN: {
     displayName: "shadcn/ui",
-    logoUrl: "/shadcnui.svg",
+    logoUrl: "/logos/shadcnui.svg",
   },
   LATEX_OLD: {
     displayName: "LaTeX",
@@ -169,35 +169,35 @@ export const brandedItems = {
   },
   FORTRAN: {
     displayName: "Fortran",
-    logoUrl: "/fortran.svg",
+    logoUrl: "/logos/fortran.svg",
   },
   FLASK_OLD: {
     displayName: "Flask",
-    logoUrl: "/flask.svg",
+    logoUrl: "/logos/flask.svg",
   },
   HASKELL: {
     displayName: "Haskell",
-    logoUrl: "/haskell.svg",
+    logoUrl: "/logos/haskell.svg",
   },
   HETZNER: {
     displayName: "Hetzner",
-    logoUrl: "/hetzner.svg",
+    logoUrl: "/logos/hetzner.svg",
   },
   AUTH0: {
     displayName: "Auth0",
-    logoUrl: "/auth0.svg",
+    logoUrl: "/logos/auth0.svg",
   },
   CLOUDFLARE: {
     displayName: "Cloudflare",
-    logoUrl: "/cloudflare.svg",
+    logoUrl: "/logos/cloudflare.svg",
   },
   CHATGPT: {
     displayName: "ChatGPT",
-    logoUrl: "/openai.svg",
+    logoUrl: "/logos/openai.svg",
   },
   CLAUDE: {
     displayName: "Claude",
-    logoUrl: "/claude.svg",
+    logoUrl: "/logos/claude.svg",
   },
   V0: {
     displayName: "V0",
@@ -211,11 +211,11 @@ export const brandedItems = {
   },
   DOCKER: {
     displayName: "Docker",
-    logoUrl: "/docker.svg",
+    logoUrl: "/logos/docker.svg",
   },
   SUBLIME: {
     displayName: "Sublime text",
-    logoUrl: "/sublime.svg",
+    logoUrl: "/logos/sublime.svg",
   },
   SQLALCHEMY: {
     displayName: "SQLAlchemy",
@@ -224,7 +224,7 @@ export const brandedItems = {
   },
   NGINX: {
     displayName: "Nginx",
-    logoUrl: "/nginx.svg",
+    logoUrl: "/logos/nginx.svg",
   },
   GUNICORN: {
     displayName: "Gunicorn",
@@ -233,35 +233,35 @@ export const brandedItems = {
   },
   LECHAT: {
     displayName: "Le Chat",
-    logoUrl: "/mistral.svg",
+    logoUrl: "/logos/mistral.svg",
   },
   DEEPSEEK: {
     displayName: "Deepseek",
-    logoUrl: "/deepseek.svg",
+    logoUrl: "/logos/deepseek.svg",
   },
   HUGGINGFACE: {
     displayName: "Hugging Face",
-    logoUrl: "/huggingface.svg",
+    logoUrl: "/logos/huggingface.svg",
   },
   JWT: {
     displayName: "JSON Web Token",
-    logoUrl: "/jwt.svg",
+    logoUrl: "/logos/jwt.svg",
   },
   SVELTE: {
     displayName: "Svelte",
-    logoUrl: "/svelte.svg",
+    logoUrl: "/logos/svelte.svg",
   },
   SVELTEKIT: {
     displayName: "SvelteKit",
-    logoUrl: "/sveltekit.svg",
+    logoUrl: "/logos/sveltekit.svg",
   },
   LUA: {
     displayName: "Lua",
-    logoUrl: "/lua.svg",
+    logoUrl: "/logos/lua.svg",
   },
   REDIS: {
     displayName: "Redis",
-    logoUrl: "/redis.svg",
+    logoUrl: "/logos/redis.svg",
   },
   REDISEARCH: {
     displayName: "RediSearch",
@@ -275,7 +275,7 @@ export const brandedItems = {
   },
   AWS: {
     displayName: "AWS",
-    logoUrl: "/aws.svg",
+    logoUrl: "/logos/aws.svg",
   },
   EC2: {
     displayName: "EC2",
@@ -284,11 +284,11 @@ export const brandedItems = {
   },
   LINUX: {
     displayName: "Linux",
-    logoUrl: "/linux.svg",
+    logoUrl: "/logos/linux.svg",
   },
   UBUNTU: {
     displayName: "Ubuntu",
-    logoUrl: "/ubuntu.svg",
+    logoUrl: "/logos/ubuntu.svg",
   },
   GITKRAKEN: {
     displayName: "GitKraken",
@@ -296,7 +296,7 @@ export const brandedItems = {
   },
   INFLUXDB: {
     displayName: "InfluxDB",
-    logoUrl: "/influxdb.svg",
+    logoUrl: "/logos/influxdb.svg",
   },
   QUANTUMESPRESSO: {
     displayName: "Quantum ESPRESSO",
@@ -315,39 +315,39 @@ export const brandedItems = {
   },
   MATLAB: {
     displayName: "Matlab",
-    logoUrl: "/matlab.svg",
+    logoUrl: "/logos/matlab.svg",
   },
   GITHUB: {
     displayName: "Github",
-    logoUrl: "/github.svg",
+    logoUrl: "/logos/github.svg",
   },
   GITHUBCOPILOT: {
     displayName: "Github Co-Pilot",
-    logoUrl: "/githubcopilot.svg",
+    logoUrl: "/logos/githubcopilot.svg",
   },
   EMACS: {
     displayName: "Emacs",
-    logoUrl: "/gnuemacs.svg",
+    logoUrl: "/logos/gnuemacs.svg",
   },
   OVERLEAF: {
     displayName: "Overleaf",
-    logoUrl: "/overleaf.svg",
+    logoUrl: "/logos/overleaf.svg",
   },
   DEBIAN: {
     displayName: "Debian",
-    logoUrl: "/debian.svg",
+    logoUrl: "/logos/debian.svg",
   },
   SQLITE: {
     displayName: "SQLite",
-    logoUrl: "/sqlite.svg",
+    logoUrl: "/logos/sqlite.svg",
   },
   VANILLAJS: {
     displayName: "Vanilla Javascript",
-    logoUrl: "/vanillajs.svg",
+    logoUrl: "/logos/vanillajs.svg",
   },
   NEXTJS: {
     displayName: "NextJS",
-    logoUrl: "/nextjs.svg",
+    logoUrl: "/logos/nextjs.svg",
   },
   CURSOR_OLD: {
     displayName: "Cursor",
@@ -356,7 +356,7 @@ export const brandedItems = {
   },
   CURSOR: {
     displayName: "Cursor",
-    logoUrl: "/cursor.svg",
+    logoUrl: "/logos/cursor.svg",
   },
   GIN: {
     displayName: "Gin",
@@ -365,15 +365,15 @@ export const brandedItems = {
   },
   BASH: {
     displayName: "Bash",
-    logoUrl: "/bash.svg",
+    logoUrl: "/logos/bash.svg",
   },
   VIM: {
     displayName: "Vim",
-    logoUrl: "/vim.svg",
+    logoUrl: "/logos/vim.svg",
   },
   VUE: {
     displayName: "Vue",
-    logoUrl: "/vue.svg",
+    logoUrl: "/logos/vue.svg",
   },
   GITHUBACTIONS: {
     displayName: "Github Actions",
@@ -432,7 +432,7 @@ export const brandedItems = {
   },
   STRIPE: {
     displayName: "Stripe",
-    logoUrl: "/stripe.svg",
+    logoUrl: "/logos/stripe.svg",
   },
   SPRINGBOOT: {
     displayName: "Spring Boot",
@@ -441,15 +441,15 @@ export const brandedItems = {
   },
   GCP: {
     displayName: "Google Cloud",
-    logoUrl: "/gcp.svg",
+    logoUrl: "/logos/gcp.svg",
   },
   GRAPHQL: {
     displayName: "GraphQL",
-    logoUrl: "/graphql.svg",
+    logoUrl: "/logos/graphql.svg",
   },
   DRIZZLE: {
     displayName: "Drizzle",
-    logoUrl: "/drizzle.svg",
+    logoUrl: "/logos/drizzle.svg",
   },
   PANDACSS: {
     displayName: "Panda CSS",
@@ -463,11 +463,11 @@ export const brandedItems = {
   },
   KEYCLOAK: {
     displayName: "Keycloak",
-    logoUrl: "/keycloak.svg",
+    logoUrl: "/logos/keycloak.svg",
   },
   KUBERNETES: {
     displayName: "Kubernetes",
-    logoUrl: "/kubernetes.svg",
+    logoUrl: "/logos/kubernetes.svg",
   },
   PLAYWRIGHT: {
     displayName: "Playwright",
@@ -486,7 +486,7 @@ export const brandedItems = {
   },
   ASTRO: {
     displayName: "Astro",
-    logoUrl: "/astro.svg",
+    logoUrl: "/logos/astro.svg",
   },
 } satisfies Record<string, BrandedItem>;
 
