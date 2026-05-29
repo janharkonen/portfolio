@@ -1,0 +1,19 @@
+---
+import type { BrandedItemKey } from "../app_data/branded_items";
+import { brandedItems } from "../app_data/branded_items";
+
+interface Props {
+  skill: BrandedItemKey;
+}
+
+const { skill } = Astro.props;
+const brandedItem = brandedItems[skill];
+---
+
+<img 
+    src={brandedItem.logoUrl} 
+    alt={brandedItem.displayName ?? skill} 
+    width={48} 
+    height={48} 
+    class="hover:text-white transition-colors" 
+/>
