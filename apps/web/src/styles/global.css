@@ -122,7 +122,7 @@
   max-width: 820px;
   margin: 16px 0 12px;
   font-size: clamp(4.4rem, 10vw, 9.4rem);
-  line-height: 0.82;
+  line-height: 1.05;
   letter-spacing: -0.09em;
 }
 
@@ -527,6 +527,11 @@
 
 .variant-3 .portrait-card {
   transform: rotate(1.25deg);
+  transition: transform 0.25s ease;
+}
+
+.variant-3 .portrait-card:hover {
+  transform: rotate(0deg);
 }
 
 .variant-3 .project-card {
@@ -708,8 +713,8 @@
     position: static;
   }
 
-  .hero,
-  .section {
+  .portfolio-makeover .hero,
+  .portfolio-makeover .section {
     grid-template-columns: 1fr;
   }
 
@@ -719,6 +724,7 @@
   }
 
   .portrait-card {
+    justify-self: center;
     max-width: 300px;
   }
 
