@@ -35,7 +35,8 @@ export const projects: Project[] = [
   {
     name: "One source of truth",
     year: "2025",
-    description: "A tool to search and filter a vast array of products blazingly fast",
+    description:
+      "A tool to search and filter a vast array of products blazingly fast",
     tech: ["NEXTJS", "GOLANG", "REDIS", "LUA", "DOCKER", "HETZNER"],
     initiallyHidden: false,
   },
