@@ -1,7 +1,7 @@
 export const profile = {
   name: "Jan Härkönen",
   role: "Senior Full Stack Developer",
-  location: "Helsinki, Finland",
+  location: "Helsinki, Finland 🇫🇮",
   line: "Writing software that's pleasant to look at",
   email: "jan.harkonen@pionblanc.fi",
   phone: "+358 50 4646 745",

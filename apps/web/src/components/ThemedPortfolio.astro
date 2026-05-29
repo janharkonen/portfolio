@@ -12,16 +12,16 @@ import { profile } from "../app_data/profile";
 
 <div class="portfolio-page" data-portfolio-tabs>
   
-
+  <!-- Hero -->
   <main>
     <section class="hero">
       <div class="hero-copy">
         <h1>{profile.name}</h1>
         <p class="role">{profile.role}</p>
-        <p class="intro">Writing software that's pleasant to look at</p>
+        <p class="intro">{profile.line}</p>
         <div class="hero-actions">
-          <a class="button primary" href={`mailto:${profile.email}`}>Start a conversation</a>
-          <a class="button secondary" href={profile.cv}>View CV</a>
+          <a class="button primary hover:scale-105 transition-transform duration-300" href={`mailto:${profile.email}`}>Start a conversation</a>
+          <a class="button secondary hover:scale-105 transition-transform duration-300" href={profile.cv}>View CV</a>
         </div>
       </div>
 
@@ -100,6 +100,7 @@ import { profile } from "../app_data/profile";
           </button>
         </div>
 
+        <!-- Experience -->
         <div
           role="tabpanel"
           id="panel-experience"
@@ -155,6 +156,7 @@ import { profile } from "../app_data/profile";
       </div>
     </section>
 
+    <!-- Projects -->
     <section class="section projects-section" aria-labelledby="projects-heading">
       <div class="section-heading">
         <p class="eyebrow">Projects</p>
