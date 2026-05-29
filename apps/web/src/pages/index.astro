@@ -1,52 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ExperienceEducationTabs from "../components/ExperienceEducationTabs.astro";
-import { getDB } from "../lib/mongo";
-import { z } from "zod";
+import { coreStack } from "../app_data/core_stack";
+import { brandedItems } from "../app_data/branded_items";
+import type { BrandedItemKey } from "../app_data/branded_items";
+import { projects } from "../app_data/projects";
 
-const db = await getDB();
-
-// Core stack
-const coreStackNotValidated = await db.collection("core_stack").findOne();
-const coreStackSchema = z.array(z.string());
-const coreStack = coreStackSchema.parse(coreStackNotValidated?.content ?? []);
-
-
-// Projects
-const projectNotValidatedCursor = await db.collection("projects").find();
-const projectSchema = z.object({
-  name: z.string(),
-  year: z.string(),
-  description: z.string(),
-  tech: z.array(z.string()),
-  initiallyHidden: z.boolean(),
-});
-const projects: z.infer<typeof projectSchema>[] = [];
-for await (const projectNotValidated of projectNotValidatedCursor) {
-  projects.push(projectSchema.parse(projectNotValidated));
+function getBrandedItem(skill: string) {
+  if (skill in brandedItems) {
+    return brandedItems[skill as BrandedItemKey];
+  }
+  return undefined;
 }
-projects.reverse()
- 
-// Branded Items
-const brandedItemsNotValidatedCursor = await db.collection("branded_items").find();
-const brandedItemsSchema = z.object({
-  key: z.string(),
-  displayName: z.string(),
-  url: z.string(),
-});
-const brandedItems: Map<string, { displayName: string, url: string }> = new Map();
-console.log("++++++++++++++++++++++ brandedItems", brandedItems);
-console.log("++++++++++++++++++++++ brandedItems", brandedItems);
-for await (const brandedItemNotValidated of brandedItemsNotValidatedCursor) {
-  const brandedItemValidated = brandedItemsSchema.parse(brandedItemNotValidated);
-  brandedItems.set(brandedItemValidated.key, { 
-      displayName: brandedItemValidated.displayName, 
-      url: brandedItemValidated.url 
-    }
-  );
-}
-console.log("++++++++++++++++++++++ brandedItems", brandedItems);
-
 ---
 
 <Layout title="Jan Härkönen — Senior Full Stack Developer">
@@ -80,7 +45,7 @@ console.log("++++++++++++++++++++++ brandedItems", brandedItems);
       <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-6">Core Stack</h3>
       <div class="flex flex-wrap gap-3">
         {coreStack.map((skill) => {
-          const brandedItem = brandedItems.get(skill);
+          const brandedItem = getBrandedItem(skill);
           if (!brandedItem) {
             return (
               <span class="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-800 text-sm text-neutral-300">
@@ -89,10 +54,10 @@ console.log("++++++++++++++++++++++ brandedItems", brandedItems);
             );
           }
           const displayName = brandedItem.displayName ?? skill;
-          const url = brandedItem.url;
-          if (url !== "") {
+          const logoUrl = brandedItem.logoUrl;
+          if (logoUrl !== "") {
             return (
-              <img src={url} alt={displayName} class="hover:text-white transition-colors" width="48" height="48" />
+              <img src={logoUrl} alt={displayName} class="hover:text-white transition-colors" width="48" height="48" />
             );
           }
           return (
