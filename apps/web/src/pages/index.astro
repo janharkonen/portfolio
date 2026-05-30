@@ -28,7 +28,7 @@ import { profile } from "../app_data/profile";
           <div class="hero-actions">
             <a
               class="button primary transition-transform duration-150 hover:scale-105"
-              href={`mailto:${profile.email}`}>Start a conversation</a
+              href="#contact">Start a conversation</a
             >
             <a
               class="button secondary transition-transform duration-150 hover:scale-105"
@@ -63,10 +63,15 @@ import { profile } from "../app_data/profile";
         class="section stack-section"
         aria-labelledby="core-stack-heading"
       >
-        <div class="section-heading">
-          <h2 id="core-stack-heading">I'm most comfortable with</h2>
+        <div>
+          <h2
+            id="core-stack-heading"
+            class="mt-2 text-[clamp(1.8rem,3.5vw,3rem)] leading-[0.96] tracking-[-0.06em]"
+          >
+            I'm most comfortable with
+          </h2>
         </div>
-        <div class="stack-grid pt-4">
+        <div class="flex flex-wrap gap-x-12 pt-4 justify-center">
           {
             coreStack.map((skill) => {
               const item = brandedItems[skill];
@@ -92,8 +97,13 @@ import { profile } from "../app_data/profile";
         class="section timeline-section"
         aria-labelledby="timeline-heading"
       >
-        <div class="section-heading">
-          <h2 id="timeline-heading">Work and education</h2>
+        <div>
+          <h2
+            id="timeline-heading"
+            class="mt-2 text-[clamp(1.8rem,3.5vw,3rem)] leading-[0.96] tracking-[-0.06em]"
+          >
+            Work and education
+          </h2>
         </div>
 
         <div class="tabs pt-4">
@@ -186,9 +196,14 @@ import { profile } from "../app_data/profile";
         class="section projects-section"
         aria-labelledby="projects-heading"
       >
-        <div class="section-heading">
+        <div>
           <p class="eyebrow">Projects</p>
-          <h2 id="projects-heading">Selected builds</h2>
+          <h2
+            id="projects-heading"
+            class="mt-2 text-[clamp(1.8rem,3.5vw,3rem)] leading-[0.96] tracking-[-0.06em]"
+          >
+            Selected builds
+          </h2>
         </div>
 
         <div class="project-grid pt-4">
@@ -223,7 +238,7 @@ import { profile } from "../app_data/profile";
       </section>
     </main>
 
-    <footer class="contact-footer">
+    <footer id="contact" class="contact-footer">
       <div>
         <p class="eyebrow">Contact</p>
         <h2>Jan Härkönen</h2>

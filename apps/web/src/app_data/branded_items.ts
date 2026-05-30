@@ -32,7 +32,7 @@ export const brandedItems = {
     logoUrl: "/logos/convex.svg",
   },
   POSTGRESQL: {
-    displayName: "PostgreSQL",
+    displayName: "Postgres",
     logoUrl: "/logos/postgresql.svg",
   },
   TAITOUNITED: {
