@@ -14,8 +14,12 @@ import { profile } from "../app_data/profile";
     <!-- Hero -->
     <main>
       <section class="hero section">
-        <div class="hero-copy">
-          <h1 class="text-balance">{profile.name}</h1>
+        <div>
+          <h1
+            class="mt-4 mb-3 max-w-4xl text-5xl leading-[1.05] tracking-[-0.08em] text-balance uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+          >
+            {profile.name}
+          </h1>
           <p class="role">{profile.role}</p>
           <p class="intro">{profile.line}</p>
           <div class="hero-actions">

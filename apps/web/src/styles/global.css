@@ -97,14 +97,6 @@
   padding: 92px 0 74px;
 }
 
-.hero-copy h1 {
-  max-width: 820px;
-  margin: 16px 0 12px;
-  font-size: clamp(4.4rem, 10vw, 9.4rem);
-  line-height: 1.05;
-  letter-spacing: -0.09em;
-}
-
 .role {
   margin: 0;
   color: var(--accent);
@@ -351,11 +343,6 @@
   grid-template-columns: minmax(0, 1fr) 260px;
 }
 
-.variant-3 .hero-copy h1 {
-  font-size: clamp(4rem, 8.8vw, 8.3rem);
-  text-transform: uppercase;
-}
-
 .variant-3 .project-card {
   position: relative;
   padding-top: 54px;
@@ -403,11 +390,6 @@
   .section,
   .contact-footer {
     width: min(100% - 24px, var(--content-max));
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(3rem, 16vw, 5rem);
-    letter-spacing: -0.08em;
   }
 
   .hero {
