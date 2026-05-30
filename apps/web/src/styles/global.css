@@ -389,7 +389,6 @@
 }
 
 .variant-3 .hero-copy h1 {
-  max-width: 900px;
   font-size: clamp(4rem, 8.8vw, 8.3rem);
   text-transform: uppercase;
 }
