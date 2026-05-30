@@ -14,14 +14,15 @@ import { profile } from "../app_data/profile";
     <!-- Hero -->
     <main>
       <section
-        class="hero section flex flex-row items-center justify-between gap-4"
+        class="hero section flex flex-row items-center justify-between gap-8"
       >
         <div>
           <h1
-            class="mt-4 mb-3 max-w-4xl text-5xl leading-[1.05] tracking-[-0.08em] text-balance uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+            class="mt-4 mb-3 max-w-4xl text-5xl leading-[1.05] tracking-[-0.08em] text-balance uppercase sm:text-7xl md:text-8xl lg:text-8xl"
           >
             {profile.name}
           </h1>
+          <p class="intro">{profile.location}</p>
           <p class="role">{profile.role}</p>
           <p class="intro">{profile.line}</p>
           <div class="hero-actions">
@@ -37,14 +38,14 @@ import { profile } from "../app_data/profile";
         </div>
 
         <figure
-          class="w-full max-w-56 rotate-0 justify-self-center border border-gray-200 bg-[var(--surface)] p-3.5 shadow-[var(--shadow)] transition-transform duration-200 ease-in-out hover:translate-x-[4px] hover:translate-y-[-16px] hover:rotate-[1.25deg] sm:max-w-72 lg:max-w-none lg:justify-self-auto"
+          class="max-w-56 rotate-0 justify-self-center border border-gray-200 bg-[var(--surface)] p-3.5 shadow-[var(--shadow)] transition-transform duration-200 ease-in-out hover:translate-x-[4px] hover:translate-y-[-16px] hover:rotate-[1.25deg] sm:max-w-72 lg:justify-self-auto"
         >
           <div class="overflow-hidden rounded-none bg-white">
             <Image
               src="/jan-1-8.webp"
               alt={profile.name}
-              width="500"
-              height="750"
+              width="200"
+              height="200"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -54,8 +55,6 @@ import { profile } from "../app_data/profile";
           <figcaption
             class="text-muted grid gap-1.5 px-1 pt-3.5 pb-0.5 text-sm sm:text-base"
           >
-            <span>{profile.location}</span>
-            <strong class="text-base text-[var(--ink)]">{profile.line}</strong>
           </figcaption>
         </figure>
       </section>
