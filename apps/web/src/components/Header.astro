@@ -3,16 +3,20 @@ import { profile } from "../app_data/profile";
 ---
 
 <header class="site-nav">
-    <a class="brand" href="/" aria-label={`Jan Härkönen home`}>
-      <span>JH</span>
-    </a>
+  <a class="brand" href="/" aria-label={`Jan Härkönen home`}>
+    <span>JH</span>
+  </a>
 
-    <nav class="primary-nav" aria-label="Primary navigation">
-      <a href={profile.cv}>CV</a>
-      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href={profile.github} target="_blank" rel="noopener noreferrer">Github</a>
-      <a href={`mailto:${profile.email}`}>Email</a>
-      <a href={profile.scholar} target="_blank" rel="noopener noreferrer">Scholar</a>
-    </nav>
-
-  </header>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <a href={profile.cv}>CV</a>
+    <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
+      >LinkedIn</a
+    >
+    <a href={profile.github} target="_blank" rel="noopener noreferrer">Github</a
+    >
+    <a href={`mailto:${profile.email}`}>Email</a>
+    <a href={profile.scholar} target="_blank" rel="noopener noreferrer"
+      >Scholar</a
+    >
+  </nav>
+</header>

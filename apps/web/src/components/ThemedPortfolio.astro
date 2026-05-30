@@ -6,12 +6,9 @@ import { educations } from "../app_data/education";
 import { experiences } from "../app_data/experience";
 import { projects } from "../app_data/projects";
 import { profile } from "../app_data/profile";
-
-
 ---
 
 <div class="portfolio-page" data-portfolio-tabs>
-  
   <!-- Hero -->
   <main>
     <section class="hero">
@@ -20,8 +17,14 @@ import { profile } from "../app_data/profile";
         <p class="role">{profile.role}</p>
         <p class="intro">{profile.line}</p>
         <div class="hero-actions">
-          <a class="button primary hover:scale-105 transition-transform duration-150" href={`mailto:${profile.email}`}>Start a conversation</a>
-          <a class="button secondary hover:scale-105 transition-transform duration-150" href={profile.cv}>View CV</a>
+          <a
+            class="button primary transition-transform duration-150 hover:scale-105"
+            href={`mailto:${profile.email}`}>Start a conversation</a
+          >
+          <a
+            class="button secondary transition-transform duration-150 hover:scale-105"
+            href={profile.cv}>View CV</a
+          >
         </div>
       </div>
 
@@ -50,26 +53,31 @@ import { profile } from "../app_data/profile";
         <h2 id="core-stack-heading">Everyday tools</h2>
       </div>
       <div class="stack-grid">
-        {coreStack.map((skill) => {
-          const item = brandedItems[skill];
+        {
+          coreStack.map((skill) => {
+            const item = brandedItems[skill];
 
-          return (
-            <div class="stack-item">
-              <Image
-                src={item.logoUrl}
-                alt={item.displayName}
-                width={52}
-                height={52}
-                class="stack-logo"
-              />
-              <span>{item.displayName}</span>
-            </div>
-          );
-        })}
+            return (
+              <div class="stack-item">
+                <Image
+                  src={item.logoUrl}
+                  alt={item.displayName}
+                  width={52}
+                  height={52}
+                  class="stack-logo"
+                />
+                <span>{item.displayName}</span>
+              </div>
+            );
+          })
+        }
       </div>
     </section>
 
-    <section class="section timeline-section" aria-labelledby="timeline-heading">
+    <section
+      class="section timeline-section"
+      aria-labelledby="timeline-heading"
+    >
       <div class="section-heading">
         <p class="eyebrow">Background</p>
         <h2 id="timeline-heading">Work and education</h2>
@@ -107,16 +115,80 @@ import { profile } from "../app_data/profile";
           aria-labelledby="tab-experience"
           class="timeline-list"
         >
-          {experiences.map((job) => (
-            <article class="timeline-card">
+          {
+            experiences.map((job) => (
+              <article class="timeline-card">
+                <div class="card-heading">
+                  <h3>{job.role}</h3>
+                  <span>{job.period}</span>
+                </div>
+                <p class="organization">{job.company}</p>
+                <p>{job.description}</p>
+                <div class="tech-row">
+                  {job.tech.map((tech) => {
+                    const item = brandedItems[tech];
+
+                    return (
+                      <Image
+                        src={item.logoUrl}
+                        alt={item.displayName}
+                        title={item.displayName}
+                        width={24}
+                        height={24}
+                        class="tech-logo"
+                      />
+                    );
+                  })}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div
+          role="tabpanel"
+          id="panel-education"
+          aria-labelledby="tab-education"
+          class="timeline-list"
+          hidden
+        >
+          {
+            educations.map((education) => (
+              <article class="timeline-card">
+                <div class="card-heading">
+                  <h3>{education.degree}</h3>
+                  <span>{education.period}</span>
+                </div>
+                <p class="organization">{education.school}</p>
+                <p>{education.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section
+      class="section projects-section"
+      aria-labelledby="projects-heading"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2 id="projects-heading">Selected builds</h2>
+      </div>
+
+      <div class="project-grid">
+        {
+          projects.map((project) => (
+            <article class="project-card">
               <div class="card-heading">
-                <h3>{job.role}</h3>
-                <span>{job.period}</span>
+                <h3>{project.name}</h3>
+                <span>{project.year}</span>
               </div>
-              <p class="organization">{job.company}</p>
-              <p>{job.description}</p>
+              <p>{project.description}</p>
               <div class="tech-row">
-                {job.tech.map((tech) => {
+                {project.tech.map((tech) => {
                   const item = brandedItems[tech];
 
                   return (
@@ -132,63 +204,8 @@ import { profile } from "../app_data/profile";
                 })}
               </div>
             </article>
-          ))}
-        </div>
-
-        <div
-          role="tabpanel"
-          id="panel-education"
-          aria-labelledby="tab-education"
-          class="timeline-list"
-          hidden
-        >
-          {educations.map((education) => (
-            <article class="timeline-card">
-              <div class="card-heading">
-                <h3>{education.degree}</h3>
-                <span>{education.period}</span>
-              </div>
-              <p class="organization">{education.school}</p>
-              <p>{education.description}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section projects-section" aria-labelledby="projects-heading">
-      <div class="section-heading">
-        <p class="eyebrow">Projects</p>
-        <h2 id="projects-heading">Selected builds</h2>
-      </div>
-
-      <div class="project-grid">
-        {projects.map((project) => (
-          <article class="project-card">
-            <div class="card-heading">
-              <h3>{project.name}</h3>
-              <span>{project.year}</span>
-            </div>
-            <p>{project.description}</p>
-            <div class="tech-row">
-              {project.tech.map((tech) => {
-                const item = brandedItems[tech];
-
-                return (
-                  <Image
-                    src={item.logoUrl}
-                    alt={item.displayName}
-                    title={item.displayName}
-                    width={24}
-                    height={24}
-                    class="tech-logo"
-                  />
-                );
-              })}
-            </div>
-          </article>
-        ))}
+          ))
+        }
       </div>
     </section>
   </main>
@@ -201,8 +218,12 @@ import { profile } from "../app_data/profile";
     <div class="contact-links">
       <a href={`mailto:${profile.email}`}>{profile.email}</a>
       <span>{profile.phone}</span>
-      <a href={profile.github} target="_blank" rel="noopener noreferrer">Github</a>
-      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={profile.github} target="_blank" rel="noopener noreferrer"
+        >Github</a
+      >
+      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
+        >LinkedIn</a
+      >
     </div>
   </footer>
 </div>
@@ -235,7 +256,8 @@ import { profile } from "../app_data/profile";
         let nextIndex: number | null = null;
 
         if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-        if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "ArrowLeft")
+          nextIndex = (index - 1 + tabs.length) % tabs.length;
 
         if (nextIndex !== null) {
           event.preventDefault();
@@ -246,6 +268,7 @@ import { profile } from "../app_data/profile";
     });
   }
 
-  document.querySelectorAll<HTMLElement>("[data-portfolio-tabs]").forEach(initPortfolioTabs);
+  document
+    .querySelectorAll<HTMLElement>("[data-portfolio-tabs]")
+    .forEach(initPortfolioTabs);
 </script>
-

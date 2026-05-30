@@ -9,7 +9,7 @@ interface Props {
 
 const {
   bodyClass = "min-h-screen bg-neutral-950 text-white max-w-screen-lg mx-auto px-4",
-  themeClass="portfolio-makeover variant-3"
+  themeClass = "portfolio-makeover variant-3",
 } = Astro.props;
 ---
 
@@ -21,9 +21,15 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Jan Härkönen — Senior Full Stack Developer based in Helsinki, Finland" />
+    <meta
+      name="description"
+      content="Jan Härkönen — Senior Full Stack Developer based in Helsinki, Finland"
+    />
     <title>Jan Härkönen — Senior Full Stack Developer</title>
   </head>
   <body class:list={[bodyClass, themeClass]}>

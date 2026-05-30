@@ -10,14 +10,14 @@ const tabClass =
 <section class="mb-20" data-tabs>
   <!-- Tabs -->
   <div
-  role="tablist"
-  aria-label="Work history"
-  class="grid grid-cols-2 gap-1 rounded-lg bg-neutral-900 p-1 mb-8 h-14"
+    role="tablist"
+    aria-label="Work history"
+    class="mb-8 grid h-14 grid-cols-2 gap-1 rounded-lg bg-neutral-900 p-1"
   >
-  <button
-  type="button"
-  role="tab"
-  id="tab-experience"
+    <button
+      type="button"
+      role="tab"
+      id="tab-experience"
       aria-selected="true"
       aria-controls="panel-experience"
       data-tab="experience"
@@ -49,12 +49,12 @@ const tabClass =
     {
       experiences.map((job) => (
         <div class="group">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+          <div class="mb-1 flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
             <h4 class="text-lg font-medium text-white">{job.role}</h4>
             <span class="text-sm text-neutral-500">{job.period}</span>
           </div>
-          <p class="text-neutral-400 font-medium mb-2">{job.company}</p>
-          <p class="text-neutral-500 text-sm mb-3">{job.description}</p>
+          <p class="mb-2 font-medium text-neutral-400">{job.company}</p>
+          <p class="mb-3 text-sm text-neutral-500">{job.description}</p>
           <div class="flex flex-wrap gap-2">
             {job.tech.map((t) => (
               <Logo skill={t} />
@@ -76,15 +76,17 @@ const tabClass =
     {
       educations.map((education) => (
         <div class="group">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+          <div class="mb-1 flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
             <h4 class="text-lg font-medium text-white">{education.degree}</h4>
             <span class="text-sm text-neutral-500">{education.period}</span>
           </div>
-          <p class="text-neutral-400 font-medium mb-2">{education.school}</p>
-          <p class="text-neutral-500 text-sm mb-3">{education.description}</p>
+          <p class="mb-2 font-medium text-neutral-400">{education.school}</p>
+          <p class="mb-3 text-sm text-neutral-500">{education.description}</p>
           <div class="flex flex-wrap gap-2">
             {education.documents.map((d) => (
-              <span class="text-xs px-2 py-1 rounded bg-neutral-900 text-neutral-500">{d}</span>
+              <span class="rounded bg-neutral-900 px-2 py-1 text-xs text-neutral-500">
+                {d}
+              </span>
             ))}
           </div>
         </div>
@@ -121,7 +123,8 @@ const tabClass =
         let nextIndex: number | null = null;
 
         if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-        if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "ArrowLeft")
+          nextIndex = (index - 1 + tabs.length) % tabs.length;
 
         if (nextIndex !== null) {
           event.preventDefault();
