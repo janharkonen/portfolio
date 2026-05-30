@@ -14,7 +14,7 @@ import { profile } from "../app_data/profile";
     <!-- Hero -->
     <main>
       <section
-        class="hero section flex flex-row items-center justify-between gap-8"
+        class="hero section flex flex-col-reverse sm:flex-row items-center justify-between"
       >
         <div>
           <h1
@@ -38,18 +38,18 @@ import { profile } from "../app_data/profile";
         </div>
 
         <figure
-          class="max-w-56 rotate-0 justify-self-center border border-gray-200 bg-[var(--surface)] p-3.5 shadow-[var(--shadow)] transition-transform duration-200 ease-in-out hover:translate-x-[4px] hover:translate-y-[-16px] hover:rotate-[1.25deg] sm:max-w-72 lg:justify-self-auto"
+          class="hero-photo max-w-36 shrink-0 rotate-0 justify-self-center sm:max-w-56 lg:justify-self-auto"
         >
-          <div class="overflow-hidden rounded-none bg-white">
+          <div class="overflow-hidden rounded-full border border-gray-200 bg-white shadow-[var(--shadow)] ring-4 ring-[var(--surface)]">
             <Image
               src="/jan-1-8.webp"
               alt={profile.name}
-              width="200"
-              height="200"
+              width="224"
+              height="224"
               loading="eager"
               fetchpriority="high"
               decoding="async"
-              class="block aspect-[4/5] w-full object-cover object-[center_18%]"
+              class="block aspect-square w-full scale-[1.22] object-cover object-[center_28%]"
             />
           </div>
           <figcaption
@@ -64,10 +64,9 @@ import { profile } from "../app_data/profile";
         aria-labelledby="core-stack-heading"
       >
         <div class="section-heading">
-          <p class="eyebrow">Core stack</p>
-          <h2 id="core-stack-heading">Everyday tools</h2>
+          <h2 id="core-stack-heading">I'm most comfortable with</h2>
         </div>
-        <div class="stack-grid">
+        <div class="stack-grid pt-4">
           {
             coreStack.map((skill) => {
               const item = brandedItems[skill];
