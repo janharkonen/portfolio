@@ -30,8 +30,12 @@ import { profile } from "../app_data/profile";
           </div>
         </div>
 
-        <figure class="portrait-card">
-          <div class="portrait-frame">
+        <figure
+          class="m-0 w-full max-w-56 rotate-[1.25deg] justify-self-center rounded-[var(--radius)] border border-[var(--line)] bg-[var(--surface)] p-3.5 shadow-[var(--shadow)] transition-transform duration-200 ease-in-out hover:rotate-0 sm:max-w-72 lg:max-w-none lg:justify-self-auto"
+        >
+          <div
+            class="overflow-hidden rounded-none bg-[color-mix(in_srgb,var(--accent-2)_24%,white)]"
+          >
             <Image
               src="/jan-1-8.webp"
               alt={profile.name}
@@ -40,11 +44,14 @@ import { profile } from "../app_data/profile";
               loading="eager"
               fetchpriority="high"
               decoding="async"
+              class="block aspect-[4/5] w-full object-cover object-[center_18%]"
             />
           </div>
-          <figcaption>
+          <figcaption
+            class="grid gap-1.5 px-1 pt-3.5 pb-0.5 text-sm text-[var(--muted)] sm:text-base"
+          >
             <span>{profile.location}</span>
-            <strong>{profile.line}</strong>
+            <strong class="text-base text-[var(--ink)]">{profile.line}</strong>
           </figcaption>
         </figure>
       </section>

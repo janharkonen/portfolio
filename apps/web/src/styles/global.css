@@ -146,42 +146,6 @@
   background: var(--surface);
 }
 
-.portrait-card {
-  margin: 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 14px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.portrait-frame {
-  overflow: hidden;
-  border-radius: calc(var(--radius) - 10px);
-  background: color-mix(in srgb, var(--accent-2) 24%, white);
-}
-
-.portrait-frame img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 18%;
-}
-
-.portrait-card figcaption {
-  display: grid;
-  gap: 5px;
-  padding: 14px 4px 2px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.portrait-card strong {
-  color: var(--ink);
-  font-size: 1rem;
-}
-
 .section {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
@@ -376,7 +340,6 @@
 }
 
 .variant-3 .site-nav,
-.variant-3 .portrait-card,
 .variant-3 .stack-item,
 .variant-3 .timeline-card,
 .variant-3 .project-card,
@@ -391,15 +354,6 @@
 .variant-3 .hero-copy h1 {
   font-size: clamp(4rem, 8.8vw, 8.3rem);
   text-transform: uppercase;
-}
-
-.variant-3 .portrait-card {
-  transform: rotate(1.25deg);
-  transition: transform 0.25s ease;
-}
-
-.variant-3 .portrait-card:hover {
-  transform: rotate(0deg);
 }
 
 .variant-3 .project-card {
@@ -436,11 +390,6 @@
   .hero {
     gap: 30px;
     padding-top: 58px;
-  }
-
-  .portrait-card {
-    justify-self: center;
-    max-width: 300px;
   }
 
   .stack-grid {
@@ -484,10 +433,6 @@
 
   .button {
     width: 100%;
-  }
-
-  .portrait-card {
-    max-width: 230px;
   }
 
   .section {
