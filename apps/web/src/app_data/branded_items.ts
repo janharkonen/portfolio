@@ -37,11 +37,11 @@ export const brandedItems = {
   },
   TAITOUNITED: {
     displayName: "Taito United Oy",
-    logoUrl: "/logos/taitounited.svg",
+    logoUrl: "/companylogos/taitounited.svg",
   },
   PIONBLANC: {
     displayName: "Pion Blanc Oy",
-    logoUrl: "/logos/pionblanc.svg",
+    logoUrl: "/companylogos/pionblanc.svg",
   },
   POLYCON: {
     displayName: "Polycon Oy",

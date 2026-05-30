@@ -141,7 +141,13 @@ import { profile } from "../app_data/profile";
             {
               experiences.map((job) => (
                 <article class="timeline-card">
-                  <div class="card-heading">
+                  <Image
+                    src={brandedItems[job.logo.key].logoUrl}
+                    alt={job.company}
+                    width={job.logo.width}
+                    height={job.logo.height}
+                  />
+                  <div class="card-heading pt-4">
                     <h3>{job.role}</h3>
                     <span>{job.period}</span>
                   </div>
@@ -178,7 +184,13 @@ import { profile } from "../app_data/profile";
             {
               educations.map((education) => (
                 <article class="timeline-card">
-                  <div class="card-heading">
+                  <Image
+                    src={brandedItems[education.logo.key].logoUrl}
+                    alt={education.school}
+                    width={education.logo.width}
+                    height={education.logo.height}
+                  />
+                  <div class="card-heading pt-4">
                     <h3>{education.degree}</h3>
                     <span>{education.period}</span>
                   </div>

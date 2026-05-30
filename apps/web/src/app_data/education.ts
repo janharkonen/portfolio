@@ -1,4 +1,7 @@
+import type { BrandedItemKey } from "./branded_items";
+
 export type Education = {
+  logo: { key: BrandedItemKey; height: number; width: number };
   degree: string;
   school: string;
   period: string;
@@ -8,6 +11,7 @@ export type Education = {
 
 export const educations: Education[] = [
   {
+    logo: { key: "AALTOSCI", height: 50, width: 50 },
     degree: "Master's degree",
     school: "Aalto University School of Science",
     period: "2018-2020",
@@ -15,6 +19,7 @@ export const educations: Education[] = [
     documents: [""],
   },
   {
+    logo: { key: "KAIST", height: 60, width: 60 },
     degree: "Exchange studies",
     school: "Korea Advanced Institute of Science and Technology (KAIST)",
     period: "2016-2017",
@@ -22,6 +27,7 @@ export const educations: Education[] = [
     documents: [""],
   },
   {
+    logo: { key: "AALTOSCI", height: 50, width: 50 },
     degree: "Bachelor's degree",
     school: "Aalto University School of Science",
     period: "2014-2018",

@@ -1,6 +1,7 @@
 import type { BrandedItemKey } from "./branded_items";
 
 export type Experience = {
+  logo: { key: BrandedItemKey; height: number; width: number };
   role: string;
   company: string;
   period: string;
@@ -10,6 +11,7 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    logo: { key: "TAITOUNITED", height: 120, width: 160 },
     role: "Software Developer",
     company: "Taito United Oy",
     period: "2025–present",
@@ -17,6 +19,7 @@ export const experiences: Experience[] = [
     tech: ["REACT", "GRAPHQL", "NODEJS_OLD", "POSTGRESQL", "DOCKER", "GCP"],
   },
   {
+    logo: { key: "PIONBLANC", height: 40, width: 40 },
     role: "CEO / Software Developer",
     company: "Pion Blanc Oy",
     period: "2024–2025",
@@ -34,6 +37,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    logo: { key: "POLYCON", height: 120, width: 160 },
     role: "Software Developer",
     company: "Polycon Oy",
     period: "2021–2024",
@@ -42,6 +46,7 @@ export const experiences: Experience[] = [
     tech: ["DELPHI", "MSSQLSERVER"],
   },
   {
+    logo: { key: "SEMANTUM", height: 36, width: 36 },
     role: "Software Developer / Data Analyst",
     company: "Semantum Oy",
     period: "Feb 2020–Sep 2020",
@@ -49,6 +54,7 @@ export const experiences: Experience[] = [
     tech: ["JAVA", "INFLUXDB", "DOCKER", "HASKELL"],
   },
   {
+    logo: { key: "AALTOSCI", height: 50, width: 50 },
     role: "Research Assistant",
     company: "Aalto University School of Science",
     period: "Jun 2019–Dec 2019",
@@ -57,6 +63,7 @@ export const experiences: Experience[] = [
     tech: ["FORTRAN", "QUANTUMESPRESSO", "CASINO", "CSCMAHTI"],
   },
   {
+    logo: { key: "AALTOSCI", height: 50, width: 50 },
     role: "Research Assistant",
     company: "Aalto University School of Science",
     period: "Summer 2018",
