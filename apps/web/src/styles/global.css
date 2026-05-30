@@ -90,10 +90,6 @@
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 390px;
-  gap: 54px;
-  align-items: center;
   padding: 92px 0 74px;
 }
 
@@ -139,9 +135,6 @@
 }
 
 .section {
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 42px;
   padding: 58px 0;
   border-top: 1px solid var(--line);
 }
@@ -339,10 +332,6 @@
   border-radius: 2px;
 }
 
-.variant-3 .hero {
-  grid-template-columns: minmax(0, 1fr) 260px;
-}
-
 .variant-3 .project-card {
   position: relative;
   padding-top: 54px;
@@ -369,13 +358,7 @@
     position: static;
   }
 
-  .portfolio-makeover .hero,
-  .portfolio-makeover .section {
-    grid-template-columns: 1fr;
-  }
-
   .hero {
-    gap: 30px;
     padding-top: 58px;
   }
 
@@ -418,7 +401,6 @@
   }
 
   .section {
-    gap: 22px;
     padding: 42px 0;
   }
 
