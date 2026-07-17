@@ -10,8 +10,6 @@ import { experiences } from "../../../../packages/app_data/experience";
 import { projects } from "../../../../packages/app_data/projects";
 import { profile } from "../../../../packages/app_data/profile";
 
-const documentTitle = (doc: string) =>
-  (doc.split("/").pop() ?? doc).replace(/\.pdf$/i, "").replace(/_/g, " ");
 ---
 
 <Layout>
@@ -172,11 +170,11 @@ const documentTitle = (doc: string) =>
                       <div class="doc-links">
                         {job.documents.map((doc) => (
                           <a
-                            href={doc}
+                            href={doc.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            title={documentTitle(doc)}
-                            aria-label={`Open document: ${documentTitle(doc)}`}
+                            data-tooltip={doc.description}
+                            aria-label={`Open document: ${doc.description}`}
                           >
                             <BookOpenText size={22} aria-hidden="true" />
                           </a>
@@ -219,11 +217,11 @@ const documentTitle = (doc: string) =>
                       <div class="doc-links">
                         {education.documents.map((doc) => (
                           <a
-                            href={doc}
+                            href={doc.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            title={documentTitle(doc)}
-                            aria-label={`Open document: ${documentTitle(doc)}`}
+                            data-tooltip={doc.description}
+                            aria-label={`Open document: ${doc.description}`}
                           >
                             <BookOpenText size={22} aria-hidden="true" />
                           </a>
@@ -378,6 +376,35 @@ I'd like to chat about..."
 </Layout>
 
 <script>
+  // On touch devices there is no hover: first tap shows the tooltip,
+  // second tap follows the link.
+  const hoverless = window.matchMedia("(hover: none)");
+  const docLinks = document.querySelectorAll<HTMLAnchorElement>(".doc-links a");
+
+  const closeTooltips = (except?: HTMLAnchorElement) => {
+    docLinks.forEach((link) => {
+      if (link !== except) link.classList.remove("tooltip-open");
+    });
+  };
+
+  docLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (!hoverless.matches) return;
+      if (!link.classList.contains("tooltip-open")) {
+        event.preventDefault();
+        closeTooltips(link);
+        link.classList.add("tooltip-open");
+      }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element) || !target.closest(".doc-links a")) {
+      closeTooltips();
+    }
+  });
+
   const form = document.getElementById("contact-form");
   const status = document.getElementById("contact-form-status");
 

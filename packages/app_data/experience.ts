@@ -1,4 +1,5 @@
 import type { BrandedItemKey } from "./branded_items";
+import type { PdfDocument } from "./education";
 
 export type Experience = {
   logo: { key: BrandedItemKey; height: number; width: number };
@@ -7,7 +8,7 @@ export type Experience = {
   period: string;
   description: string;
   tech: BrandedItemKey[];
-  documents?: string[];
+  documents?: PdfDocument[];
 };
 
 export const experiences: Experience[] = [
@@ -71,8 +72,16 @@ export const experiences: Experience[] = [
       "Simulating and calculating the annihilating electron-positron pair momentum density in a solid in the atomic scale using quantum Monte Carlo methods",
     tech: ["FORTRAN", "QUANTUMESPRESSO", "CASINO", "CSCMAHTI"],
     documents: [
-      "/pdf/Jan_Harkonen_Masters_thesis.pdf",
-      "/pdf/Research_paper_as_co_author.pdf",
+      {
+        href: "/pdf/Jan_Harkonen_Masters_thesis.pdf",
+        description:
+          "Master's thesis: computing positron annihilation momentum densities in solids with quantum Monte Carlo",
+      },
+      {
+        href: "/pdf/Research_paper_as_co_author.pdf",
+        description:
+          "Peer-reviewed research paper I co-authored on positron annihilation simulations",
+      },
     ],
   },
   {
@@ -82,7 +91,13 @@ export const experiences: Experience[] = [
     period: "Summer 2018",
     description: "Semiconductor enhancement factor simulation",
     tech: ["FORTRAN", "QUANTUMESPRESSO", "CASINO", "CSCMAHTI"],
-    documents: ["/pdf/Jan_Harkonen_Special_Assignment.pdf"],
+    documents: [
+      {
+        href: "/pdf/Jan_Harkonen_Special_Assignment.pdf",
+        description:
+          "Special assignment report on semiconductor enhancement factor simulation",
+      },
+    ],
   },
 ];
 

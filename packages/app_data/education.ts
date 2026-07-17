@@ -1,12 +1,17 @@
 import type { BrandedItemKey } from "./branded_items";
 
+export type PdfDocument = {
+  href: string;
+  description: string;
+};
+
 export type Education = {
   logo: { key: BrandedItemKey; height: number; width: number };
   degree: string;
   school: string;
   period: string;
   description: string;
-  documents?: string[];
+  documents?: PdfDocument[];
 };
 
 export const educations: Education[] = [
@@ -17,8 +22,16 @@ export const educations: Education[] = [
     period: "2018-2020",
     description: "Major: mathematics, minor: engineering physics",
     documents: [
-      "/pdf/Jan_Harkonen_Masters_thesis.pdf",
-      "/pdf/Research_paper_as_co_author.pdf",
+      {
+        href: "/pdf/Jan_Harkonen_Masters_thesis.pdf",
+        description:
+          "Master's thesis: computing positron annihilation momentum densities in solids with quantum Monte Carlo",
+      },
+      {
+        href: "/pdf/Research_paper_as_co_author.pdf",
+        description:
+          "Peer-reviewed research paper I co-authored on positron annihilation simulations",
+      },
     ],
   },
   {
@@ -35,7 +48,12 @@ export const educations: Education[] = [
     period: "2014-2018",
     description:
       "Major: engineering physics and mathematics, minor: electrical engineering",
-    documents: ["/pdf/Jan_Harkonen_Bachelors_thesis.pdf"],
+    documents: [
+      {
+        href: "/pdf/Jan_Harkonen_Bachelors_thesis.pdf",
+        description: "Bachelor's thesis on spherical maximal function",
+      },
+    ],
   },
 ];
 
