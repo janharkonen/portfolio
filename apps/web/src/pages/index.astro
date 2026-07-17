@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
-import { Mail, Phone } from "@lucide/astro";
+import { Mail, Phone, User } from "@lucide/astro";
 import { Image } from "astro:assets";
 import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { coreStack } from "../../../../packages/app_data/core_stack";
@@ -249,13 +249,22 @@ import { profile } from "../../../../packages/app_data/profile";
       </section>
     </main>
 
-    <footer id="contact" class="contact-footer">
+    <footer
+      id="contact"
+      class="contact-footer"
+      aria-labelledby="contact-heading"
+    >
       <div class="contact-intro">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Jan Härkönen</h2>
+          <h2
+            id="contact-heading"
+            class="mt-2 text-4xl leading-[1.05] tracking-[-0.06em]"
+          >
+            Contact
+          </h2>
         </div>
         <div class="contact-links">
+          <span> Jan Härkönen </span>
           <a href={`mailto:${profile.email}`}>
             <Mail size={16} aria-hidden="true" />
             {profile.email}
@@ -317,6 +326,17 @@ I'd like to chat about..."
         </p>
       </form>
     </footer>
+
+    <aside class="terminal-invite" aria-label="SSH terminal">
+      <div class="terminal-invite__prompt" aria-hidden="true">
+        <span>Try it!</span>
+        <svg viewBox="0 0 92 58" role="presentation">
+          <path d="M4 7c20 1 8 21 28 18s31-9 38 23"></path>
+          <path d="m61 40 9 9 8-10"></path>
+        </svg>
+      </div>
+      <code class="terminal-invite__command">ssh terminal.janharkonen.fi</code>
+    </aside>
   </div>
 </Layout>
 

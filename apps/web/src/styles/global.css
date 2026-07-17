@@ -397,6 +397,58 @@ html {
   color: #8b3a3a;
 }
 
+.terminal-invite {
+  position: relative;
+  display: grid;
+  width: min(var(--content-max), calc(100% - 32px));
+  place-items: center;
+  margin: 8px auto 0;
+  padding: 48px 0 64px;
+}
+
+.terminal-invite__prompt {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  align-items: flex-start;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+  transform: translateX(-130px) rotate(-4deg);
+}
+
+.terminal-invite__prompt span {
+  white-space: nowrap;
+}
+
+.terminal-invite__prompt svg {
+  width: 74px;
+  height: 47px;
+  margin: 7px -5px 0 -1px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.terminal-invite__command {
+  display: block;
+  border: 1px solid #232b23;
+  border-radius: 3px;
+  background: #050705;
+  box-shadow: 4px 4px 0 rgba(40, 45, 53, 0.12);
+  color: #56f28b;
+  padding: 11px 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .variant-3 {
   --page: #f6f1e7;
   --surface: #fffaf0;
@@ -445,7 +497,8 @@ html {
   .site-nav,
   .hero,
   .section,
-  .contact-footer {
+  .contact-footer,
+  .terminal-invite {
     width: min(100% - 24px, var(--content-max));
   }
 
@@ -510,5 +563,9 @@ html {
   .contact-form .button {
     width: 100%;
     justify-self: stretch;
+  }
+
+  .terminal-invite {
+    padding-bottom: 44px;
   }
 }

@@ -158,7 +158,7 @@ export const projects: Project[] = [
     name: "Portfolio site",
     year: "2024–2026",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/0cebe3a64ade44858fd946e58dd6b540.png",
+      "https://picapi.janharkonen.fi/api/pics/8a9385dbafde4f59869a97005b571241.png",
     description: "This very website. A personal full stack developer portfolio",
     tech: ["ASTRO", "TAILWIND", "RAILWAY"],
     initiallyHidden: false,
