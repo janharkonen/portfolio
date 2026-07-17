@@ -378,7 +378,7 @@ export const brandedItems = {
     logoUrl: "/logos/vanillajs.svg",
   },
   NEXTJS: {
-    displayName: "NextJS",
+    displayName: "Next.js",
     logoUrl: "/logos/nextjs.svg",
   },
   CURSOR_OLD: {

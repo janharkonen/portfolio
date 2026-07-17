@@ -16,7 +16,15 @@ export const experiences: Experience[] = [
     company: "Taito United Oy",
     period: "2025–present",
     description: "Product data management software development",
-    tech: ["REACT", "GRAPHQL", "NODEJS_OLD", "POSTGRESQL", "DOCKER", "GCP"],
+    tech: [
+      "REACT",
+      "TANSTACK_ROUTER",
+      "GRAPHQL",
+      "NODEJS_OLD",
+      "POSTGRESQL",
+      "DOCKER",
+      "GCP",
+    ],
   },
   {
     logo: { key: "PIONBLANC", height: 40, width: 40 },
