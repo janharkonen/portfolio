@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     name: "Wedding site",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/b8afaef81dd542f18eccb28a3a930315.png?BG=120",
+      "https://picapi.janharkonen.fi/api/pics/b8afaef81dd542f18eccb28a3a930315.png",
     year: "2026",
     description:
       "AI-powered RAG-pipeline search engine for finnish travel destinations with customizable filters and sorting options.",
