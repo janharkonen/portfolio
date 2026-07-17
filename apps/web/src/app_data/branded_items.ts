@@ -397,8 +397,7 @@ export const brandedItems = {
   },
   AZURE: {
     displayName: "Azure",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/9db8a57590ba4db8b207a245a27e8fee.svg",
+    logoUrl: "/logos/azure.svg",
   },
   AZUREVM: {
     displayName: "Azure VM",
@@ -407,8 +406,7 @@ export const brandedItems = {
   },
   BUN: {
     displayName: "Bun",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/7a8e6adcca034e8586c781331466126e.svg",
+    logoUrl: "/logos/bun.svg",
   },
   CADDY: {
     displayName: "Caddy",
@@ -422,8 +420,7 @@ export const brandedItems = {
   },
   CLERK: {
     displayName: "Clerk",
-    logoUrl:
-      "https://images.seeklogo.com/logo-png/65/1/clerk-icon-logo-png_seeklogo-653484.png",
+    logoUrl: "/logos/clerk.svg",
   },
   NEON_OLD: {
     displayName: "Neon",

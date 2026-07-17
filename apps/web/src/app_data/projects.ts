@@ -11,19 +11,29 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Trip planner",
+    imageUrl:
+      "https://flask-production-99edc.up.railway.app/api/pics/2214f68ddb044c35acf74d0f56237128.png",
+    year: "2025",
+    description:
+      "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",
+    tech: ["NEXTJS", "BUN", "CONVEX", "VERCEL"],
+    initiallyHidden: false,
+  },
+  {
     name: "SyncSpace",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/743aaa9e749842d589d26abf4cfef026.png?BGc=grey&BG=130",
+      "https://picapi.janharkonen.fi/api/pics/743aaa9e749842d589d26abf4cfef026.png",
     year: "2025",
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
-    tech: ["NEXTJS", "CONVEX", "CLERK", "DOCKER", "HETZNER"],
+    tech: ["NEXTJS", "CONVEX", "CLERK", "VERCEL"],
     initiallyHidden: false,
   },
   {
     name: "Piggybank",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/1d4685d428ef40e88362bf6fff5e2883.png?BGc=grey&BG=140",
+      "https://picapi.janharkonen.fi/api/pics/1d4685d428ef40e88362bf6fff5e2883.png",
     year: "2025",
     description: "Personal finance tracker",
     tech: ["NEXTJS", "CONVEX", "GOLANG", "NEON_OLD", "POSTGRESQL"],
@@ -32,7 +42,7 @@ export const projects: Project[] = [
   {
     name: "ÉclairDB",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/dfc3ddcb9eb44c1ab760920c4d36610a.png?BGc=grey&BG=125",
+      "https://picapi.janharkonen.fi/api/pics/dfc3ddcb9eb44c1ab760920c4d36610a.png",
     year: "2025",
     description:
       "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
@@ -42,7 +52,7 @@ export const projects: Project[] = [
   {
     name: "One source of truth",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/3a055a19c26743a2a2fc18bf41b41cbf.png?BGc=grey&BG=125",
+      "https://picapi.janharkonen.fi/api/pics/3a055a19c26743a2a2fc18bf41b41cbf.png",
     year: "2025",
     description:
       "A tool to search and filter a vast array of products blazingly fast",
@@ -52,7 +62,7 @@ export const projects: Project[] = [
   {
     name: "cdx",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/e7d1b08fd20847abb202b427a8e8f2ba.png?BGc=grey&BG=125",
+      "https://picapi.janharkonen.fi/api/pics/e7d1b08fd20847abb202b427a8e8f2ba.png",
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
@@ -61,7 +71,7 @@ export const projects: Project[] = [
   {
     name: "PICAPI",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/d40795b1bb8b4987b965e11d241bbf78.png?BGc=grey&BG=120",
+      "https://picapi.janharkonen.fi/api/pics/d40795b1bb8b4987b965e11d241bbf78.png",
     year: "2025",
     description:
       "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
@@ -71,7 +81,7 @@ export const projects: Project[] = [
   {
     name: "Progress tracker",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/6cbf8b836d0c4d3c89c2c4d23dba1281.png?BGc=grey&BG=130",
+      "https://picapi.janharkonen.fi/api/pics/6cbf8b836d0c4d3c89c2c4d23dba1281.png",
     year: "2025",
     description:
       "Web application to track the progress level of listed items for each user in real time using websockets",
@@ -92,7 +102,7 @@ export const projects: Project[] = [
     name: "Portfolio site",
     year: "2024–2025",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/0cebe3a64ade44858fd946e58dd6b540.png?BGc=grey&BG=120",
+      "https://picapi.janharkonen.fi/api/pics/0cebe3a64ade44858fd946e58dd6b540.png",
     description: "This very website. A personal full stack developer portfolio",
     tech: ["ASTRO", "TAILWIND"],
     initiallyHidden: false,
@@ -109,7 +119,7 @@ export const projects: Project[] = [
   {
     name: "Lens and mirror simulator",
     imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/2dce025429824c5595654267c848d3de.png?BGc=grey&BG=140",
+      "https://picapi.janharkonen.fi/api/pics/2dce025429824c5595654267c848d3de.png",
     year: "2015",
     description:
       "Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors",
