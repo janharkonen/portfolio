@@ -11,9 +11,45 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Wedding site",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/b8afaef81dd542f18eccb28a3a930315.png?BG=120",
+    year: "2026",
+    description:
+      "AI-powered RAG-pipeline search engine for finnish travel destinations with customizable filters and sorting options.",
+    tech: ["TANSTACK", "BUN", "CONVEX", "VERCEL", "R2"],
+    initiallyHidden: false,
+  },
+  {
+    name: "Secure receipt share",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/9140b5ac8a4240aeb5845e88d05a2c1f.png",
+    year: "2026",
+    description: "Secure way to share receipts with colleagues.",
+    tech: ["TANSTACK_START", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
+    initiallyHidden: false,
+  },
+  {
+    name: "AI traveling search engine",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/b0392792a586411ba877c3fa7b18727c.png",
+    year: "2025",
+    description:
+      "AI-powered RAG-pipeline search engine for finnish travel destinations with customizable filters and sorting options.",
+    tech: [
+      "TANSTACK_START",
+      "BUN",
+      "PYTHON",
+      "POSTGRESQL",
+      "BETTERAUTH",
+      "RAILWAY",
+    ],
+    initiallyHidden: false,
+  },
+  {
     name: "Trip planner",
     imageUrl:
-      "https://flask-production-99edc.up.railway.app/api/pics/2214f68ddb044c35acf74d0f56237128.png",
+      "https://picapi.janharkonen.fi/api/pics/2214f68ddb044c35acf74d0f56237128.png",
     year: "2025",
     description:
       "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",

@@ -133,6 +133,26 @@ export const brandedItems = {
     displayName: "Tailwind CSS",
     logoUrl: "/logos/tailwindcss.svg",
   },
+  TANSTACK: {
+    displayName: "TanStack",
+    logoUrl: "/logos/tanstack.svg",
+  },
+  TANSTACK_START: {
+    displayName: "TanStack Start",
+    logoUrl: "/logos/tanstack.svg",
+  },
+  TANSTACK_QUERY: {
+    displayName: "TanStack Query",
+    logoUrl: "/logos/tanstack.svg",
+  },
+  TANSTACK_ROUTER: {
+    displayName: "TanStack Router",
+    logoUrl: "/logos/tanstack.svg",
+  },
+  TANSTACK_AI: {
+    displayName: "TanStack AI",
+    logoUrl: "/logos/tanstack.svg",
+  },
   JAVASCRIPT: {
     displayName: "Javascript",
     logoUrl: "/logos/javascript.svg",
@@ -157,6 +177,10 @@ export const brandedItems = {
   VERCEL: {
     displayName: "Vercel",
     logoUrl: "/logos/vercel.svg",
+  },
+  RAILWAY: {
+    displayName: "Railway",
+    logoUrl: "/logos/railway.svg",
   },
   SHADCN: {
     displayName: "shadcn/ui",
@@ -187,8 +211,16 @@ export const brandedItems = {
     displayName: "Auth0",
     logoUrl: "/logos/auth0.svg",
   },
+  BETTERAUTH: {
+    displayName: "Better Auth",
+    logoUrl: "/logos/betterauth.svg",
+  },
   CLOUDFLARE: {
     displayName: "Cloudflare",
+    logoUrl: "/logos/cloudflare.svg",
+  },
+  R2: {
+    displayName: "Cloudflare R2",
     logoUrl: "/logos/cloudflare.svg",
   },
   CHATGPT: {
@@ -407,6 +439,14 @@ export const brandedItems = {
   BUN: {
     displayName: "Bun",
     logoUrl: "/logos/bun.svg",
+  },
+  NPM: {
+    displayName: "npm",
+    logoUrl: "/logos/npm.svg",
+  },
+  PNPM: {
+    displayName: "pnpm",
+    logoUrl: "/logos/pnpm.svg",
   },
   CADDY: {
     displayName: "Caddy",
