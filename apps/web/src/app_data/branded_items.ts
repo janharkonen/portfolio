@@ -425,10 +425,13 @@ export const brandedItems = {
     logoUrl:
       "https://images.seeklogo.com/logo-png/65/1/clerk-icon-logo-png_seeklogo-653484.png",
   },
+  NEON_OLD: {
+    displayName: "Neon",
+    logoUrl: "/logos/neon-tech.svg",
+  },
   NEON: {
     displayName: "Neon",
-    logoUrl:
-      "https://picapi.janharkonen.fi/api/pics/92abe4a3d3044ceeada95e723841f24a.svg",
+    logoUrl: "/logos/neon.svg",
   },
   STRIPE: {
     displayName: "Stripe",
