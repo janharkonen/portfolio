@@ -11,13 +11,12 @@ const { skill } = Astro.props;
 const brandedItem = brandedItems[skill];
 ---
 
-<div class="flex h-6 w-6 shrink-0 items-center justify-center">
-  <Image
-    src={brandedItem.logoUrl}
-    alt={brandedItem.displayName}
-    width={24}
-    height={24}
-    class="max-h-6 max-w-6 object-contain"
-    loading="lazy"
-  />
-</div>
+<Image
+  src={brandedItem.logoUrl}
+  alt={brandedItem.displayName}
+  title={brandedItem.displayName}
+  width={24}
+  height={24}
+  class="tech-logo"
+  loading="lazy"
+/>
