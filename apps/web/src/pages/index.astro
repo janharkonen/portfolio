@@ -249,20 +249,88 @@ import { profile } from "../../../../packages/app_data/profile";
     </main>
 
     <footer id="contact" class="contact-footer">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Jan Härkönen</h2>
+      <div class="contact-intro">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Jan Härkönen</h2>
+        </div>
+        <div class="contact-links">
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <span>{profile.phone}</span>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer"
+            >Github</a
+          >
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
       </div>
-      <div class="contact-links">
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        <span>{profile.phone}</span>
-        <a href={profile.github} target="_blank" rel="noopener noreferrer"
-          >Github</a
+
+      <form
+        id="contact-form"
+        class="contact-form"
+        method="POST"
+        action="/api/contact"
+      >
+        <label class="contact-field">
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label class="contact-field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label class="contact-field">
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button
+          class="button primary transition-transform duration-150 hover:scale-105"
+          type="submit"
         >
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
-          >LinkedIn</a
+          Send message
+        </button>
+        <p
+          id="contact-form-status"
+          class="contact-form-status"
+          aria-live="polite"
         >
-      </div>
+        </p>
+      </form>
     </footer>
   </div>
 </Layout>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("contact-form-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement) || !status) return;
+
+    status.textContent = "Sending…";
+    status.dataset.state = "pending";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: new FormData(form),
+      });
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        status.textContent = result.message ?? "Something went wrong.";
+        status.dataset.state = "error";
+        return;
+      }
+
+      status.textContent = result.message ?? "Message sent.";
+      status.dataset.state = "success";
+      form.reset();
+    } catch {
+      status.textContent = "Could not send message. Please try again.";
+      status.dataset.state = "error";
+    }
+  });
+</script>

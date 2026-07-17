@@ -150,7 +150,7 @@ export const projects: Project[] = [
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/0cebe3a64ade44858fd946e58dd6b540.png",
     description: "This very website. A personal full stack developer portfolio",
-    tech: ["ASTRO", "TAILWIND"],
+    tech: ["ASTRO", "TAILWIND", "RAILWAY"],
     initiallyHidden: false,
   },
   {
