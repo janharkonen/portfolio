@@ -1,0 +1,13 @@
+{
+  "name": "tui",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "cp ../../packages/app_data/dist/data.json data/data.json && go build -o dist/tui .",
+    "dev": "cp ../../packages/app_data/dist/data.json data/data.json && go run .",
+    "check-types": "go vet ./..."
+  },
+  "devDependencies": {
+    "@portfolio/app_data": "workspace:*"
+  }
+}

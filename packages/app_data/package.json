@@ -1,0 +1,13 @@
+{
+  "name": "@portfolio/app_data",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsx scripts/export-json.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "catalog:"
+  }
+}
