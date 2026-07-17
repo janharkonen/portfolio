@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
+import { Mail, Phone } from "@lucide/astro";
 import { Image } from "astro:assets";
 import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { coreStack } from "../../../../packages/app_data/core_stack";
@@ -255,14 +256,14 @@ import { profile } from "../../../../packages/app_data/profile";
           <h2>Jan Härkönen</h2>
         </div>
         <div class="contact-links">
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <span>{profile.phone}</span>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer"
-            >Github</a
-          >
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
-            >LinkedIn</a
-          >
+          <a href={`mailto:${profile.email}`}>
+            <Mail size={16} aria-hidden="true" />
+            {profile.email}
+          </a>
+          <span>
+            <Phone size={16} aria-hidden="true" />
+            {profile.phone}
+          </span>
         </div>
       </div>
 
