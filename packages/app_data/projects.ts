@@ -11,6 +11,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "HSL real time",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/2d0e98319f9f42428c86b2d9cf7eb868.png",
+    year: "2026",
+    description: "Real-time vehicle locations for Helsinki public transport.",
+    tech: ["REACT", "VERCEL"],
+    initiallyHidden: false,
+  },
+  {
     name: "Speed reader",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/da64d53faf44458eb2d7f08676f05965.png",
@@ -27,7 +36,7 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album",
-    tech: ["TANSTACK", "BUN", "CONVEX", "VERCEL", "R2"],
+    tech: ["REACT", "TANSTACK_ROUTER", "BUN", "CONVEX", "VERCEL", "R2"],
     initiallyHidden: false,
   },
   {
@@ -36,7 +45,7 @@ export const projects: Project[] = [
       "https://picapi.janharkonen.fi/api/pics/9140b5ac8a4240aeb5845e88d05a2c1f.png",
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
-    tech: ["TANSTACK_START", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
+    tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
     initiallyHidden: false,
   },
   {
@@ -48,6 +57,7 @@ export const projects: Project[] = [
       "AI-powered RAG-pipeline search engine for finnish travel destinations with customizable filters and sorting options.",
     tech: [
       "TANSTACK_START",
+      "REACT",
       "BUN",
       "PYTHON",
       "POSTGRESQL",

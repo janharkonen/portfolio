@@ -57,6 +57,9 @@ importers:
       '@astrojs/node':
         specifier: ^11.0.2
         version: 11.0.2(astro@7.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@25.8.0)(jiti@2.7.0))
+      '@lucide/astro':
+        specifier: ^1.24.0
+        version: 1.24.0(astro@7.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@25.8.0)(jiti@2.7.0))
       '@portfolio/env':
         specifier: workspace:*
         version: link:../../packages/env
@@ -616,6 +619,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/astro@1.24.0':
+    resolution: {integrity: sha512-UmQrHv3/SfulzmALy6M0H4TOAaql/OG68V7yoFDW4g4F49vQ8o32NQHK4xBm+8k8zD/JQNHt00z2YRKXJ6bnCA==}
+    peerDependencies:
+      astro: ^4 || ^5 || ^6 || ^7
 
   '@mongodb-js/saslprep@1.4.11':
     resolution: {integrity: sha512-o9rAHc0IpIjuPSxRutWpE1F62x7n+4mVS4rCNHkzhIUMQcc18bb6xEq5wd2NdN0WjepIyXIppRshYI2kQDOZVA==}
@@ -2243,6 +2251,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lucide/astro@1.24.0(astro@7.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@25.8.0)(jiti@2.7.0))':
+    dependencies:
+      astro: 7.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@25.8.0)(jiti@2.7.0)
 
   '@mongodb-js/saslprep@1.4.11':
     dependencies:

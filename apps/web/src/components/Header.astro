@@ -1,4 +1,6 @@
 ---
+import { FileText } from "@lucide/astro";
+import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { profile } from "../../../../packages/app_data/profile";
 ---
 
@@ -8,11 +10,22 @@ import { profile } from "../../../../packages/app_data/profile";
   </a>
 
   <nav class="primary-nav" aria-label="Primary navigation">
-    <a href={profile.cv}>CV</a>
+    <a href={profile.cv}>
+      <FileText size={16} aria-hidden="true" />
+      CV
+    </a>
+    <a href={profile.github} target="_blank" rel="noopener noreferrer">
+      <img
+        src={brandedItems.GITHUB.logoUrl}
+        alt=""
+        width="16"
+        height="16"
+        aria-hidden="true"
+      />
+      Github
+    </a>
     <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
       >LinkedIn</a
-    >
-    <a href={profile.github} target="_blank" rel="noopener noreferrer">Github</a
     >
     <a href={`mailto:${profile.email}`}>Email</a>
     <a href={profile.scholar} target="_blank" rel="noopener noreferrer"
