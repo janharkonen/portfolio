@@ -6,7 +6,7 @@ export type Education = {
   school: string;
   period: string;
   description: string;
-  documents: string[];
+  documents?: string[];
 };
 
 export const educations: Education[] = [
@@ -16,7 +16,10 @@ export const educations: Education[] = [
     school: "Aalto University School of Science",
     period: "2018-2020",
     description: "Major: mathematics, minor: engineering physics",
-    documents: [""],
+    documents: [
+      "/pdf/Jan_Harkonen_Master_Thesis.pdf",
+      "/pdf/Research_paper_as_co_author.pdf",
+    ],
   },
   {
     logo: { key: "KAIST", height: 60, width: 60 },
@@ -24,7 +27,6 @@ export const educations: Education[] = [
     school: "Korea Advanced Institute of Science and Technology (KAIST)",
     period: "2016-2017",
     description: "School of Computing",
-    documents: [""],
   },
   {
     logo: { key: "AALTOSCI", height: 50, width: 50 },
@@ -33,7 +35,7 @@ export const educations: Education[] = [
     period: "2014-2018",
     description:
       "Major: engineering physics and mathematics, minor: electrical engineering",
-    documents: [""],
+    documents: ["/pdf/Jan_Harkonen_Bachelor_Thesis.pdf"],
   },
 ];
 

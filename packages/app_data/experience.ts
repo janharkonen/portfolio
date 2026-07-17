@@ -7,6 +7,7 @@ export type Experience = {
   period: string;
   description: string;
   tech: BrandedItemKey[];
+  documents?: string[];
 };
 
 export const experiences: Experience[] = [
@@ -69,6 +70,10 @@ export const experiences: Experience[] = [
     description:
       "Simulating and calculating the annihilating electron-positron pair momentum density in a solid in the atomic scale using quantum Monte Carlo methods",
     tech: ["FORTRAN", "QUANTUMESPRESSO", "CASINO", "CSCMAHTI"],
+    documents: [
+      "/pdf/Jan_Harkonen_Master_Thesis.pdf",
+      "/pdf/Research_paper_as_co_author.pdf",
+    ],
   },
   {
     logo: { key: "AALTOSCI", height: 50, width: 50 },
@@ -77,6 +82,7 @@ export const experiences: Experience[] = [
     period: "Summer 2018",
     description: "Semiconductor enhancement factor simulation",
     tech: ["FORTRAN", "QUANTUMESPRESSO", "CASINO", "CSCMAHTI"],
+    documents: ["/pdf/Jan_Harkonen_Special_Assignment.pdf"],
   },
 ];
 
