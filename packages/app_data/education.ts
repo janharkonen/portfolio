@@ -17,7 +17,7 @@ export const educations: Education[] = [
     period: "2018-2020",
     description: "Major: mathematics, minor: engineering physics",
     documents: [
-      "/pdf/Jan_Harkonen_Master_Thesis.pdf",
+      "/pdf/Jan_Harkonen_Masters_thesis.pdf",
       "/pdf/Research_paper_as_co_author.pdf",
     ],
   },
@@ -35,7 +35,7 @@ export const educations: Education[] = [
     period: "2014-2018",
     description:
       "Major: engineering physics and mathematics, minor: electrical engineering",
-    documents: ["/pdf/Jan_Harkonen_Bachelor_Thesis.pdf"],
+    documents: ["/pdf/Jan_Harkonen_Bachelors_thesis.pdf"],
   },
 ];
 

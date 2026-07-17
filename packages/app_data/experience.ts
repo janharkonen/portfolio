@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
       "Simulating and calculating the annihilating electron-positron pair momentum density in a solid in the atomic scale using quantum Monte Carlo methods",
     tech: ["FORTRAN", "QUANTUMESPRESSO", "CASINO", "CSCMAHTI"],
     documents: [
-      "/pdf/Jan_Harkonen_Master_Thesis.pdf",
+      "/pdf/Jan_Harkonen_Masters_thesis.pdf",
       "/pdf/Research_paper_as_co_author.pdf",
     ],
   },

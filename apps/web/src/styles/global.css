@@ -227,6 +227,20 @@ html {
   padding: 22px;
 }
 
+.doc-links {
+  display: flex;
+  gap: 10px;
+}
+
+.doc-links a {
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.doc-links a:hover {
+  color: var(--ink);
+}
+
 .card-heading {
   display: flex;
   gap: 14px;

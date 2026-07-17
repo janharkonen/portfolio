@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
-import { Mail, Phone, User } from "@lucide/astro";
+import { BookOpenText, Mail, Phone, User } from "@lucide/astro";
 import { Image } from "astro:assets";
 import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { coreStack } from "../../../../packages/app_data/core_stack";
@@ -9,6 +9,9 @@ import { educations } from "../../../../packages/app_data/education";
 import { experiences } from "../../../../packages/app_data/experience";
 import { projects } from "../../../../packages/app_data/projects";
 import { profile } from "../../../../packages/app_data/profile";
+
+const documentTitle = (doc: string) =>
+  (doc.split("/").pop() ?? doc).replace(/\.pdf$/i, "").replace(/_/g, " ");
 ---
 
 <Layout>
@@ -158,12 +161,29 @@ import { profile } from "../../../../packages/app_data/profile";
             {
               experiences.map((job) => (
                 <article class="timeline-card">
-                  <Image
-                    src={brandedItems[job.logo.key].logoUrl}
-                    alt={job.company}
-                    width={job.logo.width}
-                    height={job.logo.height}
-                  />
+                  <div class="flex items-start justify-between">
+                    <Image
+                      src={brandedItems[job.logo.key].logoUrl}
+                      alt={job.company}
+                      width={job.logo.width}
+                      height={job.logo.height}
+                    />
+                    {job.documents && (
+                      <div class="doc-links">
+                        {job.documents.map((doc) => (
+                          <a
+                            href={doc}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={documentTitle(doc)}
+                            aria-label={`Open document: ${documentTitle(doc)}`}
+                          >
+                            <BookOpenText size={22} aria-hidden="true" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   <div class="card-heading pt-4">
                     <h3>{job.role}</h3>
                     <span>{job.period}</span>
@@ -188,12 +208,29 @@ import { profile } from "../../../../packages/app_data/profile";
             {
               educations.map((education) => (
                 <article class="timeline-card">
-                  <Image
-                    src={brandedItems[education.logo.key].logoUrl}
-                    alt={education.school}
-                    width={education.logo.width}
-                    height={education.logo.height}
-                  />
+                  <div class="flex items-start justify-between">
+                    <Image
+                      src={brandedItems[education.logo.key].logoUrl}
+                      alt={education.school}
+                      width={education.logo.width}
+                      height={education.logo.height}
+                    />
+                    {education.documents && (
+                      <div class="doc-links">
+                        {education.documents.map((doc) => (
+                          <a
+                            href={doc}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={documentTitle(doc)}
+                            aria-label={`Open document: ${documentTitle(doc)}`}
+                          >
+                            <BookOpenText size={22} aria-hidden="true" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   <div class="card-heading pt-4">
                     <h3>{education.degree}</h3>
                     <span>{education.period}</span>
