@@ -1,4 +1,17 @@
 import type { APIRoute } from "astro";
+import { env } from "@portfolio/env/server";
+import { Resend } from "resend";
+
+const resend = new Resend(env.RESEND_API_KEY);
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
@@ -20,7 +33,22 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  console.log(name, email, message);
+  const { error } = await resend.emails.send({
+    from: "Portfolio contact form <portfolio@tarjousgeneraattori.pionblanc.fi>",
+    to: "janharkonen@gmail.com",
+    replyTo: email,
+    subject: `Portfolio contact form submission from ${name}`,
+    html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+    <p><strong>Message:</strong></p>
+    <p>${escapeHtml(message).replaceAll("\n", "<br>")}</p>`,
+  });
+
+  if (error) {
+    return new Response(JSON.stringify({ message: error.message }), {
+      status: 500,
+    });
+  }
 
   return new Response(JSON.stringify({ message: "Success!" }), {
     status: 200,

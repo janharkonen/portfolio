@@ -8,7 +8,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "production", "test"])
       .default("development"),
-    MONGO_URI: z.string(),
+    RESEND_API_KEY: z.string(),
   },
   runtimeEnv: process.env,
   emptyStringAsUndefined: true,

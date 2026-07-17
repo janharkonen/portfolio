@@ -274,15 +274,33 @@ import { profile } from "../../../../packages/app_data/profile";
       >
         <label class="contact-field">
           <span>Name</span>
-          <input type="text" name="name" autocomplete="name" required />
+          <input
+            type="text"
+            name="name"
+            autocomplete="name"
+            placeholder="Your name"
+            required
+          />
         </label>
         <label class="contact-field">
           <span>Email</span>
-          <input type="email" name="email" autocomplete="email" required />
+          <input
+            type="email"
+            name="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          />
         </label>
         <label class="contact-field">
           <span>Message</span>
-          <textarea name="message" rows="4" required></textarea>
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Hey Jan,
+
+I'd like to chat about..."
+            required></textarea>
         </label>
         <button
           class="button primary transition-transform duration-150 hover:scale-105"
