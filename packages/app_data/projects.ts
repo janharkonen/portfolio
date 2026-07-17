@@ -16,7 +16,7 @@ export const projects: Project[] = [
       "https://picapi.janharkonen.fi/api/pics/b8afaef81dd542f18eccb28a3a930315.png",
     year: "2026",
     description:
-      "AI-powered RAG-pipeline search engine for finnish travel destinations with customizable filters and sorting options.",
+      "Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album",
     tech: ["TANSTACK", "BUN", "CONVEX", "VERCEL", "R2"],
     initiallyHidden: false,
   },
