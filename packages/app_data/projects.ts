@@ -11,6 +11,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Speed reader",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/da64d53faf44458eb2d7f08676f05965.png",
+    year: "2026",
+    description:
+      "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
+    tech: ["REACT", "VERCEL"],
+    initiallyHidden: false,
+  },
+  {
     name: "Wedding site",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/b8afaef81dd542f18eccb28a3a930315.png",

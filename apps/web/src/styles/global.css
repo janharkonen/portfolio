@@ -123,7 +123,7 @@ html {
   justify-content: center;
   min-height: 48px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius);
   padding: 0 18px;
   font-weight: 800;
 }
@@ -326,15 +326,15 @@ html {
   --page: #f6f1e7;
   --surface: #fffaf0;
   --surface-strong: #fffaf0;
-  --ink: #1d2430;
+  --ink: #282d35;
   --muted: #6d716f;
-  --line: rgba(29, 36, 48, 0.24);
+  --line: rgba(58, 66, 80, 0.24);
   --accent: #365f8c;
   --accent-2: #d8c7a0;
   --radius: 2px;
-  --shadow: 0 18px 0 rgba(29, 36, 48, 0.05);
+  --shadow: 0 18px 0 rgba(58, 66, 80, 0.05);
   background:
-    linear-gradient(90deg, rgba(29, 36, 48, 0.06) 1px, transparent 1px) 0 0 /
+    linear-gradient(90deg, rgba(58, 66, 80, 0.06) 1px, transparent 1px) 0 0 /
       56px 56px,
     var(--page);
   counter-reset: project;
