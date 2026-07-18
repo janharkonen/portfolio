@@ -40,8 +40,8 @@ export const POST: APIRoute = async ({ request }) => {
     subject: `Portfolio contact form submission from ${name}`,
     html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-    <p><strong>Message:</strong></p>
     <p><strong>Source:</strong> tui</p>
+    <p><strong>Message:</strong></p>
     <p>${escapeHtml(message).replaceAll("\n", "<br>")}</p>`,
   });
 
