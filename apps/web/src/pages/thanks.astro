@@ -1,19 +1,119 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { ArrowLeft, Check } from "@lucide/astro";
 ---
 
 <Layout>
   <div class="portfolio-page">
-    <main>
-      <section class="section flex flex-col items-start gap-6 py-16">
-        <h1 class="mt-2 text-4xl leading-[1.05] tracking-[-0.06em]">
-          Thank you for your message. I'll get back to you as soon as possible
-        </h1>
-        <a
-          class="button primary transition-transform duration-150 hover:scale-105"
-          href="/">Back to home</a
-        >
+    <main class="thanks-shell">
+      <section class="thanks-card" aria-labelledby="thanks-heading">
+        <div class="status">
+          <span class="status-mark" aria-hidden="true">
+            <Check size={16} stroke-width={3} />
+          </span>
+          <p class="eyebrow">Message received</p>
+        </div>
+
+        <h1 id="thanks-heading">Thank you for reaching out.</h1>
+        <p class="thanks-copy">
+          Your message is in my inbox. I'll get back to you as soon as I can,
+          usually within a day or two.
+        </p>
+
+        <a class="button primary home-button" href="/">
+          <ArrowLeft size={18} aria-hidden="true" />
+          Back to home
+        </a>
       </section>
     </main>
   </div>
 </Layout>
+
+<style>
+  .thanks-shell {
+    display: grid;
+    width: min(var(--content-max), calc(100% - 32px));
+    min-height: calc(100vh - 96px);
+    place-items: center;
+    margin-inline: auto;
+    padding: 64px 0 80px;
+  }
+
+  .thanks-card {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: clamp(28px, 6vw, 48px);
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .status-mark {
+    display: inline-grid;
+    width: 28px;
+    height: 28px;
+    flex: none;
+    place-items: center;
+    background: var(--accent);
+    color: white;
+  }
+
+  .eyebrow {
+    margin: 0;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-wrap: balance;
+  }
+
+  .thanks-copy {
+    max-width: 470px;
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .home-button {
+    gap: 9px;
+    margin-top: 30px;
+    transition: transform 150ms ease;
+  }
+
+  .home-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .home-button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 660px) {
+    .thanks-shell {
+      width: min(100% - 24px, var(--content-max));
+      min-height: auto;
+      padding: 48px 0 64px;
+    }
+
+    .home-button {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-button {
+      transition: none;
+    }
+  }
+</style>
