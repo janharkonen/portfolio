@@ -15,12 +15,12 @@ import { ArrowLeft, Check } from "@lucide/astro";
         </div>
 
         <h1 id="thanks-heading">Thank you for reaching out.</h1>
-        <p class="thanks-copy">
-          Your message is in my inbox. I'll get back to you as soon as I can,
-          usually within a day or two.
-        </p>
+        <p class="thanks-copy">I'll get back to you as soon as I can</p>
 
-        <a class="button primary home-button" href="/">
+        <a
+          class="button primary home-button transition-transform duration-150 hover:scale-105"
+          href="/"
+        >
           <ArrowLeft size={18} aria-hidden="true" />
           Back to home
         </a>
@@ -34,7 +34,7 @@ import { ArrowLeft, Check } from "@lucide/astro";
     display: grid;
     width: min(var(--content-max), calc(100% - 32px));
     min-height: calc(100vh - 96px);
-    place-items: center;
+    place-items: start center;
     margin-inline: auto;
     padding: 64px 0 80px;
   }
@@ -87,11 +87,6 @@ import { ArrowLeft, Check } from "@lucide/astro";
   .home-button {
     gap: 9px;
     margin-top: 30px;
-    transition: transform 150ms ease;
-  }
-
-  .home-button:hover {
-    transform: translateY(-2px);
   }
 
   .home-button:focus-visible {
