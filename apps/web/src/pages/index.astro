@@ -404,36 +404,4 @@ I'd like to chat about..."
       closeTooltips();
     }
   });
-
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("contact-form-status");
-
-  form?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if (!(form instanceof HTMLFormElement) || !status) return;
-
-    status.textContent = "Sending…";
-    status.dataset.state = "pending";
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: new FormData(form),
-      });
-      const result = (await response.json()) as { message?: string };
-
-      if (!response.ok) {
-        status.textContent = result.message ?? "Something went wrong.";
-        status.dataset.state = "error";
-        return;
-      }
-
-      status.textContent = result.message ?? "Message sent.";
-      status.dataset.state = "success";
-      form.reset();
-    } catch {
-      status.textContent = "Could not send message. Please try again.";
-      status.dataset.state = "error";
-    }
-  });
 </script>

@@ -13,7 +13,7 @@ function escapeHtml(value: string): string {
     .replaceAll("'", "&#39;");
 }
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, redirect }) => {
   const data = await request.formData();
   const name = data.get("name");
   const email = data.get("email");
@@ -50,7 +50,5 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  return new Response(JSON.stringify({ message: "Success!" }), {
-    status: 200,
-  });
+  return redirect("/thanks", 303);
 };
