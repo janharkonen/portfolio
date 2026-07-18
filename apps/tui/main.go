@@ -43,7 +43,7 @@ func main() {
 	host := envOr("TUI_HOST", "0.0.0.0")
 	port := envOr("TUI_PORT", "23234")
 	keyPath := envOr("TUI_HOSTKEY_PATH", ".ssh/id_ed25519")
-	contactURL := envOr("TUI_CONTACT_URL", "https://janharkonen.fi/api/contact")
+	contactURL := envOr("TUI_CONTACT_URL", "https://janharkonen.fi/api/contact_tui")
 
 	srv, err := wish.NewServer(
 		wish.WithAddress(net.JoinHostPort(host, port)),
