@@ -528,6 +528,11 @@ export const brandedItems = {
     displayName: "Astro",
     logoUrl: "/logos/astro.svg",
   },
+  BUBBLETEA: {
+    displayName: "Bubble Tea",
+    logoUrl:
+      "https://picapi.janharkonen.fi/api/pics/2ea8f16731e74b1d9c44708ac276d19b.png",
+  },
 } satisfies Record<string, BrandedItem>;
 
 export type BrandedItemKey = keyof typeof brandedItems;

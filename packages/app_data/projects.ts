@@ -11,6 +11,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "TUI portfolio",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/50c355ae6e6240429c6e526a0e056ebc.png",
+    year: "2026",
+    description:
+      "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
+    tech: ["GOLANG", "BUBBLETEA", "HETZNER"],
+    featured: false,
+  },
+  {
     name: "HSL real time",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/2d0e98319f9f42428c86b2d9cf7eb868.png",
@@ -40,7 +50,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    name: "AI traveling search engine",
+    name: "kotimaassa.fi",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/b0392792a586411ba877c3fa7b18727c.png",
     year: "2025-2026",
