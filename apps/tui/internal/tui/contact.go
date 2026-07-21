@@ -44,13 +44,13 @@ type contactModel struct {
 
 func newContactModel(p data.Profile, s Styles, endpoint string) contactModel {
 	name := textinput.New()
-	name.Placeholder = "Ada Lovelace"
+	name.Placeholder = "Your name"
 	name.CharLimit = 100
 	email := textinput.New()
-	email.Placeholder = "ada@example.com"
+	email.Placeholder = "you@example.com"
 	email.CharLimit = 100
 	message := textarea.New()
-	message.Placeholder = "Hi Jan, ..."
+	message.Placeholder = "Hi Jan, \n\nI'd like to chat about..."
 	message.CharLimit = 2000
 	message.SetHeight(5)
 	message.ShowLineNumbers = false
