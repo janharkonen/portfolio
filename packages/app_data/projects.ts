@@ -40,19 +40,10 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    name: "Secure receipt share",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/9140b5ac8a4240aeb5845e88d05a2c1f.png",
-    year: "2026",
-    description: "Secure way to share receipts with colleagues.",
-    tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
-    featured: false,
-  },
-  {
     name: "AI traveling search engine",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/b0392792a586411ba877c3fa7b18727c.png",
-    year: "2025",
+    year: "2025-2026",
     description:
       "AI-powered search engine for Finnish travel destinations with customizable filters and sorting options using RAG-pipeline",
     tech: [
@@ -64,6 +55,15 @@ export const projects: Project[] = [
       "BETTERAUTH",
       "RAILWAY",
     ],
+    featured: true,
+  },
+  {
+    name: "Secure receipt share",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/9140b5ac8a4240aeb5845e88d05a2c1f.png",
+    year: "2026",
+    description: "Secure way to share receipts with colleagues.",
+    tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
     featured: true,
   },
   {
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
     tech: ["NEXTJS", "CONVEX", "CLERK", "VERCEL"],
-    featured: true,
+    featured: false,
   },
   {
     name: "Piggybank",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     description:
       "A tool to search and filter a vast array of products blazingly fast",
     tech: ["NEXTJS", "GOLANG", "REDIS", "LUA", "DOCKER", "HETZNER"],
-    featured: true,
+    featured: false,
   },
   {
     name: "cdx",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
-    featured: false,
+    featured: true,
   },
   {
     name: "PICAPI",
