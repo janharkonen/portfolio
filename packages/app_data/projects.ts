@@ -6,7 +6,7 @@ export type Project = {
   year: string;
   description: string;
   tech: BrandedItemKey[];
-  initiallyHidden: boolean;
+  featured: boolean;
 };
 
 export const projects: Project[] = [
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     year: "2026",
     description: "Real-time vehicle locations for Helsinki public transport.",
     tech: ["REACT", "VERCEL"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "Speed reader",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     description:
       "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
     tech: ["REACT", "VERCEL"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "Wedding site",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     description:
       "Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album",
     tech: ["REACT", "TANSTACK_ROUTER", "BUN", "CONVEX", "VERCEL", "R2"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "Secure receipt share",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
     tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "AI traveling search engine",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
       "BETTERAUTH",
       "RAILWAY",
     ],
-    initiallyHidden: false,
+    featured: true,
   },
   {
     name: "Trip planner",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     description:
       "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",
     tech: ["NEXTJS", "BUN", "CONVEX", "VERCEL"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "SyncSpace",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
     tech: ["NEXTJS", "CONVEX", "CLERK", "VERCEL"],
-    initiallyHidden: false,
+    featured: true,
   },
   {
     name: "Piggybank",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     year: "2025",
     description: "Personal finance tracker",
     tech: ["NEXTJS", "CONVEX", "GOLANG", "NEON_OLD", "POSTGRESQL"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "ÉclairDB",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     description:
       "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
     tech: ["VUE", "GOLANG", "GITHUBACTIONS", "AWS"],
-    initiallyHidden: false,
+    featured: true,
   },
   {
     name: "One source of truth",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     description:
       "A tool to search and filter a vast array of products blazingly fast",
     tech: ["NEXTJS", "GOLANG", "REDIS", "LUA", "DOCKER", "HETZNER"],
-    initiallyHidden: false,
+    featured: true,
   },
   {
     name: "cdx",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "PICAPI",
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     description:
       "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
     tech: ["VANILLAJS", "PYTHON", "SQLITE", "HETZNER"],
-    initiallyHidden: false,
+    featured: true,
   },
   {
     name: "Progress tracker",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     description:
       "Web application to track the progress level of listed items for each user in real time using websockets",
     tech: ["SVELTE", "BUN", "REDIS", "DOCKER", "GITHUBACTIONS", "AZURE"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "Offer generator",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     description:
       "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",
     tech: ["REACT", "PYTHON", "POSTGRESQL", "DOCKER", "HETZNER"],
-    initiallyHidden: false,
+    featured: true,
   },
   {
     name: "Portfolio site",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
       "https://picapi.janharkonen.fi/api/pics/8a9385dbafde4f59869a97005b571241.png",
     description: "This very website. A personal full stack developer portfolio",
     tech: ["ASTRO", "TAILWIND", "RAILWAY"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "Progress tracker",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     year: "2021",
     description: "Mobile application progress tracker",
     tech: ["JAVA"],
-    initiallyHidden: false,
+    featured: false,
   },
   {
     name: "Lens and mirror simulator",
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     description:
       "Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors",
     tech: ["PYTHON"],
-    initiallyHidden: false,
+    featured: false,
   },
 ];
 

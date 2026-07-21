@@ -252,14 +252,25 @@ import { profile } from "../../../../packages/app_data/profile";
             id="projects-heading"
             class="mt-2 text-4xl leading-[1.05] tracking-[-0.06em]"
           >
-            Personal projects
+            Featured projects
           </h2>
         </div>
+
+        <input
+          type="checkbox"
+          id="show-all-projects"
+          class="projects-expand-toggle"
+        />
 
         <div class="project-grid pt-4">
           {
             projects.map((project) => (
-              <article class="project-card">
+              <article
+                class:list={[
+                  "project-card",
+                  { "project-card--hidden": !project.featured },
+                ]}
+              >
                 <Image
                   src={project.imageUrl}
                   alt={`${project.name} preview`}
@@ -281,6 +292,14 @@ import { profile } from "../../../../packages/app_data/profile";
             ))
           }
         </div>
+
+        {
+          projects.some((project) => !project.featured) && (
+            <label for="show-all-projects" class="projects-show-all">
+              Show all
+            </label>
+          )
+        }
       </section>
     </main>
 

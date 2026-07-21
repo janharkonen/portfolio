@@ -118,7 +118,7 @@ func renderEducation(d data.Data, s Styles, width int) string {
 func renderProjects(d data.Data, s Styles, width int) string {
 	w := contentWidth(width)
 	var b strings.Builder
-	b.WriteString(s.SectionTitle.Render(fmt.Sprintf("Personal projects (%d)", len(d.Projects))))
+	b.WriteString(s.SectionTitle.Render(fmt.Sprintf("Featured projects (%d)", len(d.Projects))))
 	b.WriteString("\n")
 	for _, p := range d.Projects {
 		b.WriteString(card(s, w,

@@ -33,11 +33,11 @@ type Education struct {
 }
 
 type Project struct {
-	Name            string   `json:"name"`
-	Year            string   `json:"year"`
-	Description     string   `json:"description"`
-	Tech            []string `json:"tech"`
-	InitiallyHidden bool     `json:"initiallyHidden"`
+	Name        string   `json:"name"`
+	Year        string   `json:"year"`
+	Description string   `json:"description"`
+	Tech        []string `json:"tech"`
+	Featured    bool     `json:"featured"`
 }
 
 type Data struct {
