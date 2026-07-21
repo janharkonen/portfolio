@@ -9,6 +9,9 @@ import { educations } from "../../../../packages/app_data/education";
 import { experiences } from "../../../../packages/app_data/experience";
 import { projects } from "../../../../packages/app_data/projects";
 import { profile } from "../../../../packages/app_data/profile";
+
+const featuredProjects = projects.filter((project) => project.featured);
+const moreProjects = projects.filter((project) => !project.featured);
 ---
 
 <Layout>
@@ -256,21 +259,10 @@ import { profile } from "../../../../packages/app_data/profile";
           </h2>
         </div>
 
-        <input
-          type="checkbox"
-          id="show-all-projects"
-          class="projects-expand-toggle"
-        />
-
-        <div class="project-grid pt-4">
+        <div class="project-grid project-grid--featured pt-4">
           {
-            projects.map((project) => (
-              <article
-                class:list={[
-                  "project-card",
-                  { "project-card--hidden": !project.featured },
-                ]}
-              >
+            featuredProjects.map((project) => (
+              <article class="project-card">
                 <Image
                   src={project.imageUrl}
                   alt={`${project.name} preview`}
@@ -294,10 +286,35 @@ import { profile } from "../../../../packages/app_data/profile";
         </div>
 
         {
-          projects.some((project) => !project.featured) && (
-            <label for="show-all-projects" class="projects-show-all">
-              Show all
-            </label>
+          moreProjects.length > 0 && (
+            <details class="projects-more">
+              <summary class="projects-show-all">Show all</summary>
+              <div class="project-grid project-grid--more pt-4">
+                {
+                  moreProjects.map((project) => (
+                    <article class="project-card project-card--compact">
+                      <Image
+                        src={project.imageUrl}
+                        alt={`${project.name} preview`}
+                        width={640}
+                        height={360}
+                        class="mb-[14px] block aspect-video w-full rounded-[calc(var(--radius)-4px)] object-cover"
+                      />
+                      <div class="card-heading">
+                        <h3>{project.name}</h3>
+                        <span>{project.year}</span>
+                      </div>
+                      <p>{project.description}</p>
+                      <div class="tech-row">
+                        {project.tech.map((tech) => (
+                          <Logo skill={tech} />
+                        ))}
+                      </div>
+                    </article>
+                  ))
+                }
+              </div>
+            </details>
           )
         }
       </section>
