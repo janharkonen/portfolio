@@ -324,7 +324,7 @@ export const brandedItems = {
   },
   GITKRAKEN: {
     displayName: "GitKraken",
-    logoUrl: "https://cdn.worldvectorlogo.com/logos/gitkraken.svg",
+    logoUrl: "/logos/gitkraken.svg",
   },
   INFLUXDB: {
     displayName: "InfluxDB",
@@ -342,8 +342,7 @@ export const brandedItems = {
   },
   CSCMAHTI: {
     displayName: "CSC Mahti",
-    logoUrl:
-      "https://e7.pngegg.com/pngimages/796/388/png-clipart-kajaani-university-of-applied-sciences-csc-it-center-for-science-physics-information-technology-science-purple-angle-thumbnail.png",
+    logoUrl: "/logos/CSC_logo_no_text.svg",
   },
   MATLAB: {
     displayName: "Matlab",
