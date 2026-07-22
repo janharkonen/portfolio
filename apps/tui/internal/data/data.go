@@ -11,7 +11,7 @@ type Profile struct {
 	Line     string `json:"line"`
 	Email    string `json:"email"`
 	Phone    string `json:"phone"`
-	Github   string `json:"github"`
+	GitHub   string `json:"github"`
 	Linkedin string `json:"linkedin"`
 	Scholar  string `json:"scholar"`
 	CV       string `json:"cv"`

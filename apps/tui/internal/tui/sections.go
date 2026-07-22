@@ -55,7 +55,7 @@ func renderHome(d data.Data, s Styles, width int) string {
 	b.WriteString("\n\n")
 
 	links := [][2]string{
-		{"github", p.Github},
+		{"github", p.GitHub},
 		{"linkedin", p.Linkedin},
 		{"scholar", p.Scholar},
 		{"cv", p.CV},

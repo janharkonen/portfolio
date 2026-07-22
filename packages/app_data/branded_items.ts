@@ -349,11 +349,11 @@ export const brandedItems = {
     logoUrl: "/logos/matlab.svg",
   },
   GITHUB: {
-    displayName: "Github",
+    displayName: "GitHub",
     logoUrl: "/logos/github.svg",
   },
   GITHUBCOPILOT: {
-    displayName: "Github Co-Pilot",
+    displayName: "GitHub Co-Pilot",
     logoUrl: "/logos/githubcopilot.svg",
   },
   EMACS: {
@@ -407,7 +407,7 @@ export const brandedItems = {
     logoUrl: "/logos/vue.svg",
   },
   GITHUBACTIONS: {
-    displayName: "Github Actions",
+    displayName: "GitHub Actions",
     logoUrl:
       "https://picapi.janharkonen.fi/api/pics/370b9fb8d56e42a9a4f72492fbcfc704.png?BG=110",
   },
