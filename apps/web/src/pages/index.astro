@@ -338,10 +338,10 @@ const moreProjects = projects.filter((project) => !project.featured);
             <Mail size={16} aria-hidden="true" />
             {profile.email}
           </a>
-          <span>
+          <a href={`tel:${profile.phone.replace(/\s+/g, "")}`}>
             <Phone size={16} aria-hidden="true" />
             {profile.phone}
-          </span>
+          </a>
         </div>
       </div>
 
