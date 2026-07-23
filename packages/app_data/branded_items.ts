@@ -305,6 +305,10 @@ export const brandedItems = {
     logoUrl:
       "https://picapi.janharkonen.fi/api/pics/af0c169f9566447f9a2a594a45cb9659.svg",
   },
+  RESEND: {
+    displayName: "Resend",
+    logoUrl: "/logos/resend.svg",
+  },
   AWS: {
     displayName: "AWS",
     logoUrl: "/logos/aws.svg",
