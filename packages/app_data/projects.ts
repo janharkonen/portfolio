@@ -150,7 +150,7 @@ export const projects: Project[] = [
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
-    featured: true,
+    featured: false,
   },
   {
     name: "PICAPI",
