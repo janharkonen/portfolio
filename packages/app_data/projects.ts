@@ -29,16 +29,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "TUI portfolio",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/50c355ae6e6240429c6e526a0e056ebc.png",
-    year: "2026",
-    description:
-      "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
-    tech: ["GOLANG", "BUBBLETEA", "HETZNER"],
-    featured: false,
-  },
-  {
     name: "HSL real time",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/2d0e98319f9f42428c86b2d9cf7eb868.png",
@@ -86,6 +76,16 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "TUI portfolio",
+    imageUrl:
+      "https://picapi.janharkonen.fi/api/pics/50c355ae6e6240429c6e526a0e056ebc.png",
+    year: "2026",
+    description:
+      "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
+    tech: ["GOLANG", "BUBBLETEA", "HETZNER"],
+    featured: true,
+  },
+  {
     name: "Secure receipt share",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/9140b5ac8a4240aeb5845e88d05a2c1f.png",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
     tech: ["NEXTJS", "CONVEX", "CLERK", "VERCEL"],
-    featured: false,
+    featured: true,
   },
   {
     name: "Piggybank",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     description:
       "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
     tech: ["VUE", "GOLANG", "GITHUBACTIONS", "AWS"],
-    featured: true,
+    featured: false,
   },
   {
     name: "One source of truth",
