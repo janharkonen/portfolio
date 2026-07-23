@@ -11,6 +11,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "LINJA",
+    imageUrl:
+      "https://flask-production-99edc.up.railway.app/api/pics/7fd6ead20cf14c9f809f3eb2203123ee.png",
+    year: "2026",
+    description:
+      "AI-powered tool for managing live music events. Includes artist, event and venue management as well as ticket sales.",
+    tech: [
+      "TANSTACK_START",
+      "REACT",
+      "CONVEX",
+      "BETTERAUTH",
+      "RESEND",
+      "RAILWAY",
+      "STRIPE",
+    ],
+    featured: true,
+  },
+  {
     name: "TUI portfolio",
     imageUrl:
       "https://picapi.janharkonen.fi/api/pics/50c355ae6e6240429c6e526a0e056ebc.png",
@@ -74,7 +92,7 @@ export const projects: Project[] = [
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
     tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
-    featured: true,
+    featured: false,
   },
   {
     name: "Trip planner",
