@@ -12,8 +12,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "LINJA",
-    imageUrl:
-      "https://flask-production-99edc.up.railway.app/api/pics/7fd6ead20cf14c9f809f3eb2203123ee.png",
+    imageUrl: "/projects/linja-2026.webp",
     year: "2026",
     description:
       "AI-powered tool for managing live music events. Includes artist, event and venue management as well as ticket sales.",
@@ -30,8 +29,7 @@ export const projects: Project[] = [
   },
   {
     name: "HSL real time",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/2d0e98319f9f42428c86b2d9cf7eb868.png",
+    imageUrl: "/projects/hsl-real-time-2026.webp",
     year: "2026",
     description: "Real-time vehicle locations for Helsinki public transport.",
     tech: ["REACT", "VERCEL"],
@@ -39,8 +37,7 @@ export const projects: Project[] = [
   },
   {
     name: "Speed reader",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/da64d53faf44458eb2d7f08676f05965.png",
+    imageUrl: "/projects/speed-reader-2026.webp",
     year: "2026",
     description:
       "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
@@ -49,8 +46,7 @@ export const projects: Project[] = [
   },
   {
     name: "Wedding site",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/b8afaef81dd542f18eccb28a3a930315.png",
+    imageUrl: "/projects/wedding-site-2026.webp",
     year: "2026",
     description:
       "Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album",
@@ -59,8 +55,7 @@ export const projects: Project[] = [
   },
   {
     name: "kotimaassa.fi",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/b0392792a586411ba877c3fa7b18727c.png",
+    imageUrl: "/projects/kotimaassa-fi-2025-2026.webp",
     year: "2025-2026",
     description:
       "AI-powered search engine for Finnish travel destinations with customizable filters and sorting options using RAG-pipeline",
@@ -77,8 +72,7 @@ export const projects: Project[] = [
   },
   {
     name: "TUI portfolio",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/50c355ae6e6240429c6e526a0e056ebc.png",
+    imageUrl: "/projects/tui-portfolio-2026.webp",
     year: "2026",
     description:
       "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
@@ -87,8 +81,7 @@ export const projects: Project[] = [
   },
   {
     name: "Secure receipt share",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/9140b5ac8a4240aeb5845e88d05a2c1f.png",
+    imageUrl: "/projects/secure-receipt-share-2026.webp",
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
     tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
@@ -96,8 +89,7 @@ export const projects: Project[] = [
   },
   {
     name: "Trip planner",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/2214f68ddb044c35acf74d0f56237128.png",
+    imageUrl: "/projects/trip-planner-2025.webp",
     year: "2025",
     description:
       "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",
@@ -106,8 +98,7 @@ export const projects: Project[] = [
   },
   {
     name: "SyncSpace",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/743aaa9e749842d589d26abf4cfef026.png",
+    imageUrl: "/projects/syncspace-2025.webp",
     year: "2025",
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
@@ -116,8 +107,7 @@ export const projects: Project[] = [
   },
   {
     name: "Piggybank",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/1d4685d428ef40e88362bf6fff5e2883.png",
+    imageUrl: "/projects/piggybank-2025.webp",
     year: "2025",
     description: "Personal finance tracker",
     tech: ["NEXTJS", "CONVEX", "GOLANG", "NEON_OLD", "POSTGRESQL"],
@@ -125,8 +115,7 @@ export const projects: Project[] = [
   },
   {
     name: "ÉclairDB",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/dfc3ddcb9eb44c1ab760920c4d36610a.png",
+    imageUrl: "/projects/eclairdb-2025.webp",
     year: "2025",
     description:
       "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
@@ -135,8 +124,7 @@ export const projects: Project[] = [
   },
   {
     name: "One source of truth",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/3a055a19c26743a2a2fc18bf41b41cbf.png",
+    imageUrl: "/projects/one-source-of-truth-2025.webp",
     year: "2025",
     description:
       "A tool to search and filter a vast array of products blazingly fast",
@@ -145,8 +133,7 @@ export const projects: Project[] = [
   },
   {
     name: "cdx",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/e7d1b08fd20847abb202b427a8e8f2ba.png",
+    imageUrl: "/projects/cdx-2025.webp",
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
@@ -154,8 +141,7 @@ export const projects: Project[] = [
   },
   {
     name: "PICAPI",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/d40795b1bb8b4987b965e11d241bbf78.png",
+    imageUrl: "/projects/picapi-2025.webp",
     year: "2025",
     description:
       "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
@@ -164,8 +150,7 @@ export const projects: Project[] = [
   },
   {
     name: "Progress tracker",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/6cbf8b836d0c4d3c89c2c4d23dba1281.png",
+    imageUrl: "/projects/progress-tracker-2025.webp",
     year: "2025",
     description:
       "Web application to track the progress level of listed items for each user in real time using websockets",
@@ -174,8 +159,7 @@ export const projects: Project[] = [
   },
   {
     name: "Offer generator",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/3f7e838a1aad493ab7f7176bbb203620.png?BGc=grey&BG=120",
+    imageUrl: "/projects/offer-generator-2024-2025.webp",
     year: "2024–2025",
     description:
       "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",
@@ -185,16 +169,14 @@ export const projects: Project[] = [
   {
     name: "Portfolio site",
     year: "2024–2026",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/8a9385dbafde4f59869a97005b571241.png",
+    imageUrl: "/projects/portfolio-site-2024-2026.webp",
     description: "This very website. A personal full stack developer portfolio",
     tech: ["ASTRO", "TAILWIND", "RAILWAY"],
     featured: false,
   },
   {
     name: "Progress tracker",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/4f345e3cad804de5b8dd7cb204aa99ad.png",
+    imageUrl: "/projects/progress-tracker-2021.webp",
     year: "2021",
     description: "Mobile application progress tracker",
     tech: ["JAVA"],
@@ -202,8 +184,7 @@ export const projects: Project[] = [
   },
   {
     name: "Lens and mirror simulator",
-    imageUrl:
-      "https://picapi.janharkonen.fi/api/pics/2dce025429824c5595654267c848d3de.png",
+    imageUrl: "/projects/lens-and-mirror-simulator-2015.webp",
     year: "2015",
     description:
       "Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors",
