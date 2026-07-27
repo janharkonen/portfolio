@@ -59,13 +59,17 @@ const data = {
     period,
     description,
   })),
-  projects: projects.map(({ name, year, description, tech, featured }) => ({
-    name,
-    year,
-    description,
-    tech: displayNames(tech),
-    featured,
-  })),
+  projects: projects.map(
+    ({ name, projectUrl, githubUrl, year, description, tech, featured }) => ({
+      name,
+      projectUrl,
+      githubUrl,
+      year,
+      description,
+      tech: displayNames(tech),
+      featured,
+    }),
+  ),
 };
 
 const outFile = join(

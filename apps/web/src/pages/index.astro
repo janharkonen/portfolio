@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
-import { BookOpenText, Mail, Phone, User } from "@lucide/astro";
+import { BookOpenText, ExternalLink, Mail, Phone, User } from "@lucide/astro";
 import { Image } from "astro:assets";
 import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { coreStack } from "../../../../packages/app_data/core_stack";
@@ -280,6 +280,35 @@ const moreProjects = projects.filter((project) => !project.featured);
                     <Logo skill={tech} />
                   ))}
                 </div>
+                {(project.projectUrl || project.githubUrl) && (
+                  <div class="project-links">
+                    {project.projectUrl && (
+                      <a
+                        href={project.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={16} aria-hidden="true" />
+                        View project
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          class="project-link-icon"
+                          src="/logos/github.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
               </article>
             ))
           }
@@ -309,6 +338,35 @@ const moreProjects = projects.filter((project) => !project.featured);
                         <Logo skill={tech} />
                       ))}
                     </div>
+                    {(project.projectUrl || project.githubUrl) && (
+                      <div class="project-links">
+                        {project.projectUrl && (
+                          <a
+                            href={project.projectUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink size={16} aria-hidden="true" />
+                            View project
+                          </a>
+                        )}
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              class="project-link-icon"
+                              src="/logos/github.svg"
+                              alt=""
+                              aria-hidden="true"
+                            />
+                            GitHub
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </article>
                 ))}
               </div>

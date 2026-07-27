@@ -3,6 +3,8 @@ import type { BrandedItemKey } from "./branded_items";
 export type Project = {
   name: string;
   imageUrl: string;
+  projectUrl?: string;
+  githubUrl?: string;
   year: string;
   description: string;
   tech: BrandedItemKey[];
@@ -13,6 +15,7 @@ export const projects: Project[] = [
   {
     name: "LINJA",
     imageUrl: "/projects/linja-2026.webp",
+    projectUrl: "https://linja.ai",
     year: "2026",
     description:
       "AI-powered tool for managing live music events. Includes artist, event and venue management as well as ticket sales.",
@@ -30,6 +33,7 @@ export const projects: Project[] = [
   {
     name: "HSL real time",
     imageUrl: "/projects/hsl-real-time-2026.webp",
+    projectUrl: "https://hslrealtime.pionblanc.fi",
     year: "2026",
     description: "Real-time vehicle locations for Helsinki public transport.",
     tech: ["REACT", "VERCEL"],
@@ -38,6 +42,7 @@ export const projects: Project[] = [
   {
     name: "Speed reader",
     imageUrl: "/projects/speed-reader-2026.webp",
+    projectUrl: "https://speedread.pionblanc.fi",
     year: "2026",
     description:
       "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
@@ -56,6 +61,7 @@ export const projects: Project[] = [
   {
     name: "matkalla.kotimaassa.fi",
     imageUrl: "/projects/kotimaassa-fi-2025-2026.webp",
+    projectUrl: "https://matkalla.kotimaassa.fi",
     year: "2025-2026",
     description:
       "AI-powered search engine for Finnish travel destinations with customizable filters and sorting options using RAG-pipeline",
@@ -82,6 +88,7 @@ export const projects: Project[] = [
   {
     name: "Secure receipt share",
     imageUrl: "/projects/secure-receipt-share-2026.webp",
+    projectUrl: "https://securereceiptshare.janharkonen.fi",
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
     tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
@@ -99,6 +106,7 @@ export const projects: Project[] = [
   {
     name: "SyncSpace",
     imageUrl: "/projects/syncspace-2025.webp",
+    projectUrl: "https://syncspace.janharkonen.fi",
     year: "2025",
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
@@ -134,6 +142,7 @@ export const projects: Project[] = [
   {
     name: "cdx",
     imageUrl: "/projects/cdx-2025.webp",
+    githubUrl: "https://github.com/janharkonen/cdx",
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
@@ -142,6 +151,7 @@ export const projects: Project[] = [
   {
     name: "PICAPI",
     imageUrl: "/projects/picapi-2025.webp",
+    projectUrl: "https://picapi.janharkonen.fi",
     year: "2025",
     description:
       "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
@@ -160,6 +170,7 @@ export const projects: Project[] = [
   {
     name: "Offer generator",
     imageUrl: "/projects/offer-generator-2024-2025.webp",
+    projectUrl: "https://uusi.tarjousgeneraattori.pionblanc.fi",
     year: "2024–2025",
     description:
       "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",

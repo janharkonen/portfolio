@@ -421,6 +421,46 @@ html {
   line-height: 1.5;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.project-links a:hover {
+  color: white;
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.project-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-link-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
 .project-card--compact .tech-row {
   padding-top: 14px;
 }
@@ -569,8 +609,9 @@ html {
   box-shadow: 4px 4px 0 rgba(40, 45, 53, 0.12);
   color: #56f28b;
   padding: 11px 14px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
   font-size: clamp(0.72rem, 2.8vw, 0.88rem);
   line-height: 1.2;
   white-space: nowrap;
