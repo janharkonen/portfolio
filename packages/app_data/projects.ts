@@ -54,7 +54,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    name: "kotimaassa.fi",
+    name: "matkalla.kotimaassa.fi",
     imageUrl: "/projects/kotimaassa-fi-2025-2026.webp",
     year: "2025-2026",
     description:
