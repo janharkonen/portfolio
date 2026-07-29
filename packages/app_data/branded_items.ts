@@ -473,6 +473,10 @@ export const brandedItems = {
     displayName: "Neon",
     logoUrl: "/logos/neon.svg",
   },
+  SUPABASE: {
+    displayName: "Supabase",
+    logoUrl: "/logos/supabase.svg",
+  },
   STRIPE: {
     displayName: "Stripe",
     logoUrl: "/logos/stripe.svg",

@@ -27,6 +27,7 @@ export const projects: Project[] = [
       "RESEND",
       "RAILWAY",
       "STRIPE",
+      "SUPABASE",
     ],
     featured: true,
   },
