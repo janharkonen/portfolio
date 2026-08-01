@@ -8,5 +8,5 @@ export const profile = {
   github: "https://github.com/janharkonen",
   linkedin: "https://www.linkedin.com/in/janharkonen",
   scholar: "https://scholar.google.com/citations?hl=en&user=a5q61ooAAAAJ",
-  cv: "/pdf/resume.pdf",
+  cv: "/pdf/JanH_CV.pdf",
 };
