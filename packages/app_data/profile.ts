@@ -2,7 +2,7 @@ export const profile = {
   name: "Jan Härkönen",
   role: "Senior Full Stack Developer",
   location: "Helsinki, Finland 🇫🇮",
-  line: "Web apps and AI agents. Big fan of real time UIs, typesafety, performance and DX.",
+  line: "Web apps and AI. Big fan of real time UIs, typesafety, performance and DX.",
   email: "jan.harkonen@gmail.com",
   phone: "+358 50 46 46 745",
   github: "https://github.com/janharkonen",
