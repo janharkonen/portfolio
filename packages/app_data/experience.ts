@@ -25,6 +25,7 @@ export const experiences: Experience[] = [
       "NODEJS_OLD",
       "POSTGRESQL",
       "DOCKER",
+      "KUBERNETES",
       "GCP",
     ],
   },
