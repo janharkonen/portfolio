@@ -636,10 +636,12 @@ html {
 }
 
 .project-detail {
-  display: grid;
   width: min(760px, calc(100% - 32px));
-  gap: 18px;
   margin: 52px auto 80px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: clamp(22px, 5vw, 42px);
+  box-shadow: 0 16px 34px rgba(24, 33, 45, 0.07);
 }
 
 .project-detail__back {
@@ -647,7 +649,7 @@ html {
   width: fit-content;
   align-items: center;
   gap: 7px;
-  margin-bottom: 6px;
+  margin-bottom: 36px;
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 700;
@@ -657,17 +659,12 @@ html {
   color: var(--ink);
 }
 
-.project-detail__hero,
-.project-detail > section {
-  border: 1px solid var(--line);
-  background: var(--surface);
-  padding: clamp(22px, 5vw, 42px);
-  box-shadow: 0 16px 34px rgba(24, 33, 45, 0.07);
-}
-
-.project-detail__hero .eyebrow {
+.project-detail > p:first-of-type {
   margin: 0 0 12px;
   color: var(--accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .project-detail h1 {
@@ -679,7 +676,7 @@ html {
   text-wrap: balance;
 }
 
-.project-detail__lead {
+.project-detail h1 + p {
   max-width: 630px;
   margin: 22px 0 0;
   color: var(--muted);
@@ -687,29 +684,36 @@ html {
   line-height: 1.7;
 }
 
-.project-detail__hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 30px;
-  border: 1px solid var(--line);
-  object-fit: cover;
-}
-
-.project-detail h2 {
-  margin: 0;
-  font-size: clamp(1.45rem, 4vw, 2rem);
-  letter-spacing: -0.04em;
-}
-
-.project-detail section > p,
-.project-detail section > ul {
+.project-detail > p {
   margin: 16px 0 0;
   color: var(--muted);
   line-height: 1.75;
 }
 
-.project-detail section > ul {
+.project-detail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  object-fit: cover;
+}
+
+.project-detail h2 {
+  margin: 42px 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.project-detail > ul {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.project-detail > ul {
   padding-left: 1.25rem;
   list-style: disc;
 }

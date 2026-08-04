@@ -1,0 +1,14 @@
+---
+import { ArrowLeft } from "@lucide/astro";
+import Layout from "./Layout.astro";
+---
+
+<Layout>
+  <main class="project-detail">
+    <a class="project-detail__back" href="/#projects-heading">
+      <ArrowLeft size={16} aria-hidden="true" />
+      Back to projects
+    </a>
+    <slot />
+  </main>
+</Layout>
