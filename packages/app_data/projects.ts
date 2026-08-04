@@ -190,6 +190,7 @@ export const projects: Project[] = [
   {
     name: "Progress tracker",
     imageUrl: "/projects/progress-tracker-2021.webp",
+    readMore: "/progress-tracker-old",
     year: "2021",
     description: "Mobile application progress tracker",
     tech: ["JAVA"],
