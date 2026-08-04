@@ -690,7 +690,7 @@ html {
   line-height: 1.75;
 }
 
-.project-detail img {
+.project-detail > p > img {
   display: block;
   width: 100%;
   height: auto;
@@ -718,30 +718,9 @@ html {
   list-style: disc;
 }
 
-.project-detail__stack {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.project-detail__stack > div {
-  display: flex;
-  min-height: 76px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  border: 1px solid var(--line);
-  padding: 14px;
-}
-
-.project-detail__stack > div > span {
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.project-detail > ul .tech-logo {
+  margin-left: 4px;
+  vertical-align: middle;
 }
 
 .variant-3 {
@@ -883,9 +862,5 @@ html {
   .project-detail {
     width: min(100% - 24px, 760px);
     margin-top: 36px;
-  }
-
-  .project-detail__stack {
-    grid-template-columns: 1fr;
   }
 }
