@@ -3,15 +3,22 @@
     "name": "Jan Härkönen",
     "role": "Senior Full Stack Developer",
     "location": "Helsinki, Finland",
-    "line": "Writing software that's pleasant to look at",
+    "line": "Web apps and AI. Big fan of real time UIs, typesafety, performance and DX.",
     "email": "jan.harkonen@gmail.com",
     "phone": "+358 50 46 46 745",
     "github": "https://github.com/janharkonen",
     "linkedin": "https://www.linkedin.com/in/janharkonen",
     "scholar": "https://scholar.google.com/citations?hl=en&user=a5q61ooAAAAJ",
-    "cv": "https://janharkonen.fi/pdf/resume.pdf"
+    "cv": "https://janharkonen.fi/pdf/JanH_CV.pdf"
   },
-  "coreStack": ["React", "Go", "Python", "Convex", "Postgres", "Linux"],
+  "coreStack": [
+    "React",
+    "Go",
+    "Python",
+    "Convex",
+    "Postgres",
+    "Linux"
+  ],
   "experience": [
     {
       "role": "Software Developer",
@@ -25,6 +32,7 @@
         "Node.js",
         "Postgres",
         "Docker",
+        "Kubernetes",
         "Google Cloud"
       ]
     },
@@ -49,28 +57,46 @@
       "company": "Polycon Oy",
       "period": "2021–2024",
       "description": "Developing and maintaining software and databases for handling mobility aid items for Finnish hospital districts",
-      "tech": ["Delphi", "Microsoft SQL Server"]
+      "tech": [
+        "Delphi",
+        "Microsoft SQL Server"
+      ]
     },
     {
       "role": "Software Developer / Data Analyst",
       "company": "Semantum Oy",
       "period": "Feb 2020–Sep 2020",
       "description": "LCA dashboard for environmental impact assessment",
-      "tech": ["Java", "InfluxDB", "Docker", "Haskell"]
+      "tech": [
+        "Java",
+        "InfluxDB",
+        "Docker",
+        "Haskell"
+      ]
     },
     {
       "role": "Research Assistant",
       "company": "Aalto University School of Science",
       "period": "Jun 2019–Dec 2019",
       "description": "Simulating and calculating the annihilating electron-positron pair momentum density in a solid in the atomic scale using quantum Monte Carlo methods",
-      "tech": ["Fortran", "Quantum ESPRESSO", "CASINO", "CSC Mahti"]
+      "tech": [
+        "Fortran",
+        "Quantum ESPRESSO",
+        "CASINO",
+        "CSC Mahti"
+      ]
     },
     {
       "role": "Research Assistant",
       "company": "Aalto University School of Science",
       "period": "Summer 2018",
       "description": "Semiconductor enhancement factor simulation",
-      "tech": ["Fortran", "Quantum ESPRESSO", "CASINO", "CSC Mahti"]
+      "tech": [
+        "Fortran",
+        "Quantum ESPRESSO",
+        "CASINO",
+        "CSC Mahti"
+      ]
     }
   ],
   "education": [
@@ -95,24 +121,42 @@
   ],
   "projects": [
     {
-      "name": "TUI portfolio",
+      "name": "LINJA",
+      "projectUrl": "https://linja.ai",
       "year": "2026",
-      "description": "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
-      "tech": ["Go", "Bubble Tea", "Hetzner"],
-      "featured": false
+      "description": "AI-powered tool for managing live music events. Includes artist, event and venue management as well as ticket sales.",
+      "tech": [
+        "TanStack Start",
+        "React",
+        "Convex",
+        "Better Auth",
+        "Resend",
+        "Railway",
+        "Stripe",
+        "Supabase"
+      ],
+      "featured": true
     },
     {
       "name": "HSL real time",
+      "projectUrl": "https://hslrealtime.pionblanc.fi",
       "year": "2026",
       "description": "Real-time vehicle locations for Helsinki public transport.",
-      "tech": ["React", "Vercel"],
+      "tech": [
+        "React",
+        "Vercel"
+      ],
       "featured": false
     },
     {
       "name": "Speed reader",
+      "projectUrl": "https://speedread.pionblanc.fi",
       "year": "2026",
       "description": "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
-      "tech": ["React", "Vercel"],
+      "tech": [
+        "React",
+        "Vercel"
+      ],
       "featured": false
     },
     {
@@ -130,7 +174,8 @@
       "featured": false
     },
     {
-      "name": "kotimaassa.fi",
+      "name": "matkalla.kotimaassa.fi",
+      "projectUrl": "https://matkalla.kotimaassa.fi",
       "year": "2025-2026",
       "description": "AI-powered search engine for Finnish travel destinations with customizable filters and sorting options using RAG-pipeline",
       "tech": [
@@ -145,7 +190,19 @@
       "featured": true
     },
     {
+      "name": "TUI portfolio",
+      "year": "2026",
+      "description": "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
+      "tech": [
+        "Go",
+        "Bubble Tea",
+        "Hetzner"
+      ],
+      "featured": true
+    },
+    {
       "name": "Secure receipt share",
+      "projectUrl": "https://securereceiptshare.janharkonen.fi",
       "year": "2026",
       "description": "Secure way to share receipts with colleagues.",
       "tech": [
@@ -156,90 +213,150 @@
         "Better Auth",
         "Railway"
       ],
-      "featured": true
+      "featured": false
     },
     {
       "name": "Trip planner",
       "year": "2025",
       "description": "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",
-      "tech": ["Next.js", "Bun", "Convex", "Vercel"],
+      "tech": [
+        "Next.js",
+        "Bun",
+        "Convex",
+        "Vercel"
+      ],
       "featured": false
     },
     {
       "name": "SyncSpace",
+      "projectUrl": "https://syncspace.janharkonen.fi",
       "year": "2025",
       "description": "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
-      "tech": ["Next.js", "Convex", "Clerk", "Vercel"],
-      "featured": false
+      "tech": [
+        "Next.js",
+        "Convex",
+        "Clerk",
+        "Vercel"
+      ],
+      "featured": true
     },
     {
       "name": "Piggybank",
       "year": "2025",
       "description": "Personal finance tracker",
-      "tech": ["Next.js", "Convex", "Go", "Neon", "Postgres"],
+      "tech": [
+        "Next.js",
+        "Convex",
+        "Go",
+        "Neon",
+        "Postgres"
+      ],
       "featured": false
     },
     {
       "name": "ÉclairDB",
       "year": "2025",
       "description": "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
-      "tech": ["Vue", "Go", "GitHub Actions", "AWS"],
-      "featured": true
+      "tech": [
+        "Vue",
+        "Go",
+        "GitHub Actions",
+        "AWS"
+      ],
+      "featured": false
     },
     {
       "name": "One source of truth",
       "year": "2025",
       "description": "A tool to search and filter a vast array of products blazingly fast",
-      "tech": ["Next.js", "Go", "Redis", "Lua", "Docker", "Hetzner"],
+      "tech": [
+        "Next.js",
+        "Go",
+        "Redis",
+        "Lua",
+        "Docker",
+        "Hetzner"
+      ],
       "featured": false
     },
     {
       "name": "cdx",
+      "githubUrl": "https://github.com/janharkonen/cdx",
       "year": "2025",
       "description": "Bash CLI tool to cd into directories 10x faster",
-      "tech": ["Bash"],
-      "featured": true
+      "tech": [
+        "Bash"
+      ],
+      "featured": false
     },
     {
       "name": "PICAPI",
+      "projectUrl": "https://picapi.janharkonen.fi",
       "year": "2025",
       "description": "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
-      "tech": ["Vanilla Javascript", "Python", "SQLite", "Hetzner"],
+      "tech": [
+        "Vanilla Javascript",
+        "Python",
+        "SQLite",
+        "Hetzner"
+      ],
       "featured": true
     },
     {
       "name": "Progress tracker",
       "year": "2025",
       "description": "Web application to track the progress level of listed items for each user in real time using websockets",
-      "tech": ["Svelte", "Bun", "Redis", "Docker", "GitHub Actions", "Azure"],
+      "tech": [
+        "Svelte",
+        "Bun",
+        "Redis",
+        "Docker",
+        "GitHub Actions",
+        "Azure"
+      ],
       "featured": false
     },
     {
       "name": "Offer generator",
+      "projectUrl": "https://uusi.tarjousgeneraattori.pionblanc.fi",
       "year": "2024–2025",
       "description": "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",
-      "tech": ["React", "Python", "Postgres", "Docker", "Hetzner"],
+      "tech": [
+        "React",
+        "Python",
+        "Postgres",
+        "Docker",
+        "Hetzner"
+      ],
       "featured": true
     },
     {
       "name": "Portfolio site",
       "year": "2024–2026",
       "description": "This very website. A personal full stack developer portfolio",
-      "tech": ["Astro", "Tailwind CSS", "Railway"],
+      "tech": [
+        "Astro",
+        "Tailwind CSS",
+        "Railway"
+      ],
       "featured": false
     },
     {
       "name": "Progress tracker",
       "year": "2021",
       "description": "Mobile application progress tracker",
-      "tech": ["Java"],
+      "tech": [
+        "Java"
+      ],
       "featured": false
     },
     {
       "name": "Lens and mirror simulator",
       "year": "2015",
       "description": "Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors",
-      "tech": ["Python"],
+      "tech": [
+        "Python"
+      ],
       "featured": false
     }
   ]

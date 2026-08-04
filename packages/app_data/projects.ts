@@ -5,6 +5,7 @@ export type Project = {
   imageUrl: string;
   projectUrl?: string;
   githubUrl?: string;
+  readMore?: string;
   year: string;
   description: string;
   tech: BrandedItemKey[];
@@ -197,6 +198,7 @@ export const projects: Project[] = [
   {
     name: "Lens and mirror simulator",
     imageUrl: "/projects/lens-and-mirror-simulator-2015.webp",
+    readMore: "/lens-mirror-simulator",
     year: "2015",
     description:
       "Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors",

@@ -1,7 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
-import { BookOpenText, ExternalLink, Mail, Phone, User } from "@lucide/astro";
+import {
+  ArrowRight,
+  BookOpenText,
+  ExternalLink,
+  Mail,
+  Phone,
+  User,
+} from "@lucide/astro";
 import { Image } from "astro:assets";
 import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { coreStack } from "../../../../packages/app_data/core_stack";
@@ -280,7 +287,9 @@ const moreProjects = projects.filter((project) => !project.featured);
                     <Logo skill={tech} />
                   ))}
                 </div>
-                {(project.projectUrl || project.githubUrl) && (
+                {(project.projectUrl ||
+                  project.githubUrl ||
+                  project.readMore) && (
                   <div class="project-links">
                     {project.projectUrl && (
                       <a
@@ -305,6 +314,12 @@ const moreProjects = projects.filter((project) => !project.featured);
                           aria-hidden="true"
                         />
                         GitHub
+                      </a>
+                    )}
+                    {project.readMore && (
+                      <a class="project-read-more" href={project.readMore}>
+                        More
+                        <ArrowRight size={16} aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -338,7 +353,9 @@ const moreProjects = projects.filter((project) => !project.featured);
                         <Logo skill={tech} />
                       ))}
                     </div>
-                    {(project.projectUrl || project.githubUrl) && (
+                    {(project.projectUrl ||
+                      project.githubUrl ||
+                      project.readMore) && (
                       <div class="project-links">
                         {project.projectUrl && (
                           <a
@@ -363,6 +380,12 @@ const moreProjects = projects.filter((project) => !project.featured);
                               aria-hidden="true"
                             />
                             GitHub
+                          </a>
+                        )}
+                        {project.readMore && (
+                          <a class="project-read-more" href={project.readMore}>
+                            More
+                            <ArrowRight size={16} aria-hidden="true" />
                           </a>
                         )}
                       </div>

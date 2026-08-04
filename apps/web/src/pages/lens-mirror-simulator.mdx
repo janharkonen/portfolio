@@ -1,0 +1,77 @@
+---
+layout: ../layouts/Layout.astro
+---
+
+import { ArrowLeft } from "@lucide/astro";
+import Logo from "../components/Logo.astro";
+
+<main className="project-detail">
+  <a className="project-detail__back" href="/#projects-heading">
+    <ArrowLeft size={16} aria-hidden="true" />
+    Back to projects
+  </a>
+
+<header className="project-detail__hero">
+  <p className="eyebrow">2015</p>
+  <h1>Lens and mirror simulator</h1>
+  <p className="project-detail__lead">
+    A desktop application for visualizing how light behaves as it passes through
+    lenses and reflects from mirrors.
+  </p>
+  <img
+    src="/projects/lens-and-mirror-simulator-2015.webp"
+    alt="Lens and mirror simulator application"
+    width="640"
+    height="360"
+  />
+</header>
+
+<section aria-labelledby="overview-heading">
+  <h2 id="overview-heading">Overview</h2>
+  <p>
+    The Lens and Mirror Simulator is a desktop application that visualizes the
+    behavior of light as it passes through various optical elements. It allows
+    users to place lenses and mirrors of different shapes and properties on a
+    canvas and observe how light rays interact with them. It was created as a
+    part of my programming course in university (Y2).
+  </p>
+</section>
+
+<section aria-labelledby="features-heading">
+  <h2 id="features-heading">Key Features</h2>
+  <ul>
+    <li>Real-time simulation of light ray trajectories</li>
+    <li>Optical elements (lenses and mirrors) could be dragged and dropped</li>
+    <li>Customizable lens and mirror properties</li>
+  </ul>
+</section>
+
+<section aria-labelledby="stack-heading">
+  <h2 id="stack-heading">Tech stack</h2>
+  <div className="project-detail__stack">
+    <div>
+      <span>Programming language</span>
+      <Logo skill="PYTHON" />
+    </div>
+    <div>
+      <span>UI library</span>
+      <Logo skill="PYQT4" />
+    </div>
+    <div>
+      <span>Editor of choice</span>
+      <Logo skill="SUBLIME" />
+    </div>
+    <div>
+      <span>Version control</span>
+      <Logo skill="GIT" />
+    </div>
+  </div>
+</section>
+
+  <section aria-labelledby="learned-heading">
+    <h2 id="learned-heading">What I learned</h2>
+    <ul>
+      <li>Building a desktop GUI</li>
+    </ul>
+  </section>
+</main>
