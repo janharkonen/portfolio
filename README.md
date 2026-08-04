@@ -1,42 +1,12 @@
-# portfolio
+# Portfolio
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Astro, Self, and more.
+This repository contains Jan Härkönen's personal portfolio. It presents his
+experience, projects, education, and contact details through both a website and
+an interactive terminal UI.
 
-## Features
+The portfolio is built as a pnpm and Turborepo monorepo. The web app uses Astro,
+TypeScript, and Tailwind CSS, while the terminal app is written in Go. Both apps
+are generated from the same shared TypeScript data package so their content
+stays in sync.
 
-- **TypeScript** - For type safety and improved developer experience
-- **Astro** - The web framework for content-driven websites
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **Turborepo** - Optimized monorepo build system
-
-## Getting Started
-
-First, install the dependencies:
-
-```bash
-pnpm install
-```
-
-Then, run the development server:
-
-```bash
-pnpm run dev
-```
-
-Open [http://localhost:4321](http://localhost:4321) in your browser to see the fullstack application.
-
-## Project Structure
-
-```
-portfolio/
-├── apps/
-│   └── web/         # Fullstack application (Astro)
-├── packages/
-```
-
-## Available Scripts
-
-- `pnpm run dev`: Start all applications in development mode
-- `pnpm run build`: Build all applications
-- `pnpm run dev:web`: Start only the web application
-- `pnpm run check-types`: Check TypeScript types across all apps
+Run `pnpm install` and `pnpm dev` to start the apps locally.
