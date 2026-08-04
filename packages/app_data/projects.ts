@@ -183,6 +183,7 @@ export const projects: Project[] = [
     name: "Portfolio site",
     year: "2024–2026",
     imageUrl: "/projects/portfolio-site-2024-2026.webp",
+    readMore: "/portfolio-site",
     description: "This very website. A personal full stack developer portfolio",
     tech: ["ASTRO", "TAILWIND", "RAILWAY"],
     featured: false,
