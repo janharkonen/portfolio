@@ -83,7 +83,7 @@ export const projects: Project[] = [
     imageUrl: "/projects/tui-portfolio-2026.webp",
     year: "2026",
     description:
-      "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
+      "Terminal twin of this portfolio site (ssh terminal.janharkonen.fi).",
     tech: ["GOLANG", "BUBBLETEA", "HETZNER"],
     featured: true,
   },

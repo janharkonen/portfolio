@@ -192,7 +192,7 @@
     {
       "name": "TUI portfolio",
       "year": "2026",
-      "description": "Terminal twin of this porfolio site (ssh terminal.janharkonen.fi).",
+      "description": "Terminal twin of this portfolio site (ssh terminal.janharkonen.fi).",
       "tech": [
         "Go",
         "Bubble Tea",
