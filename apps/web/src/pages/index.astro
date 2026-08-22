@@ -337,13 +337,6 @@ const moreProjects = projects.filter((project) => !project.featured);
               <div class="project-grid project-grid--more pt-4">
                 {moreProjects.map((project) => (
                   <article class="project-card project-card--compact">
-                    <Image
-                      src={project.imageUrl}
-                      alt={`${project.name} preview`}
-                      width={640}
-                      height={360}
-                      class="mb-[18px] block aspect-video w-full max-w-md mx-auto object-cover"
-                    />
                     <div class="card-heading">
                       <h3>{project.name}</h3>
                       <span>{project.year}</span>
