@@ -21,18 +21,6 @@ export const educations: Education[] = [
     school: "Aalto University School of Science",
     period: "2018-2020",
     description: "Major: mathematics, minor: engineering physics",
-    documents: [
-      {
-        href: "/pdf/Jan_Harkonen_Masters_thesis.pdf",
-        description:
-          "Master's thesis: computing positron annihilation momentum densities in solids with quantum Monte Carlo",
-      },
-      {
-        href: "/pdf/Research_paper_as_co_author.pdf",
-        description:
-          "Peer-reviewed research paper I co-authored on positron annihilation simulations",
-      },
-    ],
   },
   {
     logo: { key: "KAIST", height: 60, width: 60 },
