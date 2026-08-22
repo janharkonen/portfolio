@@ -621,6 +621,7 @@ html {
 
 .terminal-invite__command {
   display: block;
+  appearance: none;
   border: 1px solid #232b23;
   border-radius: 3px;
   background: #050705;
@@ -631,8 +632,15 @@ html {
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     monospace;
   font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+  font-weight: 400;
   line-height: 1.2;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.terminal-invite__command:focus-visible {
+  outline: 2px solid #56f28b;
+  outline-offset: 3px;
 }
 
 .project-detail {

@@ -485,7 +485,16 @@ I'd like to chat about..."
           <path d="m61 40 9 9 8-10"></path>
         </svg>
       </div>
-      <code class="terminal-invite__command">ssh terminal.janharkonen.fi</code>
+      <button
+        type="button"
+        class="terminal-invite__command"
+        aria-label="Copy ssh terminal.janharkonen.fi"
+        data-command="ssh terminal.janharkonen.fi"
+      >
+        ssh terminal.janharkonen.fi
+      </button>
+      <span class="sr-only" aria-live="polite" data-terminal-invite-status
+      ></span>
     </aside>
   </div>
 </Layout>
@@ -519,4 +528,50 @@ I'd like to chat about..."
       closeTooltips();
     }
   });
+
+  const copyCommand = async (text: string) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+    } catch {
+      // Fall through to execCommand fallback.
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  };
+
+  const inviteButton = document.querySelector<HTMLButtonElement>(
+    ".terminal-invite__command",
+  );
+  const inviteStatus = document.querySelector<HTMLElement>(
+    "[data-terminal-invite-status]",
+  );
+
+  if (inviteButton) {
+    const command =
+      inviteButton.dataset.command ?? "ssh terminal.janharkonen.fi";
+    const label = inviteButton.textContent?.trim() || command;
+    let restoreTimer = 0;
+
+    inviteButton.addEventListener("click", async () => {
+      await copyCommand(command);
+      inviteButton.textContent = "Copied!";
+      if (inviteStatus) inviteStatus.textContent = "Copied to clipboard";
+      window.clearTimeout(restoreTimer);
+      restoreTimer = window.setTimeout(() => {
+        inviteButton.textContent = label;
+        if (inviteStatus) inviteStatus.textContent = "";
+      }, 1500);
+    });
+  }
 </script>
