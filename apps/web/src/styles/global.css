@@ -620,19 +620,93 @@ html {
 }
 
 .terminal-invite__command {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   border: 1px solid #232b23;
   border-radius: 3px;
   background: #050705;
   box-shadow: 4px 4px 0 rgba(40, 45, 53, 0.12);
   color: #56f28b;
-  padding: 11px 14px;
+  padding: 8px 8px 8px 14px;
   font-family:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     monospace;
   font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+  font-weight: 400;
   line-height: 1.2;
   white-space: nowrap;
+}
+
+.terminal-invite__command code {
+  font: inherit;
+}
+
+.terminal-invite__copy {
+  position: relative;
+  display: grid;
+  place-items: center;
+  appearance: none;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.72;
+}
+
+.terminal-invite__copy:hover,
+.terminal-invite__copy:focus-visible,
+.terminal-invite__copy.is-copied {
+  opacity: 1;
+}
+
+.terminal-invite__copy:focus-visible {
+  outline: 2px solid #56f28b;
+  outline-offset: 2px;
+}
+
+.terminal-invite__copied {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  z-index: 2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #122016;
+  color: #56f28b;
+  font-family: Inter, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(5, 7, 5, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    visibility 0.15s;
+}
+
+.terminal-invite__copied::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 5px solid transparent;
+  border-top-color: #122016;
+  transform: translateX(-50%);
+}
+
+.terminal-invite__copy.is-copied .terminal-invite__copied {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .project-detail {

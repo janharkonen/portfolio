@@ -4,6 +4,7 @@ import Logo from "../components/Logo.astro";
 import {
   ArrowRight,
   BookOpenText,
+  Copy,
   ExternalLink,
   Mail,
   Phone,
@@ -485,7 +486,20 @@ I'd like to chat about..."
           <path d="m61 40 9 9 8-10"></path>
         </svg>
       </div>
-      <code class="terminal-invite__command">ssh terminal.janharkonen.fi</code>
+      <div class="terminal-invite__command">
+        <code>ssh terminal.janharkonen.fi</code>
+        <button
+          type="button"
+          class="terminal-invite__copy"
+          aria-label="Copy ssh terminal.janharkonen.fi"
+          data-command="ssh terminal.janharkonen.fi"
+        >
+          <Copy size={14} aria-hidden="true" />
+          <span class="terminal-invite__copied" aria-hidden="true">Copied</span>
+        </button>
+      </div>
+      <span class="sr-only" aria-live="polite" data-terminal-invite-status
+      ></span>
     </aside>
   </div>
 </Layout>
@@ -519,4 +533,49 @@ I'd like to chat about..."
       closeTooltips();
     }
   });
+
+  const copyCommand = async (text: string) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+    } catch {
+      // Fall through to execCommand fallback.
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  };
+
+  const inviteButton = document.querySelector<HTMLButtonElement>(
+    ".terminal-invite__copy",
+  );
+  const inviteStatus = document.querySelector<HTMLElement>(
+    "[data-terminal-invite-status]",
+  );
+
+  if (inviteButton) {
+    const command =
+      inviteButton.dataset.command ?? "ssh terminal.janharkonen.fi";
+    let restoreTimer = 0;
+
+    inviteButton.addEventListener("click", async () => {
+      await copyCommand(command);
+      inviteButton.classList.add("is-copied");
+      if (inviteStatus) inviteStatus.textContent = "Copied";
+      window.clearTimeout(restoreTimer);
+      restoreTimer = window.setTimeout(() => {
+        inviteButton.classList.remove("is-copied");
+        if (inviteStatus) inviteStatus.textContent = "";
+      }, 1500);
+    });
+  }
 </script>
