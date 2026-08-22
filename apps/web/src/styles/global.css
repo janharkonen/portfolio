@@ -498,6 +498,10 @@ html {
   scroll-margin-top: 80px;
 }
 
+#projects-heading {
+  scroll-margin-top: 80px;
+}
+
 .contact-intro {
   display: grid;
   gap: 22px;

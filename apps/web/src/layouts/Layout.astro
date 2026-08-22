@@ -51,5 +51,29 @@ const imageURL = new URL(image, Astro.site);
   <body class:list={[bodyClass, themeClass]}>
     <Header />
     <slot />
+    <!--
+      Re-scroll to location.hash after fonts/images settle.
+      Native hash jumps run too early; display=swap and lazy media
+      reflow the page and leave the viewport on a stale offset.
+    -->
+    <script is:inline>
+      (() => {
+        const scrollToHash = () => {
+          const { hash } = window.location;
+          if (!hash || hash.length < 2) return;
+          const el = document.getElementById(
+            decodeURIComponent(hash.slice(1)),
+          );
+          if (el) el.scrollIntoView();
+        };
+
+        if (document.fonts?.ready) {
+          document.fonts.ready.then(scrollToHash);
+        }
+        window.addEventListener("load", scrollToHash);
+        window.addEventListener("hashchange", scrollToHash);
+        window.addEventListener("pageshow", scrollToHash);
+      })();
+    </script>
   </body>
 </html>

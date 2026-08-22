@@ -268,13 +268,14 @@ const moreProjects = projects.filter((project) => !project.featured);
 
         <div class="project-grid project-grid--featured pt-4">
           {
-            featuredProjects.map((project) => (
+            featuredProjects.map((project, index) => (
               <article class="project-card">
                 <Image
                   src={project.imageUrl}
                   alt={`${project.name} preview`}
                   width={640}
                   height={360}
+                  loading={index < 3 ? "eager" : "lazy"}
                   class="mb-[18px] block aspect-video w-full max-w-md mx-auto object-cover"
                 />
                 <div class="card-heading">
