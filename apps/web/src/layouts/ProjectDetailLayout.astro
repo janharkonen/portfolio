@@ -1,9 +1,11 @@
 ---
 import { ArrowLeft } from "@lucide/astro";
 import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
 ---
 
-<Layout>
+<Layout title={frontmatter?.title} description={frontmatter?.description} image={frontmatter?.image}>
   <main class="project-detail">
     <a class="project-detail__back" href="/#projects-heading">
       <ArrowLeft size={16} aria-hidden="true" />
