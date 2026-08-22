@@ -578,4 +578,59 @@ I'd like to chat about..."
       }, 1500);
     });
   }
+
+  const contactForm = document.querySelector<HTMLFormElement>("#contact-form");
+  const contactStatus = document.querySelector<HTMLElement>(
+    "#contact-form-status",
+  );
+  const contactSubmit = contactForm?.querySelector<HTMLButtonElement>(
+    'button[type="submit"]',
+  );
+
+  contactForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!contactForm || !contactStatus || !contactSubmit) return;
+
+    contactSubmit.disabled = true;
+    contactStatus.textContent = "";
+    contactStatus.removeAttribute("data-state");
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+      });
+
+      // API redirects to /thanks on success; fetch follows that redirect.
+      if (response.ok || response.redirected) {
+        contactStatus.textContent = "Message sent";
+        contactStatus.dataset.state = "success";
+        contactForm.reset();
+        return;
+      }
+
+      let message = "Something went wrong. Please try again.";
+      try {
+        const data: unknown = await response.json();
+        if (
+          data &&
+          typeof data === "object" &&
+          "message" in data &&
+          typeof data.message === "string" &&
+          data.message.trim()
+        ) {
+          message = data.message;
+        }
+      } catch {
+        // Keep the generic fallback when the body is not JSON.
+      }
+      contactStatus.textContent = message;
+      contactStatus.dataset.state = "error";
+    } catch {
+      contactStatus.textContent = "Something went wrong. Please try again.";
+      contactStatus.dataset.state = "error";
+    } finally {
+      contactSubmit.disabled = false;
+    }
+  });
 </script>
