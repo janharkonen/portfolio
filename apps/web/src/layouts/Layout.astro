@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import { profile } from "../../../../packages/app_data/profile";
 
 interface Props {
   bodyClass?: string;
@@ -18,8 +19,41 @@ const {
   image = "/jan-1-8.webp",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const imageURL = new URL(image, Astro.site);
+const siteURL = Astro.site ?? new URL("https://janharkonen.fi");
+const siteOrigin = siteURL.origin;
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const imageURL = new URL(image, siteURL);
+const personId = `${siteOrigin}/#person`;
+const websiteId = `${siteOrigin}/#website`;
+const homeLocation = profile.location.replace(/\s*🇫🇮\s*$/, "").trim();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: profile.name,
+      jobTitle: profile.role,
+      url: siteOrigin,
+      image: imageURL.href,
+      sameAs: [profile.github, profile.linkedin, profile.scholar],
+      homeLocation: {
+        "@type": "Place",
+        name: homeLocation,
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteOrigin,
+      name: profile.name,
+      description,
+      author: { "@id": personId },
+      publisher: { "@id": personId },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -47,6 +81,7 @@ const imageURL = new URL(image, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class:list={[bodyClass, themeClass]}>
     <Header />
