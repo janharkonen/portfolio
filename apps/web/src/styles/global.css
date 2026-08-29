@@ -4,8 +4,8 @@ html {
   scroll-behavior: smooth;
 }
 
-@theme {
-  --font-sans: "Inter", sans-serif;
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 .portfolio-makeover {
@@ -676,7 +676,7 @@ html {
   border-radius: 4px;
   background: #122016;
   color: #56f28b;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -813,7 +813,7 @@ html {
       56px 56px,
     var(--page);
   counter-reset: project;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 .variant-3 .site-nav,
