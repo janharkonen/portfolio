@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter?.title} description={frontmatter?.description} image={frontmatter?.image}>
-  <main class="project-detail">
+  <main id="main-content" class="project-detail" tabindex="-1">
     <a class="project-detail__back" href="/#projects-heading">
       <ArrowLeft size={16} aria-hidden="true" />
       Back to projects
