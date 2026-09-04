@@ -81,6 +81,7 @@ export const projects: Project[] = [
   {
     name: "TUI portfolio",
     imageUrl: "/projects/tui-portfolio-2026.webp",
+    githubUrl: "https://github.com/janharkonen/portfolio/tree/master/apps/tui",
     year: "2026",
     description:
       "Terminal twin of this portfolio site (ssh terminal.janharkonen.fi).",
