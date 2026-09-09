@@ -1,0 +1,43 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+type Props = {
+  imageUrl: string;
+  alt: string;
+  class?: string;
+};
+
+const { imageUrl, alt, class: className } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/projects/*.{webp,png,jpg,jpeg}",
+  { eager: true },
+);
+
+const filename = imageUrl.split("/").pop();
+const assetPath = filename ? `/src/assets/projects/${filename}` : undefined;
+const image = assetPath ? images[assetPath]?.default : undefined;
+
+if (!image) {
+  throw new Error(
+    `Project preview image not found for "${imageUrl}". Expected asset at ${assetPath}.`,
+  );
+}
+
+// Cards use w-full max-w-md (448px). Offer smaller files for narrow viewports.
+const widths = [320, 480, 640];
+const sizes = "(max-width: 640px) calc(100vw - 2.5rem), 448px";
+---
+
+<Image
+  src={image}
+  alt={alt}
+  width={640}
+  height={360}
+  widths={widths}
+  sizes={sizes}
+  class={className}
+  loading="lazy"
+  decoding="async"
+/>

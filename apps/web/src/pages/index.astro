@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
+import ProjectPreviewImage from "../components/ProjectPreviewImage.astro";
 import {
   ArrowRight,
   BookOpenText,
@@ -11,6 +12,7 @@ import {
   User,
 } from "@lucide/astro";
 import { Image } from "astro:assets";
+import heroPhoto from "../assets/jan-1-8.webp";
 import { brandedItems } from "../../../../packages/app_data/branded_items";
 import { coreStack } from "../../../../packages/app_data/core_stack";
 import { educations } from "../../../../packages/app_data/education";
@@ -57,10 +59,12 @@ const moreProjects = projects.filter((project) => !project.featured);
             class="overflow-hidden rounded-full border border-gray-200 bg-white shadow-[var(--shadow)] ring-4 ring-[var(--surface)]"
           >
             <Image
-              src="/jan-1-8.webp"
+              src={heroPhoto}
               alt={profile.name}
-              width="224"
-              height="224"
+              width={224}
+              height={224}
+              widths={[144, 224, 448]}
+              sizes="(min-width: 640px) 224px, 144px"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -271,11 +275,9 @@ const moreProjects = projects.filter((project) => !project.featured);
           {
             featuredProjects.map((project) => (
               <article class="project-card">
-                <Image
-                  src={project.imageUrl}
+                <ProjectPreviewImage
+                  imageUrl={project.imageUrl}
                   alt={`${project.name} preview`}
-                  width={640}
-                  height={360}
                   class="mb-[18px] block aspect-video w-full max-w-md mx-auto object-cover"
                 />
                 <div class="card-heading">
@@ -337,11 +339,9 @@ const moreProjects = projects.filter((project) => !project.featured);
               <div class="project-grid project-grid--more pt-4">
                 {moreProjects.map((project) => (
                   <article class="project-card project-card--compact">
-                    <Image
-                      src={project.imageUrl}
+                    <ProjectPreviewImage
+                      imageUrl={project.imageUrl}
                       alt={`${project.name} preview`}
-                      width={640}
-                      height={360}
                       class="mb-[18px] block aspect-video w-full max-w-md mx-auto object-cover"
                     />
                     <div class="card-heading">
