@@ -16,7 +16,7 @@ export type Education = {
 
 export const educations: Education[] = [
   {
-    logo: { key: "AALTOSCI", height: 50, width: 50 },
+    logo: { key: "AALTOSCI", height: 40, width: 40 },
     degree: "Master's degree",
     school: "Aalto University School of Science",
     period: "2018-2020",
@@ -35,14 +35,14 @@ export const educations: Education[] = [
     ],
   },
   {
-    logo: { key: "KAIST", height: 60, width: 60 },
+    logo: { key: "KAIST", height: 40, width: 40 },
     degree: "Exchange studies",
     school: "Korea Advanced Institute of Science and Technology (KAIST)",
     period: "2016-2017",
     description: "School of Computing",
   },
   {
-    logo: { key: "AALTOSCI", height: 50, width: 50 },
+    logo: { key: "AALTOSCI", height: 40, width: 40 },
     degree: "Bachelor's degree",
     school: "Aalto University School of Science",
     period: "2014-2018",

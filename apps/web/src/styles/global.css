@@ -255,6 +255,14 @@ html {
   padding: 22px;
 }
 
+.timeline-logo {
+  display: block;
+  height: auto;
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .doc-links {
   display: flex;
   gap: 10px;
