@@ -1,0 +1,4 @@
+Contact: mailto:jan.harkonen@gmail.com
+Preferred-Languages: en, fi
+Canonical: https://janharkonen.fi/.well-known/security.txt
+Expires: 2027-09-12T00:00:00.000Z
