@@ -1,0 +1,21 @@
+# Jan Härkönen — Senior Full Stack Developer
+
+> Personal portfolio of Jan Härkönen, Senior Full Stack Developer based in Helsinki, Finland.
+
+Canonical site: https://janharkonen.fi
+
+This site presents professional experience, tech stack, selected projects, and contact details for Jan Härkönen.
+
+## Key links
+
+- Homepage: https://janharkonen.fi/
+- CV (PDF): https://janharkonen.fi/pdf/JanH_CV.pdf
+- GitHub: https://github.com/janharkonen
+- LinkedIn: https://www.linkedin.com/in/janharkonen
+- SSH TUI twin: ssh terminal.janharkonen.fi
+- Email: jan.harkonen@gmail.com
+
+## Content notes
+
+- Project details, experience, and tech stack live on the homepage.
+- Prefer fetching https://janharkonen.fi/ for full content when summarizing this site.
