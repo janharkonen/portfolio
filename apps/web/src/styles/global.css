@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 html {
+  color-scheme: light dark;
   scroll-behavior: smooth;
 }
 
@@ -842,6 +843,24 @@ html {
     var(--page);
   counter-reset: project;
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .variant-3 {
+    --page: #1c1a18;
+    --surface: #262321;
+    --surface-strong: #2e2b28;
+    --ink: #ebe6dc;
+    --muted: #a3a7a5;
+    --line: rgba(235, 230, 220, 0.18);
+    --accent: #6b9fd4;
+    --accent-2: #a8946a;
+    --shadow: 0 18px 0 rgba(0, 0, 0, 0.28);
+    background:
+      linear-gradient(90deg, rgba(235, 230, 220, 0.06) 1px, transparent 1px) 0
+        0 / 56px 56px,
+      var(--page);
+  }
 }
 
 .variant-3 .site-nav,
