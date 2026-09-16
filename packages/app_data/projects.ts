@@ -154,6 +154,7 @@ export const projects: Project[] = [
     name: "PICAPI",
     imageUrl: "/projects/picapi-2025.webp",
     projectUrl: "https://picapi.janharkonen.fi",
+    readMore: "/picapi",
     year: "2025",
     description:
       "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",

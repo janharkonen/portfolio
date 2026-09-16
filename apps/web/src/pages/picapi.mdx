@@ -1,0 +1,69 @@
+---
+layout: ../layouts/ProjectDetailLayout.astro
+title: "PICAPI — Jan Härkönen"
+---
+
+import Logo from "../components/Logo.astro";
+
+**2025**
+
+# PICAPI
+
+![PICAPI](/projects/picapi-2025.webp)
+
+## Overview
+
+PICAPI was spawned out of frustration.
+
+Placing and framing images in a React project is annoying. Whenever I need padding or cropping for my pictures or simply just adding a solid background, I had to open MS paint, make changes, save it in my React project's public directory and then hope that the placement is even remotely adequate. Eventually I stopped using Windows entirely and switched to Linux. Relying only on GIMP was even worse, since it was pretty much impossible to quickly do the simplest image manipulation as an inexperienced GIMP user. All of this was time consuming and I hated it.
+
+I tried using AWS S3, which freed me from the shackles of saving images in my React public directory, since I could get a URL for each picture. But it was still annoying to modify the picture and to reupload the image into S3 and copy-pasting the new URL.
+
+Next I tried UploadThing (shoutout to Theo). It was an improvement compared to S3, since the uploading process was as simple as a drag and drop. But it was still annoying to first modify the picture and then reupload and re-copy the URL.
+
+This led me to a simple idea: what if we could transform images simply by adding parameters to their URLs? I wasn't aware of any product like that. "Dammit, I'll make it myself", I thought. Thus PICAPI was born.
+
+PICAPI also offers a simple front-end, where you can upload your pictures in a cloud server by simply dragging and dropping, and copying the image URL is only one click away.
+
+As a simple example, using the URL `https://picapi.janharkonen.fi/api/pics/20c610e3647d4e9582fd2bf469025a92.png` we get this picture as is, with no manipulation.
+
+To manipulate this picture with PICAPI, we can add URL parameters, for example `?BGc=gray&BG=125`. So the URL becomes `https://picapi.janharkonen.fi/api/pics/20c610e3647d4e9582fd2bf469025a92.png?BGc=gray&BG=125` and the picture is manipulated to have a gray background with a 125% padding.
+
+## Key Features
+
+- Manipulating images with URL parameters
+- Uploading images to the cloud with a simple drag and drop
+
+## Tech stack
+
+- Front-end:
+  <Logo skill="VANILLAJS" />
+  <Logo skill="HTML" />
+  <Logo skill="CSS" />
+- API:
+  <Logo skill="PYTHON" />
+  <Logo skill="FLASK_OLD" />
+- Database:
+  <Logo skill="SQLITE" />
+- Auth:
+  My own RSA encryption implementation
+- Containerization:
+  <Logo skill="DOCKER" />
+- Deployment:
+  <Logo skill="HETZNER" />
+  <Logo skill="DEBIAN" />
+- Reverse proxy:
+  <Logo skill="NGINX" />
+- DNS:
+  <Logo skill="CLOUDFLARE" />
+- AI tools:
+  <Logo skill="CLAUDE" />
+- IDE:
+  <Logo skill="VSCODE" />
+- Version control:
+  <Logo skill="GIT" />
+  <Logo skill="GITKRAKEN" />
+
+## What I learned
+
+- Making a simple front-end with vanilla JS, HTML and CSS with no fancy frameworks
