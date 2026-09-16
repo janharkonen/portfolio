@@ -127,6 +127,7 @@ export const projects: Project[] = [
   {
     name: "Piggybank",
     imageUrl: "/projects/piggybank-2025.webp",
+    readMore: "/piggybank",
     year: "2025",
     description: "Personal finance tracker",
     tech: ["NEXTJS", "CONVEX", "GOLANG", "NEON_OLD", "POSTGRESQL"],
