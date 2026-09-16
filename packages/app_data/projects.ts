@@ -57,6 +57,7 @@ export const projects: Project[] = [
   {
     name: "Wedding site",
     imageUrl: "/projects/wedding-site-2026.webp",
+    readMore: "/wedding-site",
     year: "2026",
     description:
       "Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album",
