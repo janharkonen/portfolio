@@ -1,0 +1,45 @@
+---
+layout: ../layouts/ProjectDetailLayout.astro
+title: "matkalla.kotimaassa.fi — Jan Härkönen"
+---
+
+import Logo from "../components/Logo.astro";
+
+**2025-2026**
+
+# matkalla.kotimaassa.fi
+
+![matkalla.kotimaassa.fi](/projects/kotimaassa-fi-2025-2026.webp)
+
+## Overview
+
+matkalla.kotimaassa.fi is an AI-powered search engine for Finnish travel destinations. Users can explore destinations with customizable filters and sorting, backed by a RAG pipeline that grounds answers in destination content rather than generic chatbot fluff.
+
+The goal was a practical travel discovery experience: find places that match what you care about, then dig into details without losing the filter context.
+
+## Key Features
+
+- Destination search with customizable filters and sorting
+- RAG-based answers grounded in destination data
+- Authenticated user flows where needed
+- Full-stack TypeScript front end with a Python-backed pipeline
+
+## Tech stack
+
+- Front-end:
+  <Logo skill="TANSTACK_START" />
+  <Logo skill="REACT" />
+  <Logo skill="BUN" />
+- Backend / data:
+  <Logo skill="PYTHON" />
+  <Logo skill="POSTGRESQL" />
+- Auth:
+  <Logo skill="BETTERAUTH" />
+- Deployment:
+  <Logo skill="RAILWAY" />
+
+## What I learned
+
+- Building a RAG pipeline for a real product use case
+- Filter-heavy search UX over travel content
+- Combining TanStack Start with Python services

@@ -17,6 +17,7 @@ export const projects: Project[] = [
     name: "LINJA",
     imageUrl: "/projects/linja-2026.webp",
     projectUrl: "https://linja.ai",
+    readMore: "/linja",
     year: "2026",
     description:
       "AI-powered tool for managing live music events. Includes artist, event and venue management as well as ticket sales.",
@@ -36,6 +37,7 @@ export const projects: Project[] = [
     name: "HSL real time",
     imageUrl: "/projects/hsl-real-time-2026.webp",
     projectUrl: "https://hslrealtime.pionblanc.fi",
+    readMore: "/hsl-real-time",
     year: "2026",
     description: "Real-time vehicle locations for Helsinki public transport.",
     tech: ["REACT", "VERCEL"],
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     name: "Speed reader",
     imageUrl: "/projects/speed-reader-2026.webp",
     projectUrl: "https://speedread.pionblanc.fi",
+    readMore: "/speed-reader",
     year: "2026",
     description:
       "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
@@ -54,6 +57,7 @@ export const projects: Project[] = [
   {
     name: "Wedding site",
     imageUrl: "/projects/wedding-site-2026.webp",
+    readMore: "/wedding-site",
     year: "2026",
     description:
       "Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album",
@@ -64,6 +68,7 @@ export const projects: Project[] = [
     name: "matkalla.kotimaassa.fi",
     imageUrl: "/projects/kotimaassa-fi-2025-2026.webp",
     projectUrl: "https://matkalla.kotimaassa.fi",
+    readMore: "/matkalla-kotimaassa",
     year: "2025-2026",
     description:
       "AI-powered search engine for Finnish travel destinations with customizable filters and sorting options using RAG-pipeline",
@@ -81,6 +86,7 @@ export const projects: Project[] = [
   {
     name: "TUI portfolio",
     imageUrl: "/projects/tui-portfolio-2026.webp",
+    readMore: "/tui-portfolio",
     year: "2026",
     description:
       "Terminal twin of this portfolio site (ssh terminal.janharkonen.fi).",
@@ -91,6 +97,7 @@ export const projects: Project[] = [
     name: "Secure receipt share",
     imageUrl: "/projects/secure-receipt-share-2026.webp",
     projectUrl: "https://securereceiptshare.janharkonen.fi",
+    readMore: "/secure-receipt-share",
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
     tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
@@ -99,6 +106,7 @@ export const projects: Project[] = [
   {
     name: "Trip planner",
     imageUrl: "/projects/trip-planner-2025.webp",
+    readMore: "/trip-planner",
     year: "2025",
     description:
       "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",
@@ -109,6 +117,7 @@ export const projects: Project[] = [
     name: "SyncSpace",
     imageUrl: "/projects/syncspace-2025.webp",
     projectUrl: "https://syncspace.janharkonen.fi",
+    readMore: "/syncspace",
     year: "2025",
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
@@ -118,6 +127,7 @@ export const projects: Project[] = [
   {
     name: "Piggybank",
     imageUrl: "/projects/piggybank-2025.webp",
+    readMore: "/piggybank",
     year: "2025",
     description: "Personal finance tracker",
     tech: ["NEXTJS", "CONVEX", "GOLANG", "NEON_OLD", "POSTGRESQL"],
@@ -126,6 +136,7 @@ export const projects: Project[] = [
   {
     name: "ÉclairDB",
     imageUrl: "/projects/eclairdb-2025.webp",
+    readMore: "/eclairdb",
     year: "2025",
     description:
       "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",
@@ -135,6 +146,7 @@ export const projects: Project[] = [
   {
     name: "One source of truth",
     imageUrl: "/projects/one-source-of-truth-2025.webp",
+    readMore: "/one-source-of-truth",
     year: "2025",
     description:
       "A tool to search and filter a vast array of products blazingly fast",
@@ -145,6 +157,7 @@ export const projects: Project[] = [
     name: "cdx",
     imageUrl: "/projects/cdx-2025.webp",
     githubUrl: "https://github.com/janharkonen/cdx",
+    readMore: "/cdx",
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
@@ -154,6 +167,7 @@ export const projects: Project[] = [
     name: "PICAPI",
     imageUrl: "/projects/picapi-2025.webp",
     projectUrl: "https://picapi.janharkonen.fi",
+    readMore: "/picapi",
     year: "2025",
     description:
       "API for manipulating images directly from URL parameters + platform to save own pictures in the cloud",
@@ -174,6 +188,7 @@ export const projects: Project[] = [
     name: "Offer generator",
     imageUrl: "/projects/offer-generator-2024-2025.webp",
     projectUrl: "https://uusi.tarjousgeneraattori.pionblanc.fi",
+    readMore: "/offer-generator",
     year: "2024–2025",
     description:
       "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",
