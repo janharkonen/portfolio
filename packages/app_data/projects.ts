@@ -112,6 +112,7 @@ export const projects: Project[] = [
     name: "SyncSpace",
     imageUrl: "/projects/syncspace-2025.webp",
     projectUrl: "https://syncspace.janharkonen.fi",
+    readMore: "/syncspace",
     year: "2025",
     description:
       "Simple list+checkbox based tool for collaborative task management with real-time synchronization",
