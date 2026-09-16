@@ -136,6 +136,7 @@ export const projects: Project[] = [
   {
     name: "One source of truth",
     imageUrl: "/projects/one-source-of-truth-2025.webp",
+    readMore: "/one-source-of-truth",
     year: "2025",
     description:
       "A tool to search and filter a vast array of products blazingly fast",

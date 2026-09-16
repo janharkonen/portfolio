@@ -1,0 +1,72 @@
+---
+layout: ../layouts/ProjectDetailLayout.astro
+title: "One source of truth — Jan Härkönen"
+---
+
+import Logo from "../components/Logo.astro";
+
+**2025**
+
+# One source of truth
+
+![One source of truth](/projects/one-source-of-truth-2025.webp)
+
+## Overview
+
+One source of truth is a tool to search and filter a vast array of products blazingly fast. Initially the purpose was to create a separate API endpoint for my product database in my other project Offer Generator.
+
+I wanted to experiment with search performance and decided to use Go and Redis. I made 2 versions: one with RediSearch and one with a simple hashmap in the Go API layer.
+
+The base of the product database is a simple JSON file with over 100 000 products. The database can be sharded into multiple parts based on the supplier name. Each supplier had total number of products ranging from 100 to 60 000. Quite the range but that certainly enables a good test case for the search performance.
+
+In the Go hashmap version, I used the Gin framework for the REST API and I used a simple hashmap to store the products. I created a single inverted index for the products based on the supplier. On the Redis side, I stored each item as a JSON using RedisJSON and then created a RediSearch index for all of the columns found in the entire database. Then I created some API routes to query the database using pagination and filtering. For RediSearch, I used the Redis' NodeJS client to query the database from NextJS AppRouter's API routes, but for the hashmap version I brute forced it. I simply iterated over the hashmap and then filtered the products based on the search query. The only optimization I did was the inverted index for the hashmap based on the supplier name.
+
+The results were quite interesting. For small lists of items the Go solution is faster. For bigger lists the Redis solution performed very well in roughly constant time, whereas the Go solution sometimes matched it and sometimes took 2x or 4x as long. The Docker image size was also striking: the Go solution is only about 20MB large, whereas the Redis solution is about 830MB — a ~40x difference. The Go solution is also much easier to maintain and deploy.
+
+The biggest issue with the Redis solution was the tokenization strategy. I wanted my front end to react to writing text in the filter from the very first character written. This wasn't doable cleanly with RediSearch because the index tokenizes each word and whitespace separately. Perhaps I could experiment with loading JSON entries into Redis and then create a custom Lua script to search using EVAL or Redis Functions — though Lua would likely still be slower than the Go solution.
+
+The way I built my Go solution was a bit outside the box, because it clearly breaks the rule of a stateless API: it had a global variable to store the hashmap. I did this because I wanted to avoid the overhead of creating a new hashmap for each request and it does pay off performance-wise.
+
+## Key Features
+
+- Search products with pagination
+- Filter products by input text
+- Great UX with extremely fast search performance
+
+## Tech stack
+
+- Front-end:
+  <Logo skill="NEXTJS" />
+  <Logo skill="REACT" />
+  <Logo skill="TYPESCRIPT" />
+- UI:
+  <Logo skill="SHADCN" />
+  <Logo skill="TAILWIND" />
+- API:
+  <Logo skill="GOLANG" />
+  <Logo skill="GIN" />
+- Database:
+  <Logo skill="REDIS" />
+  <Logo skill="REDISEARCH" />
+  <Logo skill="REDISJSON" />
+  <Logo skill="LUA" />
+- Containerization:
+  <Logo skill="DOCKER" />
+- Deployment:
+  <Logo skill="HETZNER" />
+  <Logo skill="DEBIAN" />
+- Reverse proxy:
+  <Logo skill="NGINX" />
+- DNS:
+  <Logo skill="CLOUDFLARE" />
+- IDE / AI:
+  <Logo skill="CURSOR" />
+- Version control:
+  <Logo skill="GIT" />
+
+## What I learned
+
+- Redisstack / RediSearch / RedisJSON
+- Search concepts: inverted index, tokenization, wildcard, pagination, filtering
+- Lua scripting
+- Redis's Lua runtime environment has a maximum size of input arguments of 64kb
