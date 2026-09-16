@@ -97,6 +97,7 @@ export const projects: Project[] = [
     name: "Secure receipt share",
     imageUrl: "/projects/secure-receipt-share-2026.webp",
     projectUrl: "https://securereceiptshare.janharkonen.fi",
+    readMore: "/secure-receipt-share",
     year: "2026",
     description: "Secure way to share receipts with colleagues.",
     tech: ["TANSTACK_START", "REACT", "BUN", "CONVEX", "BETTERAUTH", "RAILWAY"],
