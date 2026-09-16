@@ -1,0 +1,172 @@
+---
+layout: ../layouts/ProjectDetailLayout.astro
+title: "Offer generator — Jan Härkönen"
+---
+
+import Logo from "../components/Logo.astro";
+
+**2024–2025**
+
+# Offer generator
+
+![Offer generator](/projects/offer-generator-2024-2025.webp)
+
+## Overview (V3)
+
+Offer generator is a web app we build in our startup that me and my friends have founded. It is aimed for small businesses to have their product info up to date, and speed up their offer generation process for their customers. The app offers an intuitive UI for generating a PDF file with the product info to be sent to their customers.
+
+The main time-saving feature for our client is our over 100 000 product catalogue from different suppliers has been integrated within the software in an easily filterable UI and fully accessible even if a supplier's website crashes (which happens quite frequently).
+
+This was built within our startup Pion Blanc Oy. We are a small team of 3 software developers. More info in our website [www.pionblanc.fi](https://www.pionblanc.fi). This has been my biggest personal project yet that I have built from scratch, and what a journey it has been! This project has seen lots of iterations, and I've learned a lot about software development.
+
+## Key Features
+
+- Up-to-date product catalogue with over 100 000 products
+- Web app interface for automated offer generation
+- User authentication with Auth0
+- Cloud database with PostgreSQL
+- API integration for data retrieval
+
+## Tech stack
+
+- Front end:
+  <Logo skill="REACT" />
+  <Logo skill="TYPESCRIPT" />
+  <Logo skill="VITE" />
+  <Logo skill="TAILWIND" />
+  <Logo skill="SHADCN" />
+- State management:
+  <Logo skill="ZUSTAND" />
+- API:
+  <Logo skill="PYTHON" />
+  <Logo skill="FLASK_OLD" />
+  <Logo skill="PANDAS" />
+  <Logo skill="GUNICORN" />
+- ORM:
+  <Logo skill="SQLALCHEMY" />
+- Database:
+  <Logo skill="POSTGRESQL" />
+- Auth:
+  <Logo skill="AUTH0" />
+  <Logo skill="JWT" />
+- Containerization:
+  <Logo skill="DOCKER" />
+- Deployment:
+  <Logo skill="HETZNER" />
+  <Logo skill="UBUNTU" />
+- Reverse proxy:
+  <Logo skill="NGINX" />
+- DNS:
+  <Logo skill="CLOUDFLARE" />
+- AI tools:
+  <Logo skill="CLAUDE" />
+  <Logo skill="V0" />
+  <Logo skill="CHATGPT" />
+  <Logo skill="LECHAT" />
+  <Logo skill="DEEPSEEK" />
+- IDE:
+  <Logo skill="VSCODE" />
+- Version control:
+  <Logo skill="GIT" />
+  <Logo skill="GITKRAKEN" />
+
+## What I learned
+
+- Cloud VPS deployment
+- Containerization and Docker
+- Authentication and JWT
+- Deploying PostgreSQL server
+- CRON jobs
+- Bash scripts
+- Multi-tenancy
+
+## Older version
+
+**2024**
+
+## Overview (V2)
+
+At this stage the app was still work-in-progress, but we made huge improvements compared to the previous version. For example we actually started using React and for good reason. I tried using Redux for state management, but I felt it was way too complicated for A) an inexperienced front-end dev and B) for our use case.
+
+MSSQL server was something that I've only heard shade being thrown towards, and my experience with it kind of confirmed it. The biggest issues were 1) installing ODBC drivers, 2) not being open-source software and 3) being more designed for Windows environments.
+
+The whole tech stack was just kind of weird. We used Flask for the API, which was deployed on a Hetzner VPS, our React app was deployed on Vercel and the MSSQL database ran on my home laptop.
+
+## Tech stack
+
+- Front end:
+  <Logo skill="REACT" />
+  <Logo skill="TYPESCRIPT" />
+  <Logo skill="VITE" />
+  <Logo skill="TAILWIND" />
+  <Logo skill="SHADCN" />
+- State management:
+  <Logo skill="REDUX" />
+- API:
+  <Logo skill="PYTHON" />
+  <Logo skill="PANDAS" />
+  <Logo skill="FLASK_OLD" />
+  <Logo skill="GUNICORN" />
+- Database:
+  <Logo skill="MSSQLSERVER" />
+- Auth:
+  <Logo skill="AUTH0" />
+- Deployment:
+  <Logo skill="HETZNER" />
+  <Logo skill="UBUNTU" />
+  <Logo skill="VERCEL" />
+- DNS:
+  <Logo skill="CLOUDFLARE" />
+- AI tools:
+  <Logo skill="CLAUDE" />
+  <Logo skill="V0" />
+  <Logo skill="CHATGPT" />
+- IDE:
+  <Logo skill="VSCODE" />
+- Version control:
+  <Logo skill="GIT" />
+  <Logo skill="GITKRAKEN" />
+
+## What I learned
+
+- Front-end web development
+- Advanced front-end state management
+- Authorization
+- REST APIs
+- MVP
+
+## Overview (V1)
+
+Looking back I can see how far we've gotten in such a short time. This version was done as a desktop application as our first MVP.
+
+Deployment was something we haven't considered initially. I think this is one of the inexperienced dev's classic blunder even though it is inevitable eventually. Surprise, surprise, when it was time for deployment, it was a huge pain, since our first user used MacOS and installing Python and the appropriate dependencies was next to impossible. I wish there was a tool where an app and its dependencies would work on any machine!
+
+As our database we used simple .csv files as in the beginning, but we quickly pivoted to an SQL database. I already had MSSQL Server on my laptop, and we actually deployed it from my home laptop.
+
+Building a UI for a Python desktop app sucks. It was a lesson I had too learn the hard way. I quickly realized that this cannot be the modern way of creating front-end applications.
+
+## Tech stack
+
+- Desktop app:
+  <Logo skill="PYTHON" />
+  <Logo skill="PANDAS" />
+- UI library:
+  <Logo skill="TKINTER" />
+- Database:
+  <Logo skill="MSSQLSERVER" />
+- AI tools:
+  <Logo skill="CLAUDE" />
+  <Logo skill="CHATGPT" />
+- IDE:
+  <Logo skill="VSCODE" />
+- Version control:
+  <Logo skill="GIT" />
+  <Logo skill="GITKRAKEN" />
+
+## What I learned
+
+- Leading a small team of devs
+- Database deployment (kinda)
+- TCP/IP configuration
+- The fact that MSSQL Server sucks
+- The fact that UI development in Python sucks
