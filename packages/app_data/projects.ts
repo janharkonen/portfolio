@@ -37,6 +37,7 @@ export const projects: Project[] = [
     name: "HSL real time",
     imageUrl: "/projects/hsl-real-time-2026.webp",
     projectUrl: "https://hslrealtime.pionblanc.fi",
+    readMore: "/hsl-real-time",
     year: "2026",
     description: "Real-time vehicle locations for Helsinki public transport.",
     tech: ["REACT", "VERCEL"],
