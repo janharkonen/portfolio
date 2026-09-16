@@ -17,6 +17,7 @@ export const projects: Project[] = [
     name: "LINJA",
     imageUrl: "/projects/linja-2026.webp",
     projectUrl: "https://linja.ai",
+    readMore: "/linja",
     year: "2026",
     description:
       "AI-powered tool for managing live music events. Includes artist, event and venue management as well as ticket sales.",
