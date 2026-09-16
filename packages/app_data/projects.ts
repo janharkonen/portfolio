@@ -176,6 +176,7 @@ export const projects: Project[] = [
     name: "Offer generator",
     imageUrl: "/projects/offer-generator-2024-2025.webp",
     projectUrl: "https://uusi.tarjousgeneraattori.pionblanc.fi",
+    readMore: "/offer-generator",
     year: "2024–2025",
     description:
       "Product data synchronization and sales processes automation tool as a web app aimed at small businesses",
