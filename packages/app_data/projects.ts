@@ -126,6 +126,7 @@ export const projects: Project[] = [
   {
     name: "ÉclairDB",
     imageUrl: "/projects/eclairdb-2025.webp",
+    readMore: "/eclairdb",
     year: "2025",
     description:
       "Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities",

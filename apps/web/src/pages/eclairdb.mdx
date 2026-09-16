@@ -1,0 +1,60 @@
+---
+layout: ../layouts/ProjectDetailLayout.astro
+title: "ÉclairDB — Jan Härkönen"
+---
+
+import Logo from "../components/Logo.astro";
+
+**2025**
+
+# ÉclairDB
+
+![ÉclairDB](/projects/eclairdb-2025.webp)
+
+## Overview
+
+ÉclairDB is a tool built to solve a personal issue I had while exploring large databases. While there already exists many database explorer clients, such as pgAdmin or DBeaver, as well as web clients built into Neon and Supabase, they all suffered from the same fundamental issue: too many features.
+
+What I mean by that is twofold. First of all, the UI to find a table is too time-consuming. This is the case especially in pgAdmin, where finding the list of tables for a schema, you have to navigate through 7 layers of the treeview. I don't know about you, but table selection is where I spend most of my time when exploring a database. Most of the time I don't even care at all about login/group Roles, event triggers, foreign tables, indexes and heck, even the keys or foreign keys or even the types. I just want to find the table I'm looking for and maybe do some basic filtering and sorting and that's it. The second issue is exactly that: filtering and sorting. Many database exploring clients make it difficult to filter and sort the data. The main reason for this is that in a SQL database, the types of data matter and the way to filter each type have their own quirks. Sure, you can filter however your heart desires using the SQL query, but that's not what I want. Usually, when I just want a quick overview of the data, I would just want to filter strings, and that's it.
+
+I went on to do just that. I built a simple Vue app that allows me to find a table from a PostgreSQL database, then for any column in that table you can sort the table and filter using only strings with lightning speed. The choice to use strings was indeed opinionated but deliberate. At the end of the day, anything you write on a computer is a string, and since the purpose of ÉclairDB is to be simple and fast to use, using strings was the way to go. Sure, the functionalities are very limited, but that's the point. It is by design a read-only database viewer with lightning fast table filtering thanks to a concurrent Go backend.
+
+## Key Features
+
+- Filter and sort databases with pagination
+- Great UX with extremely fast filtering performance
+
+## Tech stack
+
+- Front-end:
+  <Logo skill="VUE" />
+  <Logo skill="TYPESCRIPT" />
+- UI:
+  <Logo skill="TAILWIND" />
+- API:
+  <Logo skill="GOLANG" />
+  <Logo skill="GIN" />
+- Containerization:
+  <Logo skill="DOCKER" />
+- CI/CD:
+  <Logo skill="GITHUBACTIONS" />
+  <Logo skill="DOCKERHUB" />
+- Deployment:
+  <Logo skill="AWS" />
+  <Logo skill="ECR" />
+  <Logo skill="APPRUNNER" />
+- Reverse proxy:
+  <Logo skill="NGINX" />
+- IDE / AI:
+  <Logo skill="CURSOR" />
+- Version control:
+  <Logo skill="GIT" />
+  <Logo skill="GITKRAKEN" />
+
+## What I learned
+
+- Vue
+- SSEvents
+- Github Actions
+- AWS ECR
+- AWS App Runner
