@@ -147,6 +147,7 @@ export const projects: Project[] = [
     name: "cdx",
     imageUrl: "/projects/cdx-2025.webp",
     githubUrl: "https://github.com/janharkonen/cdx",
+    readMore: "/cdx",
     year: "2025",
     description: "Bash CLI tool to cd into directories 10x faster",
     tech: ["BASH"],
