@@ -65,6 +65,7 @@ export const projects: Project[] = [
     name: "matkalla.kotimaassa.fi",
     imageUrl: "/projects/kotimaassa-fi-2025-2026.webp",
     projectUrl: "https://matkalla.kotimaassa.fi",
+    readMore: "/matkalla-kotimaassa",
     year: "2025-2026",
     description:
       "AI-powered search engine for Finnish travel destinations with customizable filters and sorting options using RAG-pipeline",
