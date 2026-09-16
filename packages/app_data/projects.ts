@@ -46,6 +46,7 @@ export const projects: Project[] = [
     name: "Speed reader",
     imageUrl: "/projects/speed-reader-2026.webp",
     projectUrl: "https://speedread.pionblanc.fi",
+    readMore: "/speed-reader",
     year: "2026",
     description:
       "A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.",
