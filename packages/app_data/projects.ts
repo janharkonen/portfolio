@@ -106,6 +106,7 @@ export const projects: Project[] = [
   {
     name: "Trip planner",
     imageUrl: "/projects/trip-planner-2025.webp",
+    readMore: "/trip-planner",
     year: "2025",
     description:
       "Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.",
