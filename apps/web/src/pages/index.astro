@@ -440,6 +440,7 @@ const moreProjects = projects.filter((project) => !project.featured);
             name="name"
             autocomplete="name"
             placeholder="Your name"
+            maxlength="100"
             required
           />
         </label>
@@ -450,6 +451,7 @@ const moreProjects = projects.filter((project) => !project.featured);
             name="email"
             autocomplete="email"
             placeholder="you@example.com"
+            maxlength="254"
             required
           />
         </label>
@@ -458,11 +460,18 @@ const moreProjects = projects.filter((project) => !project.featured);
           <textarea
             name="message"
             rows="6"
+            maxlength="5000"
             placeholder="Hey Jan,
 
 I'd like to chat about..."
             required></textarea>
         </label>
+        <div class="contact-form__hp" aria-hidden="true">
+          <label>
+            Leave this field empty
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
         <button
           class="button primary transition-transform duration-150 hover:scale-105"
           type="submit"
