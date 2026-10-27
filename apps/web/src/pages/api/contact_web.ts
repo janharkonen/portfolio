@@ -13,11 +13,22 @@ function escapeHtml(value: string): string {
     .replaceAll("'", "&#39;");
 }
 
+const MAX_NAME = 100;
+const MAX_EMAIL = 254;
+const MAX_MESSAGE = 5000;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export const POST: APIRoute = async ({ request, redirect }) => {
   const data = await request.formData();
   const name = data.get("name");
   const email = data.get("email");
   const message = data.get("message");
+  const honeypot = data.get("website");
+
+  // Bots fill every field; humans never see this one. Pretend it worked.
+  if (typeof honeypot === "string" && honeypot.trim() !== "") {
+    return redirect("/thanks", 303);
+  }
 
   if (
     typeof name !== "string" ||
@@ -33,11 +44,27 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     );
   }
 
+  if (
+    name.length > MAX_NAME ||
+    email.length > MAX_EMAIL ||
+    message.replaceAll("\r\n", "\n").length > MAX_MESSAGE
+  ) {
+    return new Response(JSON.stringify({ message: "Field too long" }), {
+      status: 400,
+    });
+  }
+
+  if (!EMAIL_PATTERN.test(email.trim())) {
+    return new Response(JSON.stringify({ message: "Invalid email address" }), {
+      status: 400,
+    });
+  }
+
   const { error } = await resend.emails.send({
     from: "Portfolio contact form <portfolio@tarjousgeneraattori.pionblanc.fi>",
     to: "jan.harkonen@gmail.com",
-    replyTo: email,
-    subject: `Portfolio contact form submission from ${name}`,
+    replyTo: email.trim(),
+    subject: `Portfolio contact form submission from ${name.trim().replace(/\s+/g, " ")}`,
     html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(email)}</p>
     <p><strong>Source:</strong> web</p>
