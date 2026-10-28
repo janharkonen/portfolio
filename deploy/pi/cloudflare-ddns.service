@@ -1,0 +1,9 @@
+[Unit]
+Description=Update terminal.janharkonen.fi to current public IP
+After=network-online.target
+Wants=network-online.target
+ConditionFileNotEmpty=/etc/cloudflare-ddns/token
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/cloudflare-ddns

@@ -1,0 +1,22 @@
+#!/bin/sh
+# Keep terminal.janharkonen.fi (A, DNS only) pointed at this home connection's
+# public IP. Token: Cloudflare API token with Zone.DNS:Edit on janharkonen.fi.
+set -eu
+ZONE_ID=cd38ad826ed115a2dd31c936d1c496b2
+NAME=terminal.janharkonen.fi
+TOKEN=$(cat /etc/cloudflare-ddns/token)
+[ -n "$TOKEN" ] || { echo "no token in /etc/cloudflare-ddns/token"; exit 1; }
+API=https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records
+
+IP=$(curl -fsS4 --max-time 10 https://api.ipify.org || curl -fsS4 --max-time 10 https://ifconfig.me)
+echo "$IP" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' || { echo "bad IP: $IP"; exit 1; }
+
+REC=$(curl -fsS --max-time 10 -H "Authorization: Bearer $TOKEN" "$API?type=A&name=$NAME")
+ID=$(echo "$REC" | jq -r '.result[0].id')
+CUR=$(echo "$REC" | jq -r '.result[0].content')
+[ "$ID" != null ] || { echo "record $NAME not found"; exit 1; }
+[ "$CUR" = "$IP" ] && exit 0
+
+curl -fsS --max-time 10 -X PATCH -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+  --data "{\"content\":\"$IP\",\"proxied\":false}" "$API/$ID" | jq -e .success >/dev/null
+echo "updated $NAME: $CUR -> $IP"
