@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janharkonen.fi/sitemap.xml
