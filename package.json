@@ -12,6 +12,7 @@
     "check-types": "turbo check-types",
     "dev:web": "turbo -F web dev",
     "dev:tui": "turbo -F tui dev",
+    "deploy:tui": "deploy/pi/deploy.sh",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

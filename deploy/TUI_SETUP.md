@@ -38,13 +38,17 @@ changing it, update the tunnel route** or you lose remote access.
 
 ## Deploy a new build
 
+From your laptop, in the repo root:
+
 ```bash
-# on your laptop, repo root
-pnpm -F @portfolio/app_data build && cp packages/app_data/dist/data.json apps/tui/data/data.json
-(cd apps/tui && CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-s -w" -o /tmp/portfolio-tui .)
-scp /tmp/portfolio-tui janharkonen@pi.janharkonen.fi:/tmp/
-ssh janharkonen@pi.janharkonen.fi 'sudo install -m 755 /tmp/portfolio-tui /usr/local/bin/ && sudo systemctl restart portfolio-tui'
+pnpm deploy:tui              # export data, cross-compile arm64, ship, restart
+pnpm deploy:tui --rollback   # put the previous binary back
 ```
+
+[`deploy/pi/deploy.sh`](pi/deploy.sh) builds from your **local working tree**
+(not origin), keeps the old binary as `/usr/local/bin/portfolio-tui.prev`, and
+rolls back on its own if the new one doesn't start. Override the target with
+`PI=user@host`.
 
 No Docker on the Pi on purpose (SD card is nearly full; a static binary is
 enough).
