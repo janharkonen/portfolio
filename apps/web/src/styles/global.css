@@ -975,3 +975,21 @@ html {
     margin-top: 36px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hover\:scale-105:hover,
+  .project-links a:hover {
+    transform: none !important;
+  }
+}
