@@ -1,0 +1,30 @@
+# Jan Härkönen
+
+> Senior Full Stack Developer in Helsinki, Finland. Web apps and AI. Core stack: React, Go, Python, Convex, Postgres, Linux.
+
+Personal portfolio at https://janharkonen.fi. Focus areas include real-time UIs, typesafety, performance, and DX.
+
+## Contact
+
+- Email: [jan.harkonen@gmail.com](mailto:jan.harkonen@gmail.com)
+- GitHub: [https://github.com/janharkonen](https://github.com/janharkonen)
+- LinkedIn: [https://www.linkedin.com/in/janharkonen](https://www.linkedin.com/in/janharkonen)
+- Google Scholar: [https://scholar.google.com/citations?hl=en&user=a5q61ooAAAAJ](https://scholar.google.com/citations?hl=en&user=a5q61ooAAAAJ)
+- CV: [https://janharkonen.fi/pdf/JanH_CV.pdf](https://janharkonen.fi/pdf/JanH_CV.pdf)
+
+## Projects
+
+- [cdx](https://janharkonen.fi/cdx): Bash CLI tool to cd into directories 10x faster
+- [ÉclairDB](https://janharkonen.fi/eclairdb): Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities
+- [HSL real time](https://janharkonen.fi/hsl-real-time): Real-time vehicle locations for Helsinki public transport.
+- [Lens and mirror simulator](https://janharkonen.fi/lens-mirror-simulator): Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors
+- [Offer generator](https://janharkonen.fi/offer-generator): Product data synchronization and sales processes automation tool as a web app aimed at small businesses
+- [Portfolio site](https://janharkonen.fi/portfolio-site): This very website. A personal full stack developer portfolio
+- [Progress tracker](https://janharkonen.fi/progress-tracker): Web application to track the progress level of listed items for each user in real time using websockets
+- [Progress tracker](https://janharkonen.fi/progress-tracker-old): Mobile application progress tracker
+- [Secure receipt share](https://janharkonen.fi/secure-receipt-share): Secure way to share receipts with colleagues.
+- [Speed reader](https://janharkonen.fi/speed-reader): A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.
+- [SyncSpace](https://janharkonen.fi/syncspace): Simple list+checkbox based tool for collaborative task management with real-time synchronization
+- [Trip planner](https://janharkonen.fi/trip-planner): Website for travel details of a 3-day trip for 60 people. Time-table, relevant links and FAQ.
+- [TUI portfolio](https://janharkonen.fi/tui-portfolio): Terminal twin of this portfolio site (ssh terminal.janharkonen.fi).
+- [Wedding site](https://janharkonen.fi/wedding-site): Wedding site to inform guests about the wedding details. Includes schedule, sign-up, and other information as well as a photo album
