@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 html {
+  color-scheme: light dark;
   scroll-behavior: smooth;
 }
 
@@ -859,6 +860,106 @@ html {
 .variant-3 .project-card,
 .variant-3 .tab-list {
   border-radius: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .variant-3 {
+    --page: #16181d;
+    --surface: #21242b;
+    --surface-strong: #262a33;
+    --ink: #ebe6dc;
+    --muted: #a9adaa;
+    --line: rgba(235, 230, 220, 0.16);
+    --accent: #7aa3c9;
+    --accent-2: #8a7d5f;
+    --shadow: 0 18px 0 rgba(0, 0, 0, 0.28);
+    background:
+      linear-gradient(90deg, rgba(235, 230, 220, 0.05) 1px, transparent 1px) 0 0 /
+        56px 56px,
+      var(--page);
+  }
+
+  /* Accent fills are lighter in dark mode — use page (dark) text for AA. */
+  .skip-link,
+  .button.primary,
+  .project-links a:not(.project-read-more) {
+    color: var(--page);
+  }
+
+  .project-links a:not(.project-read-more):hover {
+    color: var(--page);
+  }
+
+  .project-links .project-link-icon {
+    filter: brightness(0);
+  }
+
+  .site-nav {
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
+  }
+
+  .timeline-card,
+  .project-card,
+  .project-detail {
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+  }
+
+  .tab-list button[aria-selected="true"] {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .contact-form-status[data-state="error"] {
+    color: #e08080;
+  }
+
+  .hero-photo > div {
+    border-color: var(--line);
+  }
+
+  /*
+   * Monochrome / near-black logos vanish on dark surfaces.
+   * Invert them; leave multicolor marks alone. Exclude project-link-icon
+   * (already filtered for accent buttons).
+   */
+  .primary-nav img[src*="github.svg"],
+  .stack-logo[src*="github.svg"],
+  .tech-logo__icon[src*="github.svg"],
+  .stack-logo[src*="vercel.svg"],
+  .tech-logo__icon[src*="vercel.svg"],
+  .stack-logo[src*="nextjs.svg"],
+  .tech-logo__icon[src*="nextjs.svg"],
+  .stack-logo[src*="shadcnui.svg"],
+  .tech-logo__icon[src*="shadcnui.svg"],
+  .stack-logo[src*="betterauth.svg"],
+  .tech-logo__icon[src*="betterauth.svg"],
+  .stack-logo[src*="cursor.svg"],
+  .tech-logo__icon[src*="cursor.svg"],
+  .stack-logo[src*="openai.svg"],
+  .tech-logo__icon[src*="openai.svg"],
+  .stack-logo[src*="resend.svg"],
+  .tech-logo__icon[src*="resend.svg"],
+  .stack-logo[src*="v0.svg"],
+  .tech-logo__icon[src*="v0.svg"],
+  .stack-logo[src*="railway.svg"]:not([src*="railway_dark"]),
+  .tech-logo__icon[src*="railway.svg"]:not([src*="railway_dark"]),
+  .stack-logo[src*="astro.svg"],
+  .tech-logo__icon[src*="astro.svg"] {
+    filter: invert(1) brightness(0.95);
+  }
+
+  /*
+   * Multicolor marks with large black areas: soft light plate
+   * (invert would distort brand colors).
+   */
+  .stack-logo[src*="linux.svg"],
+  .tech-logo__icon[src*="linux.svg"],
+  .stack-logo[src*="flask.svg"],
+  .tech-logo__icon[src*="flask.svg"] {
+    border-radius: 8px;
+    background: color-mix(in srgb, #f6f1e7 90%, transparent);
+    padding: 3px;
+    box-sizing: content-box;
+  }
 }
 
 @media (max-width: 980px) {
