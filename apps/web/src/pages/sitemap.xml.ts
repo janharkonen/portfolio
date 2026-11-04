@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 /** Public page modules at the pages root (home + case studies). */
 const pageModules = import.meta.glob(["./*.{astro,mdx}"]);
 
-const EXCLUDED = new Set(["404", "thanks"]);
+const EXCLUDED = new Set(["404", "thanks", "progress-tracker-old"]);
 
 function modulePathToLoc(modulePath: string, origin: string): string | null {
   const file = modulePath.replace(/^\.\//, "").replace(/\.(astro|mdx)$/, "");
