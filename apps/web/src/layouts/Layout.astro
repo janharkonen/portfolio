@@ -41,6 +41,7 @@ const jsonLd = {
       url: siteOrigin,
       image: imageURL.href,
       telephone: profile.phone.replace(/\s+/g, ""),
+      email: profile.email,
       sameAs: [profile.github, profile.linkedin, profile.scholar],
       homeLocation: {
         "@type": "Place",
