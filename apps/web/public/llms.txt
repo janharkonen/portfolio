@@ -21,7 +21,6 @@ Personal portfolio at https://janharkonen.fi. Focus areas include real-time UIs,
 - [Offer generator](https://janharkonen.fi/offer-generator): Product data synchronization and sales processes automation tool as a web app aimed at small businesses
 - [Portfolio site](https://janharkonen.fi/portfolio-site): This very website. A personal full stack developer portfolio
 - [Progress tracker](https://janharkonen.fi/progress-tracker): Web application to track the progress level of listed items for each user in real time using websockets
-- [Progress tracker](https://janharkonen.fi/progress-tracker-old): Mobile application progress tracker
 - [Secure receipt share](https://janharkonen.fi/secure-receipt-share): Secure way to share receipts with colleagues.
 - [Speed reader](https://janharkonen.fi/speed-reader): A lightweight .epub ebook reader with RSVP (Rapid Serial Visual Presentation) capability.
 - [SyncSpace](https://janharkonen.fi/syncspace): Simple list+checkbox based tool for collaborative task management with real-time synchronization
