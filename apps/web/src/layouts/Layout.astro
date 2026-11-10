@@ -4,12 +4,35 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import { profile } from "../../../../packages/app_data/profile";
 
+const DEFAULT_OG_IMAGE = "/jan-1-8.webp";
+const DEFAULT_OG_IMAGE_META = {
+  width: 500,
+  height: 750,
+  type: "image/webp",
+  alt: "Portrait of Jan Härkönen, Senior Full Stack Developer",
+} as const;
+
+function mimeTypeFromImagePath(path: string): string | undefined {
+  const pathname = path.split("?")[0]?.split("#")[0]?.toLowerCase() ?? "";
+  if (pathname.endsWith(".webp")) return "image/webp";
+  if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) return "image/jpeg";
+  if (pathname.endsWith(".png")) return "image/png";
+  if (pathname.endsWith(".gif")) return "image/gif";
+  if (pathname.endsWith(".svg")) return "image/svg+xml";
+  if (pathname.endsWith(".avif")) return "image/avif";
+  return undefined;
+}
+
 interface Props {
   bodyClass?: string;
   themeClass?: string;
   title?: string;
   description?: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageType?: string;
+  imageAlt?: string;
   noindex?: boolean;
 }
 
@@ -18,7 +41,11 @@ const {
   themeClass = "portfolio-makeover variant-3",
   title = "Jan Härkönen — Senior Full Stack Developer",
   description = "Jan Härkönen — Senior Full Stack Developer based in Helsinki, Finland",
-  image = "/jan-1-8.webp",
+  image = DEFAULT_OG_IMAGE,
+  imageWidth,
+  imageHeight,
+  imageType,
+  imageAlt = DEFAULT_OG_IMAGE_META.alt,
   noindex = false,
 } = Astro.props;
 
@@ -26,6 +53,16 @@ const siteURL = Astro.site ?? new URL("https://janharkonen.fi");
 const siteOrigin = siteURL.origin;
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const imageURL = new URL(image, siteURL);
+const isDefaultOgImage = image === DEFAULT_OG_IMAGE;
+const resolvedImageWidth =
+  imageWidth ?? (isDefaultOgImage ? DEFAULT_OG_IMAGE_META.width : undefined);
+const resolvedImageHeight =
+  imageHeight ?? (isDefaultOgImage ? DEFAULT_OG_IMAGE_META.height : undefined);
+const resolvedImageType =
+  imageType ??
+  (isDefaultOgImage
+    ? DEFAULT_OG_IMAGE_META.type
+    : mimeTypeFromImagePath(image));
 const personId = `${siteOrigin}/#person`;
 const websiteId = `${siteOrigin}/#website`;
 const homeLocation = profile.location.replace(/\s*🇫🇮\s*$/, "").trim();
@@ -93,6 +130,25 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageURL} />
+    {
+      resolvedImageWidth != null && (
+        <meta property="og:image:width" content={String(resolvedImageWidth)} />
+      )
+    }
+    {
+      resolvedImageHeight != null && (
+        <meta
+          property="og:image:height"
+          content={String(resolvedImageHeight)}
+        />
+      )
+    }
+    {
+      resolvedImageType && (
+        <meta property="og:image:type" content={resolvedImageType} />
+      )
+    }
+    <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="en_US" />
@@ -101,6 +157,7 @@ const jsonLd = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class:list={[bodyClass, themeClass]}>

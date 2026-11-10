@@ -9,6 +9,10 @@ const { frontmatter } = Astro.props;
   title={frontmatter?.title}
   description={frontmatter?.description}
   image={frontmatter?.image}
+  imageWidth={frontmatter?.imageWidth}
+  imageHeight={frontmatter?.imageHeight}
+  imageType={frontmatter?.imageType}
+  imageAlt={frontmatter?.imageAlt}
   noindex={frontmatter?.noindex}
 >
   <main id="main-content" class="project-detail" tabindex="-1">
