@@ -1,0 +1,14 @@
+/* TEAM */
+Name: Jan Härkönen
+Title: Senior Full Stack Developer
+Location: Helsinki, Finland
+Contact: jan.harkonen@gmail.com
+Site: https://janharkonen.fi
+GitHub: https://github.com/janharkonen
+LinkedIn: https://www.linkedin.com/in/janharkonen
+
+/* SITE */
+Last update: 2026/11/12
+Language: English
+Standards: HTML5, CSS3
+Components: Astro, TypeScript, Tailwind
