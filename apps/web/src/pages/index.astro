@@ -57,7 +57,9 @@ const moreProjects = projects.filter((project) => !project.featured);
             class="overflow-hidden rounded-full border border-gray-200 bg-white shadow-[var(--shadow)] ring-4 ring-[var(--surface)]"
           >
             <Image
-              src="/jan-1-8.webp"
+              src="/jan-1-8-448.webp"
+              srcset="/jan-1-8-280.webp 280w, /jan-1-8-448.webp 448w, /jan-1-8.webp 500w"
+              sizes="(min-width: 640px) 224px, 144px"
               alt={profile.name}
               width="224"
               height="224"
