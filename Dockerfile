@@ -21,5 +21,6 @@ ENV RESEND_API_KEY={$RESEND_API_KEY}
 RUN apk add --no-cache libc6-compat
 COPY --from=build /app/apps/web/dist ./dist
 COPY --from=build /out/node_modules ./node_modules
+COPY apps/web/server.mjs ./server.mjs
 EXPOSE 4321
-CMD ["node", "./dist/server/entry.mjs"]
+CMD ["node", "./server.mjs"]
