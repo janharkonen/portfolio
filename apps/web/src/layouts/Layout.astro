@@ -4,12 +4,12 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import { profile } from "../../../../packages/app_data/profile";
 
-const DEFAULT_OG_IMAGE = "/jan-1-8.webp";
+const DEFAULT_OG_IMAGE = "/og-image.jpg";
 const DEFAULT_OG_IMAGE_META = {
-  width: 500,
-  height: 750,
-  type: "image/webp",
-  alt: "Portrait of Jan Härkönen, Senior Full Stack Developer",
+  width: 1200,
+  height: 630,
+  type: "image/jpeg",
+  alt: "Jan Härkönen — Senior Full Stack Developer in Helsinki",
 } as const;
 
 function mimeTypeFromImagePath(path: string): string | undefined {
