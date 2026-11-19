@@ -27,5 +27,11 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      // Emit processed <script> modules as /_astro/*.js instead of inlining
+      // small ones, so script-src can stay at 'self' without 'unsafe-inline'.
+      assetsInlineLimit: 0,
+    },
   },
 });
+

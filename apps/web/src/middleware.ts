@@ -7,8 +7,11 @@ import { defineMiddleware } from "astro:middleware";
  * - img: self, data:, plus remote logo/screenshot hosts used by
  *   branded_items / MDX (picapi, ufs.sh, stackshare, icons8, npmmirror,
  *   gstatic, pandas, wikimedia, githubusercontent, wingware)
- * - scripts/styles: self + unsafe-inline (JSON-LD, homepage inline
- *   <script type="module">, Astro Font @font-face <style>)
+ * - scripts: self only (processed page scripts are external /_astro/*.js
+ *   via vite.build.assetsInlineLimit: 0; JSON-LD is a data block, not
+ *   executed, so CSP does not need to allow it)
+ * - styles: self + unsafe-inline (Astro Font @font-face <style> and any
+ *   other inline <style> blocks; style-src hardening is out of scope)
  * - fonts: self (fontsource Inter via Astro Font, copied into /_astro)
  * - connect/form-action: self (contact form POSTs to /api/contact_web;
  *   Resend is server-side only)
@@ -16,9 +19,10 @@ import { defineMiddleware } from "astro:middleware";
  */
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://picapi.janharkonen.fi https://i4ndcxhbcg.ufs.sh https://img.stackshare.io https://img.icons8.com https://registry.npmmirror.com https://encrypted-tbn0.gstatic.com https://pandas.pydata.org https://upload.wikimedia.org https://user-images.githubusercontent.com https://wingware.com",
+
   "font-src 'self'",
   "connect-src 'self'",
   "media-src 'self'",
