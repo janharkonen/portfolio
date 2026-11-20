@@ -25,6 +25,11 @@ export default defineConfig({
       subsets: ["latin", "latin-ext"], // Härkönen / Finnish
     },
   ],
+  build: {
+    // Keep component/Tailwind CSS as /_astro/*.css so style-src can stay
+    // at 'self' (+ sha256 hashes for the Astro Font <style> only).
+    inlineStylesheets: "never",
+  },
   vite: {
     plugins: [tailwindcss()],
     build: {
@@ -34,4 +39,5 @@ export default defineConfig({
     },
   },
 });
+
 

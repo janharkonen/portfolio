@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { defineMiddleware } from "astro:middleware";
 
 /**
@@ -10,19 +11,22 @@ import { defineMiddleware } from "astro:middleware";
  * - scripts: self only (processed page scripts are external /_astro/*.js
  *   via vite.build.assetsInlineLimit: 0; JSON-LD is a data block, not
  *   executed, so CSP does not need to allow it)
- * - styles: self + unsafe-inline (Astro Font @font-face <style> and any
- *   other inline <style> blocks; style-src hardening is out of scope)
+ * - styles: self + per-response sha256 hashes of any remaining inline
+ *   <style> bodies (Astro Font @font-face). Component/Tailwind CSS ships
+ *   as /_astro/*.css via build.inlineStylesheets: 'never'. No style=""
+ *   attributes in the app; CSSOM writes from trusted scripts are fine.
  * - fonts: self (fontsource Inter via Astro Font, copied into /_astro)
  * - connect/form-action: self (contact form POSTs to /api/contact_web;
  *   Resend is server-side only)
  * - no iframes, embeds, analytics, or external fonts/scripts
  */
-const CONTENT_SECURITY_POLICY = [
+const CSP_BEFORE_STYLE_SRC = [
   "default-src 'self'",
   "script-src 'self'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://picapi.janharkonen.fi https://i4ndcxhbcg.ufs.sh https://img.stackshare.io https://img.icons8.com https://registry.npmmirror.com https://encrypted-tbn0.gstatic.com https://pandas.pydata.org https://upload.wikimedia.org https://user-images.githubusercontent.com https://wingware.com",
+] as const;
 
+const CSP_AFTER_STYLE_SRC = [
+  "img-src 'self' data: https://picapi.janharkonen.fi https://i4ndcxhbcg.ufs.sh https://img.stackshare.io https://img.icons8.com https://registry.npmmirror.com https://encrypted-tbn0.gstatic.com https://pandas.pydata.org https://upload.wikimedia.org https://user-images.githubusercontent.com https://wingware.com",
   "font-src 'self'",
   "connect-src 'self'",
   "media-src 'self'",
@@ -31,34 +35,80 @@ const CONTENT_SECURITY_POLICY = [
   "form-action 'self'",
   "frame-ancestors 'none'",
   "upgrade-insecure-requests",
-].join("; ");
+] as const;
 
-/** Baseline security headers for every Astro response. */
+/** Baseline security headers other than CSP (CSP is built per response). */
 const SECURITY_HEADERS: ReadonlyArray<readonly [string, string]> = [
   ["Strict-Transport-Security", "max-age=31536000; includeSubDomains"],
   ["X-Content-Type-Options", "nosniff"],
   ["Referrer-Policy", "strict-origin-when-cross-origin"],
   ["X-Frame-Options", "DENY"],
-  ["Content-Security-Policy", CONTENT_SECURITY_POLICY],
   [
     "Permissions-Policy",
     "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()",
   ],
 ];
 
+const STYLE_ELEMENT_RE = /<style\b[^>]*>([\s\S]*?)<\/style>/gi;
+
+/** CSP style-src hashes for each inline <style> element's text content. */
+function styleSrcHashesFromHtml(html: string): string[] {
+  const hashes = new Set<string>();
+  for (const match of html.matchAll(STYLE_ELEMENT_RE)) {
+    const content = match[1] ?? "";
+    const digest = createHash("sha256").update(content, "utf8").digest("base64");
+    hashes.add(`'sha256-${digest}'`);
+  }
+  return [...hashes];
+}
+
+function buildContentSecurityPolicy(styleHashes: readonly string[]): string {
+  const styleSrc =
+    styleHashes.length > 0
+      ? `style-src 'self' ${styleHashes.join(" ")}`
+      : "style-src 'self'";
+  return [...CSP_BEFORE_STYLE_SRC, styleSrc, ...CSP_AFTER_STYLE_SRC].join("; ");
+}
+
+function applyBaselineSecurityHeaders(headers: Headers): void {
+  for (const [name, value] of SECURITY_HEADERS) {
+    if (!headers.has(name)) {
+      headers.set(name, value);
+    }
+  }
+}
+
 /**
  * Attach security headers to every response produced by the Astro server
- * (HTML pages, 404, and API routes). Skips a header when the response
- * already has that name so we never overwrite a more specific value.
+ * (HTML pages, 404, and API routes). For text/html, buffer the body once to
+ * hash inline <style> contents and set style-src without 'unsafe-inline'
+ * (header rewrite only — body is returned unchanged).
  */
 export const onRequest = defineMiddleware(async (_context, next) => {
   const response = await next();
+  const contentType = response.headers.get("content-type") ?? "";
 
-  for (const [name, value] of SECURITY_HEADERS) {
-    if (!response.headers.has(name)) {
-      response.headers.set(name, value);
+  if (!contentType.includes("text/html")) {
+    applyBaselineSecurityHeaders(response.headers);
+    if (!response.headers.has("Content-Security-Policy")) {
+      response.headers.set(
+        "Content-Security-Policy",
+        buildContentSecurityPolicy([]),
+      );
     }
+    return response;
   }
 
-  return response;
+  const html = await response.text();
+  const styleHashes = styleSrcHashesFromHtml(html);
+  const headers = new Headers(response.headers);
+  headers.delete("content-length");
+  applyBaselineSecurityHeaders(headers);
+  headers.set("Content-Security-Policy", buildContentSecurityPolicy(styleHashes));
+
+  return new Response(html, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 });
