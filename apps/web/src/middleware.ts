@@ -5,9 +5,8 @@ import { defineMiddleware } from "astro:middleware";
  * Enforcing CSP for every Astro response.
  *
  * Runtime origins (audited from pages/components + Logo usages + `dist`):
- * - img: self, data:, plus remote logo/screenshot hosts used by
- *   branded_items / MDX (picapi, ufs.sh, stackshare, icons8, npmmirror,
- *   gstatic, pandas, wikimedia, githubusercontent, wingware)
+ * - img: self, data:, plus picapi.janharkonen.fi (Jan's image API used
+ *   on the homepage / branded_items for some logos)
  * - scripts: self only (processed page scripts are external /_astro/*.js
  *   via vite.build.assetsInlineLimit: 0; JSON-LD is a data block, not
  *   executed, so CSP does not need to allow it)
@@ -26,7 +25,7 @@ const CSP_BEFORE_STYLE_SRC = [
 ] as const;
 
 const CSP_AFTER_STYLE_SRC = [
-  "img-src 'self' data: https://picapi.janharkonen.fi https://i4ndcxhbcg.ufs.sh https://img.stackshare.io https://img.icons8.com https://registry.npmmirror.com https://encrypted-tbn0.gstatic.com https://pandas.pydata.org https://upload.wikimedia.org https://user-images.githubusercontent.com https://wingware.com",
+  "img-src 'self' data: https://picapi.janharkonen.fi",
   "font-src 'self'",
   "connect-src 'self'",
   "media-src 'self'",

@@ -114,8 +114,7 @@ export const brandedItems = {
   },
   VITE_OLD: {
     displayName: "Vite",
-    logoUrl:
-      "https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png&color=000000",
+    logoUrl: "/logos/vite.svg",
   },
   NODEJS_OLD: {
     displayName: "Node.js",
@@ -168,11 +167,11 @@ export const brandedItems = {
   },
   TKINTER: {
     displayName: "Tkinter",
-    logoUrl: "https://wingware.com/images/large-feather.png",
+    logoUrl: "/logos/wing.png",
   },
   PANDAS: {
     displayName: "Pandas",
-    logoUrl: "https://pandas.pydata.org/static/img/pandas_mark.svg",
+    logoUrl: "/logos/pandas.svg",
   },
   VERCEL: {
     displayName: "Vercel",
@@ -188,8 +187,7 @@ export const brandedItems = {
   },
   LATEX_OLD: {
     displayName: "LaTeX",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg",
+    logoUrl: "/logos/latex.svg",
   },
   FORTRAN: {
     displayName: "Fortran",
@@ -233,13 +231,11 @@ export const brandedItems = {
   },
   V0: {
     displayName: "V0",
-    logoUrl:
-      "https://img.stackshare.io/service/145352/default_18b7775bbad27a164cbe774b72f2dbafd8676289.png",
+    logoUrl: "/logos/v0.svg",
   },
   ZUSTAND: {
     displayName: "Zustand",
-    logoUrl:
-      "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg",
+    logoUrl: "/logos/zustand.svg",
   },
   DOCKER: {
     displayName: "Docker",
@@ -251,8 +247,7 @@ export const brandedItems = {
   },
   SQLALCHEMY: {
     displayName: "SQLAlchemy",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/SQLAlchemy.svg/1920px-SQLAlchemy.svg.png",
+    logoUrl: "/logos/sqlalchemy.svg",
   },
   NGINX: {
     displayName: "Nginx",
@@ -315,8 +310,7 @@ export const brandedItems = {
   },
   EC2: {
     displayName: "EC2",
-    logoUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9vVTDosC-AsWLprepTOyXhkzAKji4DcJCA&s",
+    logoUrl: "/logos/aws-ec2.svg",
   },
   LINUX: {
     displayName: "Linux",
@@ -386,8 +380,7 @@ export const brandedItems = {
   },
   CURSOR_OLD: {
     displayName: "Cursor",
-    logoUrl:
-      "https://registry.npmmirror.com/@lobehub/icons-static-png/1.44.0/files/light/cursor.png",
+    logoUrl: "/logos/cursor.svg",
   },
   CURSOR: {
     displayName: "Cursor",
