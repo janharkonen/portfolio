@@ -138,8 +138,8 @@
       "featured": true
     },
     {
-      "name": "HSL real time",
-      "projectUrl": "https://hslrealtime.pionblanc.fi",
+      "name": "HSL Live",
+      "projectUrl": "https://hsl-live.pionblanc.fi",
       "year": "2026",
       "description": "Real-time vehicle locations for Helsinki public transport.",
       "tech": [

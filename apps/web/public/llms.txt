@@ -16,7 +16,7 @@ Personal portfolio at https://janharkonen.fi. Focus areas include real-time UIs,
 
 - [cdx](https://janharkonen.fi/cdx): Bash CLI tool to cd into directories 10x faster
 - [ÉclairDB](https://janharkonen.fi/eclairdb): Lightning-fast PostgreSQL database exploration with intuitive search and filtering capabilities
-- [HSL real time](https://janharkonen.fi/hsl-real-time): Real-time vehicle locations for Helsinki public transport.
+- [HSL Live](https://janharkonen.fi/hsl-real-time): Real-time vehicle locations for Helsinki public transport.
 - [Lens and mirror simulator](https://janharkonen.fi/lens-mirror-simulator): Desktop GUI for simulating the trajectory of a laser beam through curved lenses and mirrors
 - [Offer generator](https://janharkonen.fi/offer-generator): Product data synchronization and sales processes automation tool as a web app aimed at small businesses
 - [Portfolio site](https://janharkonen.fi/portfolio-site): This very website. A personal full stack developer portfolio
