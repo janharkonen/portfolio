@@ -36,6 +36,10 @@ const CSP_AFTER_STYLE_SRC = [
   "upgrade-insecure-requests",
 ] as const;
 
+/** Canonical public apex; www is 301'd here so search engines see one host. */
+const CANONICAL_HOST = "janharkonen.fi";
+const WWW_HOST = `www.${CANONICAL_HOST}`;
+
 /** Baseline security headers other than CSP (CSP is built per response). */
 const SECURITY_HEADERS: ReadonlyArray<readonly [string, string]> = [
   ["Strict-Transport-Security", "max-age=31536000; includeSubDomains"],
@@ -78,12 +82,41 @@ function applyBaselineSecurityHeaders(headers: Headers): void {
 }
 
 /**
+ * Prefer X-Forwarded-Host (proxy/CDN), then Host, then the URL host.
+ * Lowercase and strip any port so comparisons stay exact.
+ */
+function requestHost(context: {
+  request: Request;
+  url: URL;
+}): string {
+  const forwarded = context.request.headers.get("x-forwarded-host");
+  const raw =
+    (forwarded?.split(",")[0]?.trim() ||
+      context.request.headers.get("host") ||
+      context.url.host ||
+      "").trim();
+  return raw.split(":")[0]?.toLowerCase() ?? "";
+}
+
+/**
  * Attach security headers to every response produced by the Astro server
  * (HTML pages, 404, and API routes). For text/html, buffer the body once to
  * hash inline <style> contents and set style-src without 'unsafe-inline'
  * (header rewrite only — body is returned unchanged).
  */
-export const onRequest = defineMiddleware(async (_context, next) => {
+export const onRequest = defineMiddleware(async (context, next) => {
+  // Only canonicalize www → apex; leave localhost / Railway / apex alone.
+  if (requestHost(context) === WWW_HOST) {
+    const location = `https://${CANONICAL_HOST}${context.url.pathname}${context.url.search}`;
+    const headers = new Headers({ Location: location });
+    applyBaselineSecurityHeaders(headers);
+    headers.set(
+      "Content-Security-Policy",
+      buildContentSecurityPolicy([]),
+    );
+    return new Response(null, { status: 301, headers });
+  }
+
   const response = await next();
   const contentType = response.headers.get("content-type") ?? "";
 
